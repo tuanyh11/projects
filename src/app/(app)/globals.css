@@ -1,107 +1,243 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
 
-@plugin "@tailwindcss/typography";
-@plugin "tailwindcss-animate";
+@config '../../../tailwind.config.mjs';
 
 @custom-variant dark (&:is([data-theme='dark'] *));
+@custom-variant sm (@media (width >=theme(--breakpoint-sm)));
+@custom-variant md (@media (width >=theme(--breakpoint-md)));
+@custom-variant lg (@media (width >=theme(--breakpoint-lg)));
+@custom-variant xl (@media (width >=theme(--breakpoint-xl)));
+@custom-variant 2xl (@media (width >=theme(--breakpoint-2xl)));
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: unset;
+    font-size: unset;
   }
 }
 
+@plugin "@tailwindcss/typography";
+
+@source inline("lg:col-span-4");
+@source inline("lg:col-span-6");
+@source inline("lg:col-span-8");
+@source inline("lg:col-span-12");
+@source inline("border-border");
+@source inline("bg-card");
+@source inline("border-error");
+@source inline("bg-error/30");
+@source inline("border-success");
+@source inline("bg-success/30");
+@source inline("border-warning");
+@source inline("bg-warning/30");
+
 @theme {
-  --font-sans: var(--font-geist-sans), sans-serif;
-  --font-mono: var(--font-geist-mono), sans-serif;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 86rem;
+  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans);
 }
 
-@utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-  max-width: 76.125rem;
+@layer utilities {
+  .container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  @variant sm {
+    .container {
+      max-width: var(--breakpoint-sm);
+    }
+  }
+
+  @variant md {
+    .container {
+      max-width: var(--breakpoint-md);
+      padding-inline: 2rem;
+    }
+  }
+
+  @variant lg {
+    .container {
+      max-width: var(--breakpoint-lg);
+    }
+  }
+
+  @variant xl {
+    .container {
+      max-width: var(--breakpoint-xl);
+    }
+  }
+
+  @variant 2xl {
+    .container {
+      max-width: var(--breakpoint-2xl);
+    }
+  }
 }
+
+/* ═══════════════════════════════════════════
+   🎎 JAPANESE ZEN — Color Palette
+   Wabi-sabi · Washi · Sumi-e · Enso
+   Authentic Japanese aesthetic tones
+   ═══════════════════════════════════════════ */
 
 :root {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(222.2 84% 4.9%);
+  /* Core washi-inspired palette */
+  --background: #F8F6F1;
+  --foreground: #1E1C17;
+  --card: #FDFCF8;
+  --card-foreground: #1E1C17;
+  --popover: #FDFCF8;
+  --popover-foreground: #1E1C17;
 
-  --card: hsl(240 5% 96%);
-  --card-foreground: hsl(222.2 84% 4.9%);
+  /* Matcha green — primary */
+  --primary: #6B7A5E;
+  --primary-foreground: #FDFCF8;
 
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(222.2 84% 4.9%);
+  /* Kincha gold — secondary */
+  --secondary: #B89B6A;
+  --secondary-foreground: #1E1C17;
 
-  --primary: hsl(222.2 47.4% 11.2%);
-  --primary-foreground: hsl(210 40% 98%);
+  /* Warm muted tones */
+  --muted: #EDE9E2;
+  --muted-foreground: #7A7870;
 
-  --secondary: hsl(210 40% 96.1%);
-  --secondary-foreground: hsl(222.2 47.4% 11.2%);
+  /* Kincha accent */
+  --accent: #C4A055;
+  --accent-foreground: #1E1C17;
 
-  --muted: hsl(210 40% 96.1%);
-  --muted-foreground: hsl(215.4 16.3% 46.9%);
+  --destructive: oklch(57.7% 0.245 27.325deg);
+  --destructive-foreground: oklch(57.7% 0.245 27.325deg);
 
-  --accent: hsl(210 40% 96.1%);
-  --accent-foreground: hsl(222.2 47.4% 11.2%);
+  /* Washi paper edges */
+  --border: #DDD9D0;
+  --input: #DDD9D0;
+  --ring: #6B7A5E;
 
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(210 40% 98%);
+  --chart-1: oklch(64.6% 0.222 41.116deg);
+  --chart-2: oklch(60% 0.118 184.704deg);
+  --chart-3: oklch(39.8% 0.07 227.392deg);
+  --chart-4: oklch(82.8% 0.189 84.429deg);
+  --chart-5: oklch(76.9% 0.188 70.08deg);
 
-  --border: hsl(240 6% 90%);
-  --input: hsl(214.3 31.8% 91.4%);
-  --ring: hsl(222.2 84% 4.9%);
+  --radius: 0.25rem;
+  --sidebar: #F2EFE8;
+  --sidebar-foreground: #1E1C17;
+  --sidebar-primary: #6B7A5E;
+  --sidebar-primary-foreground: #FDFCF8;
+  --sidebar-accent: #EDE9E2;
+  --sidebar-accent-foreground: #1E1C17;
+  --sidebar-border: #DDD9D0;
+  --sidebar-ring: #6B7A5E;
+  --success: #6B7A5E;
+  --warning: #C4A055;
+  --error: #B85C44;
 
-  --radius: hsl(0.2rem);
-
-  --success: hsl(196 52% 74%);
-  --warning: hsl(34 89% 85%);
-  --error: hsl(10, 93%, 70%);
+  /* Zen custom palette tokens */
+  --sumi: #1E1C17;
+  /* 墨 sumi ink */
+  --washi: #F8F6F1;
+  /* 和紙 washi paper */
+  --matcha: #6B7A5E;
+  /* 抹茶 matcha green */
+  --kincha: #C4A055;
+  /* 金茶 kincha gold */
+  --yuki: #EDE9E2;
+  /* 雪 yuki snow */
+  --koke: #4A5940;
+  /* 苔 koke moss */
+  --sakura: #D4A8A0;
+  /* 桜 sakura blush */
+  --nori: #252820;
+  /* 暗 nori dark */
 }
 
 [data-theme='dark'] {
-  --background: hsla(0, 0%, 4%);
-  --foreground: hsl(210 40% 98%);
+  /* ═══════════════════════════════════════════
+     墨夜 SUMI-YORU — Premium Dark Mode
+     Deep ink night · Luminous accents
+     ═══════════════════════════════════════════ */
 
-  --card: hsl(0, 0%, 8%);
-  --card-foreground: hsl(210 40% 98%);
+  /* ═══ 墨 Sumi ink — Abyssal dark foundation ═══ */
+  --background: #0C0B08;
+  --foreground: #E8E4DB;
+  --card: #151310;
+  --card-foreground: #E8E4DB;
+  --popover: #151310;
+  --popover-foreground: #E8E4DB;
 
-  --popover: hsl(222.2 84% 4.9%);
-  --popover-foreground: hsl(210 40% 98%);
+  /* Matcha green — luminous on dark */
+  --primary: #9AB487;
+  --primary-foreground: #0C0B08;
 
-  --primary: hsl(210 40% 98%);
-  --primary-foreground: hsl(0, 0%, 6%);
+  /* Kincha gold — radiant warmth */
+  --secondary: #D4B880;
+  --secondary-foreground: #0C0B08;
 
-  --secondary: hsl(217.2 32.6% 17.5%);
-  --secondary-foreground: hsl(210 40% 98%);
+  /* Muted — deep earth underlay */
+  --muted: #1A1814;
+  --muted-foreground: #918D85;
 
-  --muted: hsl(217.2 32.6% 17.5%);
-  --muted-foreground: hsl(215 20.2% 65.1%);
+  /* Kincha accent — amber glow */
+  --accent: #C9A46A;
+  --accent-foreground: #E8E4DB;
 
-  --accent: hsla(197, 100%, 58%);
-  --accent-foreground: hsl(210 40% 98%);
+  --destructive: oklch(57.7% 0.245 27.325deg);
+  --destructive-foreground: oklch(90% 0.05 27.325deg);
 
-  --destructive: hsl(0 62.8% 30.6%);
-  --destructive-foreground: hsl(210 40% 98%);
+  /* Dark borders — warm subtle */
+  --border: #292620;
+  --input: #201E1A;
+  --ring: #9AB487;
 
-  --border: hsla(0, 0%, 100%, 0.1);
-  --input: hsla(0, 0%, 100%, 0.1);
-  --ring: hsl(212.7 26.8% 83.9%);
+  --chart-1: oklch(64.6% 0.222 41.116deg);
+  --chart-2: oklch(60% 0.118 184.704deg);
+  --chart-3: oklch(76.9% 0.188 70.08deg);
+  --chart-4: oklch(62.7% 0.265 303.9deg);
+  --chart-5: oklch(64.5% 0.246 16.439deg);
 
-  --success: hsl(196 100% 14%);
-  --warning: hsl(34 51% 25%);
-  --error: hsl(10 39% 43%);
+  --sidebar: #110F0C;
+  --sidebar-foreground: #E8E4DB;
+  --sidebar-primary: #9AB487;
+  --sidebar-primary-foreground: #0C0B08;
+  --sidebar-accent: #1A1814;
+  --sidebar-accent-foreground: #E8E4DB;
+  --sidebar-border: #292620;
+  --sidebar-ring: #9AB487;
+  --success: #9AB487;
+  --warning: #D4B880;
+  --error: #D47058;
+
+  /* Zen custom tokens — night edition */
+  --sumi: #E8E4DB;
+  --washi: #151310;
+  --matcha: #9AB487;
+  --kincha: #D4B880;
+  --yuki: #1A1814;
+  --koke: #7A9E65;
+  --sakura: #C4908A;
+  --nori: #080704;
+
+  /* ═══ Dark-exclusive design tokens ═══ */
+  --glow-matcha: rgba(154, 180, 135, 0.12);
+  --glow-kincha: rgba(212, 184, 128, 0.10);
+  --glow-primary: rgba(154, 180, 135, 0.08);
+  --dark-elevated: #1A1814;
+  --dark-elevated-2: #201E1A;
+  --dark-surface: rgba(255, 255, 255, 0.03);
+  --dark-surface-hover: rgba(255, 255, 255, 0.05);
+  --dark-border-glow: rgba(154, 180, 135, 0.08);
 }
 
 @theme inline {
@@ -124,36 +260,131 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-radius: var(--radius);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-error: var(--error);
 }
 
 @layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: auto;
-    font-weight: auto;
-  }
-}
-
-@layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground min-h-[100vh] flex flex-col;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.015em;
+    font-feature-settings: 'kern' 1, 'liga' 1;
   }
 }
 
 html {
-  opacity: 0;
-  @apply font-sans;
+  scroll-behavior: smooth;
+}
+
+a,
+button,
+[role='button'],
+input[type='submit'],
+input[type='button'],
+input[type='reset'],
+select,
+summary {
+  cursor: pointer;
+}
+
+/* ═══════════ Range Slider — Full Theme Support ═══════════ */
+input[type='range'] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  background: transparent !important;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 3px;
+  background: transparent;
+  border: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--washi) !important;
+  border: 2px solid var(--matcha) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  margin-top: -8px;
+  transition: all 0.2s ease;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  background: var(--matcha) !important;
+  box-shadow: 0 0 0 4px rgba(107, 122, 94, 0.15);
+}
+
+/* Dark mode slider — high contrast */
+html[data-theme='dark'] input[type='range']::-webkit-slider-thumb,
+[data-theme='dark'] input[type='range']::-webkit-slider-thumb {
+  background: var(--matcha) !important;
+  border-color: rgba(154, 180, 135, 0.8) !important;
+  box-shadow: 0 0 8px rgba(154, 180, 135, 0.4), 0 0 0 2px rgba(154, 180, 135, 0.15) !important;
+}
+
+html[data-theme='dark'] input[type='range']::-webkit-slider-thumb:hover,
+[data-theme='dark'] input[type='range']::-webkit-slider-thumb:hover {
+  background: #b8d4a0 !important;
+  box-shadow: 0 0 12px rgba(154, 180, 135, 0.6), 0 0 0 4px rgba(154, 180, 135, 0.2) !important;
+}
+
+/* Firefox */
+input[type='range']::-moz-range-track {
+  height: 3px;
+  background: transparent;
+  border: none;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--washi);
+  border: 2px solid var(--matcha);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+html[data-theme='dark'] input[type='range']::-moz-range-thumb,
+[data-theme='dark'] input[type='range']::-moz-range-thumb {
+  background: var(--matcha);
+  border-color: rgba(154, 180, 135, 0.8);
+  box-shadow: 0 0 8px rgba(154, 180, 135, 0.4), 0 0 0 2px rgba(154, 180, 135, 0.15);
+}
+
+::selection {
+  background-color: var(--matcha);
+  color: var(--washi);
 }
 
 html[data-theme='dark'],
@@ -162,7 +393,1115 @@ html[data-theme='light'] {
 }
 
 a,
-input,
+input:not(.zen-input),
 button {
   @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-neutral-900;
+}
+
+/* ═══════════════════════════════════════════
+   🖋️ ZEN TYPOGRAPHY — Japanese-inspired
+   ═══════════════════════════════════════════ */
+
+.font-jp {
+  font-family: 'Noto Serif JP', 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  letter-spacing: 0.08em;
+}
+
+.font-jp-light {
+  font-family: 'Noto Serif JP', 'Shippori Mincho', serif;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+}
+
+.zen-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.zen-kanji {
+  font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+/* ═══════════════════════════════════════════
+   🌀 ZEN ANIMATIONS — Slow & Meditative
+   ═══════════════════════════════════════════ */
+
+@keyframes enso-draw {
+  from {
+    stroke-dashoffset: 340;
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 16px rgba(107, 122, 94, 0.08);
+  }
+
+  50% {
+    box-shadow: 0 0 32px rgba(107, 122, 94, 0.2);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zen-breathe {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+}
+
+@keyframes bamboo-sway {
+
+  0%,
+  100% {
+    transform: rotate(-1deg);
+  }
+
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes water-ripple {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fog-drift {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0.04;
+  }
+
+  50% {
+    transform: translateX(30px) translateY(-10px);
+    opacity: 0.08;
+  }
+
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 0.04;
+  }
+}
+
+@keyframes sumi-stroke {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 10s ease infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 1.2s ease-out forwards;
+}
+
+.animate-slide-up-delay-1 {
+  animation: slide-up 1.2s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-delay-2 {
+  animation: slide-up 1.2s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-delay-3 {
+  animation: slide-up 1.2s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-zen-breathe {
+  animation: zen-breathe 6s ease-in-out infinite;
+}
+
+.animate-bamboo-sway {
+  animation: bamboo-sway 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-water-ripple {
+  animation: water-ripple 2.5s ease-out infinite;
+}
+
+.animate-fog-drift {
+  animation: fog-drift 12s ease-in-out infinite;
+}
+
+.animate-enso {
+  stroke-dasharray: 340;
+  animation: enso-draw 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+}
+
+.animate-sumi-stroke {
+  animation: sumi-stroke 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ═══════════ Scroll Reveal ═══════════ */
+.reveal-on-scroll {
+  animation: reveal-up 1s ease-out both;
+}
+
+/* ═══════════ Page transitions ═══════════ */
+main {
+  animation: page-fade-in 0.7s ease-out;
+}
+
+/* ═══════════ Focus ring style ═══════════ */
+.focus-ring {
+  @apply focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 focus-visible:outline-hidden;
+}
+
+/* ═══════════════════════════════════════════
+   🪷 ZEN UI COMPONENTS
+   ═══════════════════════════════════════════ */
+
+/* Washi paper card */
+.card-washi {
+  background: var(--washi);
+  border-radius: 2px;
+  box-shadow:
+    0 2px 8px rgba(30, 28, 23, 0.04),
+    0 1px 2px rgba(30, 28, 23, 0.02);
+}
+
+.card-washi:hover {
+  box-shadow:
+    0 8px 32px rgba(30, 28, 23, 0.07),
+    0 2px 8px rgba(30, 28, 23, 0.04);
+  transform: translateY(-1px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Zen premium card */
+.card-premium {
+  @apply bg-card rounded-sm;
+  box-shadow: 0 1px 4px rgba(30, 28, 23, 0.04);
+}
+
+.card-premium:hover {
+  box-shadow: 0 8px 40px rgba(30, 28, 23, 0.08);
+  transition: box-shadow 0.5s ease;
+}
+
+/* Glassmorphism — washi style */
+.glass {
+  background: rgba(248, 246, 241, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(221, 217, 208, 0.5);
+}
+
+/* ═══════════════════════════════════════════
+   🌙 DARK MODE — Premium Glass & Glow Effects
+   ═══════════════════════════════════════════ */
+
+/* Dark glassmorphism */
+[data-theme='dark'] .glass {
+  background: rgba(21, 19, 16, 0.75);
+  border: 1px solid rgba(154, 180, 135, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* Dark card — elevated with subtle glow */
+[data-theme='dark'] .card-washi {
+  background: var(--dark-elevated);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(154, 180, 135, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+[data-theme='dark'] .card-washi:hover {
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(154, 180, 135, 0.08),
+    0 0 20px var(--glow-matcha),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .card-premium {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+[data-theme='dark'] .card-premium:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35),
+    0 0 24px var(--glow-matcha),
+    0 0 0 1px rgba(154, 180, 135, 0.06);
+}
+
+/* Dark mode — enhanced product card */
+[data-theme='dark'] .product-card-zen {
+  border-radius: 2px;
+}
+
+[data-theme='dark'] .product-card-zen:hover {
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .product-card-zen::after {
+  background: linear-gradient(90deg, var(--matcha), var(--kincha));
+  box-shadow: 0 0 8px var(--glow-matcha);
+}
+
+/* Dark ambient glow card */
+.dark-glow-card {
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] .dark-glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, rgba(154, 180, 135, 0.06), transparent 40%, rgba(212, 184, 128, 0.04));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+[data-theme='dark'] .dark-glow-card:hover::before {
+  opacity: 1;
+}
+
+/* Dark mode — enhanced scrollbar */
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: rgba(154, 180, 135, 0.15);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(154, 180, 135, 0.3);
+}
+
+/* Dark mode section backgrounds */
+[data-theme='dark'] .dark-section-alt {
+  background-color: var(--dark-elevated) !important;
+}
+
+/* Dark mode floating elements */
+[data-theme='dark'] .dark-float {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(154, 180, 135, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Dark mode — ink wash ambient */
+@keyframes dark-ambient-pulse {
+
+  0%,
+  100% {
+    opacity: 0.03;
+  }
+
+  50% {
+    opacity: 0.06;
+  }
+}
+
+@keyframes matcha-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(154, 180, 135, 0.05);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(154, 180, 135, 0.12);
+  }
+}
+
+[data-theme='dark'] .animate-dark-ambient {
+  animation: dark-ambient-pulse 8s ease-in-out infinite;
+}
+
+[data-theme='dark'] .animate-matcha-glow {
+  animation: matcha-glow 6s ease-in-out infinite;
+}
+
+/* Dark mode input styles */
+[data-theme='dark'] input:not(.zen-input),
+[data-theme='dark'] textarea:not(.zen-input),
+[data-theme='dark'] select:not(.zen-input) {
+  background-color: var(--dark-elevated) !important;
+  border-color: rgba(154, 180, 135, 0.08) !important;
+}
+
+[data-theme='dark'] input:not(.zen-input):focus,
+[data-theme='dark'] textarea:not(.zen-input):focus,
+[data-theme='dark'] select:not(.zen-input):focus {
+  border-color: rgba(154, 180, 135, 0.2) !important;
+  box-shadow: 0 0 0 2px var(--glow-matcha) !important;
+}
+
+/* ═══ Zen Input — clean focus without ring/offset ═══ */
+.zen-input {
+  outline: none !important;
+  box-shadow: none !important;
+  --tw-ring-shadow: none !important;
+  transition: border-color 0.5s ease !important;
+}
+
+.zen-input:focus,
+.zen-input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  --tw-ring-shadow: none !important;
+  border-color: rgba(107, 122, 94, 0.4) !important;
+}
+
+[data-theme='dark'] .zen-input {
+  background: transparent !important;
+  border-color: var(--border) !important;
+}
+
+[data-theme='dark'] .zen-input:focus,
+[data-theme='dark'] .zen-input:focus-visible {
+  border-color: rgba(154, 180, 135, 0.3) !important;
+  box-shadow: none !important;
+}
+
+/* Dark mode — image overlay enhancement */
+[data-theme='dark'] .dark-image-overlay {
+  position: relative;
+}
+
+[data-theme='dark'] .dark-image-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(12, 11, 8, 0.4));
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ═══════════ Zen Separators ═══════════ */
+.zen-separator {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--matcha) 0%, transparent 100%);
+  margin: 1.5rem 0;
+}
+
+.zen-separator-center {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--matcha) 50%, transparent 100%);
+  margin: 1.5rem auto;
+}
+
+[data-theme='dark'] .zen-separator {
+  background: linear-gradient(90deg, rgba(154, 180, 135, 0.5) 0%, transparent 100%);
+  box-shadow: 0 0 6px var(--glow-matcha);
+}
+
+[data-theme='dark'] .zen-separator-center {
+  background: linear-gradient(90deg, transparent 0%, rgba(154, 180, 135, 0.4) 50%, transparent 100%);
+  box-shadow: 0 0 8px var(--glow-matcha);
+}
+
+/* ═══════════ Japanese Patterns ═══════════ */
+
+/* Seigaiha (青海波 overlapping waves) */
+.pattern-seigaiha {
+  background-image:
+    radial-gradient(circle at 100% 150%, rgba(107, 122, 94, 0.05) 24%, transparent 25%),
+    radial-gradient(circle at 0% 150%, rgba(107, 122, 94, 0.05) 24%, transparent 25%),
+    radial-gradient(circle at 50% 100%, rgba(107, 122, 94, 0.05) 30%, transparent 31%),
+    radial-gradient(circle at 100% 50%, rgba(107, 122, 94, 0.05) 24%, transparent 25%),
+    radial-gradient(circle at 0% 50%, rgba(107, 122, 94, 0.05) 24%, transparent 25%);
+  background-size: 44px 44px;
+}
+
+/* Shoji screen grid (障子) */
+.pattern-shoji {
+  background-image:
+    linear-gradient(rgba(107, 122, 94, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107, 122, 94, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Asanoha (麻の葉) subtle diagonal */
+.pattern-asanoha {
+  background-image:
+    repeating-linear-gradient(45deg,
+      rgba(107, 122, 94, 0.03) 0px,
+      rgba(107, 122, 94, 0.03) 1px,
+      transparent 1px,
+      transparent 20px),
+    repeating-linear-gradient(-45deg,
+      rgba(107, 122, 94, 0.03) 0px,
+      rgba(107, 122, 94, 0.03) 1px,
+      transparent 1px,
+      transparent 20px);
+}
+
+/* Dark mode enhanced patterns */
+[data-theme='dark'] .pattern-seigaiha {
+  background-image:
+    radial-gradient(circle at 100% 150%, rgba(154, 180, 135, 0.04) 24%, transparent 25%),
+    radial-gradient(circle at 0% 150%, rgba(154, 180, 135, 0.04) 24%, transparent 25%),
+    radial-gradient(circle at 50% 100%, rgba(154, 180, 135, 0.04) 30%, transparent 31%),
+    radial-gradient(circle at 100% 50%, rgba(154, 180, 135, 0.04) 24%, transparent 25%),
+    radial-gradient(circle at 0% 50%, rgba(154, 180, 135, 0.04) 24%, transparent 25%);
+}
+
+[data-theme='dark'] .pattern-shoji {
+  background-image:
+    linear-gradient(rgba(154, 180, 135, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(154, 180, 135, 0.04) 1px, transparent 1px);
+}
+
+[data-theme='dark'] .pattern-asanoha {
+  background-image:
+    repeating-linear-gradient(45deg,
+      rgba(154, 180, 135, 0.02) 0px,
+      rgba(154, 180, 135, 0.02) 1px,
+      transparent 1px,
+      transparent 20px),
+    repeating-linear-gradient(-45deg,
+      rgba(154, 180, 135, 0.02) 0px,
+      rgba(154, 180, 135, 0.02) 1px,
+      transparent 1px,
+      transparent 20px);
+}
+
+/* ═══════════ Sumi-e ink stroke hover ═══════════ */
+.sumi-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.sumi-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background: linear-gradient(90deg, var(--sumi) 0%, transparent 100%);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sumi-underline:hover::after {
+  width: 100%;
+}
+
+[data-theme='dark'] .sumi-underline::after {
+  background: linear-gradient(90deg, var(--matcha) 0%, transparent 100%);
+  box-shadow: 0 0 4px var(--glow-matcha);
+}
+
+/* ═══════════ Water ripple button ═══════════ */
+.btn-zen {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-zen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(107, 122, 94, 0.08);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-zen:hover::before {
+  transform: scaleX(1);
+}
+
+[data-theme='dark'] .btn-zen {
+  border-color: rgba(154, 180, 135, 0.15) !important;
+}
+
+[data-theme='dark'] .btn-zen:hover {
+  border-color: rgba(154, 180, 135, 0.3) !important;
+  box-shadow: 0 0 16px var(--glow-matcha);
+}
+
+[data-theme='dark'] .btn-zen::before {
+  background: linear-gradient(90deg, rgba(154, 180, 135, 0.08), rgba(212, 184, 128, 0.04));
+}
+
+/* ═══════════ Scrollbar — minimal ink ═══════════ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--matcha);
+}
+
+/* ═══════════ Kanji decorator ═══════════ */
+.kanji-bg {
+  font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+  font-weight: 200;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0;
+}
+
+/* ═══════════ Product card zen ═══════════ */
+.product-card-zen {
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card-zen::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--matcha), var(--kincha));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card-zen:hover::after {
+  transform: scaleX(1);
+}
+
+/* ═══════════ Section divider ═══════════ */
+.section-divider {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--border), transparent);
+  margin: 0 auto;
+}
+
+[data-theme='dark'] .section-divider {
+  background: linear-gradient(to bottom, transparent, rgba(154, 180, 135, 0.15), transparent);
+}
+
+/* ═══════════ No Scrollbar Utility ═══════════ */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ═══════════════════════════════════════════
+   🌙 DARK MODE — Star field ambient bg
+   ═══════════════════════════════════════════ */
+[data-theme='dark'] body {
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(154, 180, 135, 0.08) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 65%, rgba(212, 184, 128, 0.06) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 80%, rgba(154, 180, 135, 0.05) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 15%, rgba(212, 184, 128, 0.04) 0%, transparent 100%);
+  background-attachment: fixed;
+}
+
+/* Dark mode selection */
+[data-theme='dark'] ::selection {
+  background-color: rgba(154, 180, 135, 0.3);
+  color: var(--foreground);
+}
+
+/* Dark mode — border-t / border-b glow */
+[data-theme='dark'] .dark-border-glow-top {
+  border-top: 1px solid rgba(154, 180, 135, 0.06);
+  box-shadow: inset 0 1px 0 rgba(154, 180, 135, 0.04);
+}
+
+[data-theme='dark'] .dark-border-glow-bottom {
+  border-bottom: 1px solid rgba(154, 180, 135, 0.06);
+  box-shadow: inset 0 -1px 0 rgba(154, 180, 135, 0.04);
+}
+
+/* ═══════════════════════════════════════════
+   🌙 DARK MODE — Zen Hero Header Premium
+   ═══════════════════════════════════════════ */
+
+/* Hero dark gradient - more luminous */
+.zen-hero-dark {
+  background: linear-gradient(165deg,
+      #0F0D0A 0%,
+      #151210 40%,
+      #1A1610 70%,
+      #0C0B08 100%);
+  position: relative;
+}
+
+[data-theme='dark'] .zen-hero-dark {
+  background: linear-gradient(165deg,
+      #0A0906 0%,
+      #0F0D0A 35%,
+      #161310 65%,
+      #0A0906 100%);
+}
+
+/* Hero ambient glow - matcha tint on dark */
+.zen-hero-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(154, 180, 135, 0.15) 30%,
+      rgba(212, 184, 128, 0.1) 60%,
+      transparent 100%);
+  pointer-events: none;
+}
+
+/* Hero kincha glow orb */
+.zen-hero-dark::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: 15%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(212, 184, 128, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* ═══ Premium Glass Card ═══ */
+.glass-dark {
+  background: rgba(20, 18, 14, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(154, 180, 135, 0.07);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .glass-dark:hover {
+  border-color: rgba(154, 180, 135, 0.12);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(154, 180, 135, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ═══ Kincha accent border ═══ */
+[data-theme='dark'] .border-kincha-glow {
+  border-color: rgba(212, 184, 128, 0.15) !important;
+  box-shadow: 0 0 12px rgba(212, 184, 128, 0.06);
+}
+
+/* ═══ Dark badge zen ═══ */
+.zen-badge-dark {
+  background: rgba(154, 180, 135, 0.06);
+  border: 1px solid rgba(154, 180, 135, 0.12);
+  color: rgba(154, 180, 135, 0.7);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  font-weight: 300;
+  padding: 0.35rem 0.75rem;
+  border-radius: 1px;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme='dark'] .zen-badge-dark {
+  background: rgba(154, 180, 135, 0.07);
+  border-color: rgba(154, 180, 135, 0.14);
+}
+
+/* ═══ Dark tag kincha ═══ */
+.zen-tag-kincha {
+  background: rgba(212, 184, 128, 0.05);
+  border: 1px solid rgba(212, 184, 128, 0.1);
+  transition: all 0.4s ease;
+}
+
+.zen-tag-kincha:hover {
+  background: rgba(212, 184, 128, 0.1);
+  border-color: rgba(212, 184, 128, 0.2);
+}
+
+/* ═══ Animated gradient border card ═══ */
+@keyframes border-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+[data-theme='dark'] .card-glow-border {
+  position: relative;
+  border-radius: 2px;
+}
+
+[data-theme='dark'] .card-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 3px;
+  background: linear-gradient(135deg,
+      rgba(154, 180, 135, 0.15),
+      transparent 40%,
+      transparent 60%,
+      rgba(212, 184, 128, 0.1));
+  background-size: 200% 200%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme='dark'] .card-glow-border:hover::before {
+  opacity: 1;
+  animation: border-rotate 4s ease infinite;
+}
+
+/* ═══ Elevated surface layers ═══ */
+[data-theme='dark'] .surface-1 {
+  background: var(--dark-elevated);
+}
+
+[data-theme='dark'] .surface-2 {
+  background: var(--dark-elevated-2);
+}
+
+[data-theme='dark'] .surface-3 {
+  background: #252220;
+}
+
+/* ═══ Dark mode hero gradient overlay ═══ */
+[data-theme='dark'] .hero-gradient-overlay {
+  background: linear-gradient(to bottom,
+      rgba(12, 11, 8, 0) 0%,
+      rgba(12, 11, 8, 0.1) 60%,
+      rgba(12, 11, 8, 0.5) 100%);
+}
+
+/* ═══ Matcha glow text ═══ */
+[data-theme='dark'] .text-matcha-glow {
+  color: var(--matcha);
+  text-shadow: 0 0 20px rgba(154, 180, 135, 0.3);
+}
+
+/* ═══ Kincha glow text ═══ */
+[data-theme='dark'] .text-kincha-glow {
+  color: var(--kincha);
+  text-shadow: 0 0 20px rgba(212, 184, 128, 0.25);
+}
+
+/* ═══ Input dark premium ═══ */
+[data-theme='dark'] .input-dark-premium {
+  background: rgba(15, 13, 10, 0.8) !important;
+  border-color: rgba(154, 180, 135, 0.08) !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .input-dark-premium:focus {
+  border-color: rgba(154, 180, 135, 0.22) !important;
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.2),
+    0 0 0 3px rgba(154, 180, 135, 0.07) !important;
+}
+
+/* ═══ Dark btn outline kincha ═══ */
+[data-theme='dark'] .btn-outline-kincha {
+  border-color: rgba(212, 184, 128, 0.2);
+  color: var(--kincha);
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
+[data-theme='dark'] .btn-outline-kincha:hover {
+  border-color: rgba(212, 184, 128, 0.4);
+  background: rgba(212, 184, 128, 0.06);
+  box-shadow: 0 0 16px rgba(212, 184, 128, 0.08);
+}
+
+/* ═══ Payment option card dark ═══ */
+[data-theme='dark'] .payment-option {
+  background: var(--dark-elevated);
+  border-color: rgba(154, 180, 135, 0.07) !important;
+  transition: all 0.35s ease;
+}
+
+[data-theme='dark'] .payment-option:hover,
+[data-theme='dark'] .payment-option.selected {
+  border-color: rgba(154, 180, 135, 0.2) !important;
+  background: rgba(154, 180, 135, 0.04) !important;
+  box-shadow: 0 0 20px rgba(154, 180, 135, 0.05);
+}
+
+/* ═══ Order summary card dark ═══ */
+[data-theme='dark'] .order-summary-card {
+  background: linear-gradient(160deg, #151310 0%, #120F0C 100%);
+  border: 1px solid rgba(154, 180, 135, 0.07);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* ═══ Zen divider with glow ═══ */
+[data-theme='dark'] .zen-divider-glow {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(154, 180, 135, 0.12) 30%,
+      rgba(212, 184, 128, 0.08) 70%,
+      transparent 100%);
+  height: 1px;
+  border: none;
+}
+
+/* ═══ Floating light orbs for sections ═══ */
+.zen-orb-matcha {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(154, 180, 135, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.zen-orb-kincha {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 184, 128, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+/* ═══ Card hover shimmer ═══ */
+[data-theme='dark'] .card-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme='dark'] .card-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.015) 50%,
+      transparent 100%);
+  transform: skewX(-20deg);
+  opacity: 0;
+  transition: opacity 0.3s ease, left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+[data-theme='dark'] .card-shimmer:hover::after {
+  opacity: 1;
+  left: 120%;
+}
+
+/* ═══ Account nav dark ═══ */
+[data-theme='dark'] .account-nav-item {
+  border-color: rgba(154, 180, 135, 0.06);
+  background: rgba(21, 19, 16, 0.8);
+  backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .account-nav-item:hover,
+[data-theme='dark'] .account-nav-item.active {
+  border-color: rgba(154, 180, 135, 0.15);
+  background: rgba(154, 180, 135, 0.05);
+}
+
+/* ═══ Blog card dark hover ═══ */
+[data-theme='dark'] .blog-card-dark {
+  background: var(--dark-elevated);
+  border-radius: 2px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] .blog-card-dark:hover {
+  background: var(--dark-elevated-2);
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(154, 180, 135, 0.08),
+    0 0 24px rgba(154, 180, 135, 0.05);
+}
+
+/* ═══ Hero underline accent ═══ */
+[data-theme='dark'] .hero-title-accent {
+  position: relative;
+  display: inline-block;
+}
+
+[data-theme='dark'] .hero-title-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 184, 128, 0.5), transparent);
+  box-shadow: 0 0 8px rgba(212, 184, 128, 0.2);
+}
+
+/* ═══ Radial section bg ═══ */
+[data-theme='dark'] .section-radial-dark {
+  background:
+    radial-gradient(ellipse 80% 50% at 60% -10%, rgba(154, 180, 135, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(212, 184, 128, 0.03) 0%, transparent 60%),
+    #0C0B08;
+}
+
+/* ═══ Stats badge dark ═══ */
+[data-theme='dark'] .stats-badge {
+  background: rgba(21, 19, 16, 0.9);
+  border: 1px solid rgba(154, 180, 135, 0.08);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }

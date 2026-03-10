@@ -1,84 +1,55 @@
-import { Banner } from '@payloadcms/ui'
-import React from 'react'
+import configPromise from '@payload-config';
+import { getPayload } from 'payload';
+import './index.scss';
+import { OrderChart } from './OrderChart';
 
-import { SeedButton } from './SeedButton'
-import './index.scss'
+export const BeforeDashboard = async () => {
+  const payload = await getPayload({ config: configPromise })
 
-const baseClass = 'before-dashboard'
+  const sevenDaysAgo = new Date();
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
-export const BeforeDashboard: React.FC = () => {
+  const { docs: orders } = await payload.find({
+    collection: 'orders',
+    limit: 1000,
+    where: {
+      createdAt: {
+        greater_than_equal: sevenDaysAgo.toISOString(),
+      },
+    },
+    depth: 0,
+  })
+
   return (
-    <div className={baseClass}>
-      <Banner className={`${baseClass}__banner`} type="success">
-        <h4>Welcome to your dashboard!</h4>
-      </Banner>
-      Here&apos;s what to do next:
-      <ul className={`${baseClass}__instructions`}>
-        <li>
-          <SeedButton />
-          {' with a few products and pages to jump-start your new project, then '}
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a href="/">visit your website</a>
-          {' to see the results.'}
-        </li>
-        <li>
-          {'Head over to '}
-          <a
-            href="https://dashboard.stripe.com/test/apikeys"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Stripe to obtain your API Keys
+    <div className="before-dashboard">
+      {/* Welcome */}
+      <div className="welcome-card">
+        <div className="welcome-card__left">
+          <span className="welcome-card__icon">🍃</span>
+          <div>
+            <h2 className="welcome-card__title">Hồng Thái Admin</h2>
+            <p className="welcome-card__desc">Quản trị du lịch, homestay và đặc sản vùng cao.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick links */}
+      <div className="quick-links">
+        {[
+          { icon: '📍', label: 'Điểm đến', link: '/admin/collections/destinations', count: '' },
+          { icon: '🏡', label: 'Phòng', link: '/admin/collections/rooms', count: '' },
+          { icon: '📦', label: 'Sản phẩm', link: '/admin/collections/products', count: '' },
+          { icon: '👥', label: 'Người dùng', link: '/admin/collections/users', count: '' },
+        ].map((item, i) => (
+          <a key={i} href={item.link} className="quick-link">
+            <span className="quick-link__icon">{item.icon}</span>
+            <span className="quick-link__label">{item.label}</span>
+            <span className="quick-link__arrow">→</span>
           </a>
-          {
-            '. Create a new account if needed, then copy them into your environment variables and restart your server. See the '
-          }
-          <a
-            href="https://github.com/payloadcms/payload/blob/main/templates/ecommerce/README.md#stripe"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            README
-          </a>
-          {' for more details.'}
-        </li>
-        <li>
-          {'Modify your '}
-          <a
-            href="https://payloadcms.com/docs/configuration/collections"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            collections
-          </a>
-          {' and add more '}
-          <a
-            href="https://payloadcms.com/docs/fields/overview"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            fields
-          </a>
-          {' as needed. If you are new to Payload, we also recommend you check out the '}
-          <a
-            href="https://payloadcms.com/docs/getting-started/what-is-payload"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Getting Started
-          </a>
-          {' docs.'}
-        </li>
-      </ul>
-      {'Pro Tip: This block is a '}
-      <a
-        href="https://payloadcms.com/docs/admin/components#base-component-overrides"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        custom component
-      </a>
-      , you can remove it at any time by updating your <strong>payload.config</strong>.
+        ))}
+      </div>
+
+      <OrderChart orders={orders} />
     </div>
   )
 }

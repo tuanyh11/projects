@@ -1,9 +1,6 @@
 import { Media } from '@/components/Media'
-import { OrderStatus } from '@/components/OrderStatus'
 import { Price } from '@/components/Price'
-import { Button } from '@/components/ui/button'
-import { Media as MediaType, Order, Product, Variant } from '@/payload-types'
-import { formatDateTime } from '@/utilities/formatDateTime'
+import { Product, Variant } from '@/payload-types'
 import Link from 'next/link'
 
 type Props = {
@@ -11,9 +8,6 @@ type Props = {
   style?: 'compact' | 'default'
   variant?: Variant
   quantity?: number
-  /**
-   * Force all formatting to a particular currency.
-   */
   currencyCode?: string
 }
 
@@ -55,50 +49,70 @@ export const ProductItem: React.FC<Props> = ({
     }
   }
 
-  const itemPrice = variant?.priceInUSD || product.priceInUSD
+  const itemPrice = variant?.priceInVND || product.priceInVND
   const itemURL = `/products/${product.slug}${variant ? `?variant=${variant.id}` : ''}`
 
   return (
-    <div className="flex items-center gap-4">
-      <div className="flex items-stretch justify-stretch h-20 w-20 p-2 rounded-lg border">
-        <div className="relative w-full h-full">
-          {image && typeof image !== 'string' && (
-            <Media className="" fill imgClassName="rounded-lg object-cover" resource={image} />
-          )}
-        </div>
-      </div>
-      <div className="flex grow justify-between items-center">
-        <div className="flex flex-col gap-1">
-          <p className="font-medium text-lg">
-            <Link href={itemURL}>{title}</Link>
-          </p>
-          {variant && (
-            <p className="text-sm font-mono text-primary/50 tracking-[0.1em]">
-              {variant.options
-                ?.map((option) => {
-                  if (typeof option === 'object') return option.label
-                  return null
-                })
-                .join(', ')}
-            </p>
-          )}
-          <div>
-            {'x'}
-            {quantity}
+    <div
+      className="flex items-center gap-4 py-4 border-b border-border/15 last:border-b-0 transition-colors duration-500 group"
+    >
+      {/* Product image — zen frame */}
+      <Link
+        href={itemURL}
+        className="shrink-0 w-16 h-16 overflow-hidden border border-border/20 relative"
+        style={{ borderRadius: '2px' }}
+      >
+        {image && typeof image !== 'string' ? (
+          <Media
+            className="w-full h-full"
+            imgClassName="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+            resource={image}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center" style={{ background: 'var(--muted)' }}>
+            <span className="zen-kanji text-lg" style={{ color: 'var(--matcha)', opacity: 0.1 }}>品</span>
           </div>
-        </div>
+        )}
+      </Link>
 
-        {itemPrice && quantity && (
-          <div className="text-right">
-            <p className="font-medium text-lg">Subtotal</p>
+      {/* Product info */}
+      <div className="flex-1 min-w-0">
+        <Link
+          href={itemURL}
+          className="text-sm font-light text-foreground/90 hover:text-foreground transition-colors duration-400 tracking-wide line-clamp-1"
+          style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
+        >
+          {title}
+        </Link>
+        {variant && (
+          <p className="text-[10px] text-muted-foreground/55 tracking-widest font-light mt-0.5">
+            {variant.options
+              ?.map((option) => {
+                if (typeof option === 'object') return option.label
+                return null
+              })
+              .join(', ')}
+          </p>
+        )}
+        <p className="text-[11px] text-muted-foreground/55 font-light tracking-wide mt-1">
+          Số lượng: {quantity}
+        </p>
+      </div>
+
+      {/* Subtotal */}
+      {itemPrice && quantity && (
+        <div className="text-right shrink-0">
+          <div
+            className="text-sm font-light text-foreground/85"
+            style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
+          >
             <Price
-              className="font-mono text-primary/50 text-sm"
               amount={itemPrice * quantity}
               currencyCode={currencyCode}
             />
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   )
 }

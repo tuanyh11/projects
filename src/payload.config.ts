@@ -10,16 +10,28 @@ import {
   UnorderedListFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { en } from '@payloadcms/translations/languages/en'
+import { vi } from '@payloadcms/translations/languages/vi'
 import path from 'path'
 import { buildConfig } from 'payload'
+import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
+import { Banners } from '@/collections/Banners'
 import { Categories } from '@/collections/Categories'
+import { ContactSubmissions } from '@/collections/ContactSubmissions'
+import { Destinations } from '@/collections/Destinations'
 import { Media } from '@/collections/Media'
 import { Pages } from '@/collections/Pages'
+import { Posts } from '@/collections/Posts'
+import { Reviews } from '@/collections/Reviews'
+import { Rooms } from '@/collections/Rooms'
 import { Users } from '@/collections/Users'
+import { getDistricts, getProvinces, getWards } from '@/endpoints/ghn-address'
 import { Footer } from '@/globals/Footer'
 import { Header } from '@/globals/Header'
+import { HomePage } from '@/globals/HomePage'
+import { SiteSettings } from '@/globals/SiteSettings'
 import { plugins } from './plugins'
 
 const filename = fileURLToPath(import.meta.url)
@@ -28,19 +40,20 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   admin: {
     components: {
-      // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
-      // Feel free to delete this at any time. Simply remove the line below and the import `BeforeLogin` statement on line 15.
       beforeLogin: ['@/components/BeforeLogin#BeforeLogin'],
-      // The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
-      // Feel free to delete this at any time. Simply remove the line below and the import `BeforeDashboard` statement on line 15.
       beforeDashboard: ['@/components/BeforeDashboard#BeforeDashboard'],
+      afterNav: ['@/components/Admin/OrderNotifier#OrderNotifier'],
+    },
+    meta: {
+      titleSuffix: ' — Hồng Thái Admin',
+      description: 'Hệ thống quản trị du lịch Hồng Thái Na Hang',
     },
     user: Users.slug,
   },
-  collections: [Users, Pages, Categories, Media],
+  collections: [Users, Pages, Categories, Media, Banners, Reviews, Destinations, Rooms, Posts, ContactSubmissions],
   db: sqliteAdapter({
     client: {
-      url: process.env.DATABASE_URI || '',
+      url: process.env.DATABASE_URL || '',
     },
   }),
   editor: lexicalEditor({
@@ -79,15 +92,15 @@ export default buildConfig({
     },
   }),
   //email: nodemailerAdapter(),
-  endpoints: [],
-  globals: [Header, Footer],
+  endpoints: [getProvinces, getDistricts, getWards],
+  globals: [Header, Footer, HomePage, SiteSettings],
+  i18n: {
+    supportedLanguages: { vi, en },
+  },
   plugins,
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: process.env.PAYLOAD_SECRET || (() => { throw new Error('PAYLOAD_SECRET environment variable is required') })(),
+  sharp,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  // Sharp is now an optional dependency -
-  // if you want to resize images, crop, set focal point, etc.
-  // make sure to install it and pass it to the config.
-  // sharp,
 })

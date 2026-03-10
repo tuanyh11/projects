@@ -8,6 +8,8 @@ import {
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+import { adminOnly } from '@/access/adminOnly'
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
@@ -18,6 +20,9 @@ export const Media: CollectionConfig = {
   slug: 'media',
   access: {
     read: () => true,
+    create: adminOnly,
+    update: adminOnly,
+    delete: adminOnly,
   },
   fields: [
     {
@@ -37,5 +42,16 @@ export const Media: CollectionConfig = {
   ],
   upload: {
     staticDir: path.resolve(dirname, '../../public/media'),
+    mimeTypes: [
+      'image/jpeg',
+      'image/png',
+      'image/webp',
+      'image/gif',
+      'image/avif',
+      'image/svg+xml',
+      'video/mp4',
+      'video/webm',
+      'application/pdf',
+    ],
   },
 }

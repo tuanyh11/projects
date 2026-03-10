@@ -1,15 +1,15 @@
-import type { CollectionSlug, GlobalSlug, Payload, PayloadRequest, File } from 'payload'
-
+import { Address, Transaction, VariantOption } from '@/payload-types'
+import axios from 'axios'
+import type { CollectionSlug, File, GlobalSlug, Payload, PayloadRequest } from 'payload'
 import { contactFormData } from './contact-form'
 import { contactPageData } from './contact-page'
-import { productHatData } from './product-hat'
-import { productTshirtData, productTshirtVariant } from './product-tshirt'
 import { homePageData } from './home'
 import { imageHatData } from './image-hat'
+import { imageHero1Data } from './image-hero-1'
 import { imageTshirtBlackData } from './image-tshirt-black'
 import { imageTshirtWhiteData } from './image-tshirt-white'
-import { imageHero1Data } from './image-hero-1'
-import { Address, Transaction, VariantOption } from '@/payload-types'
+import { productHatData } from './product-hat'
+import { productTshirtData, productTshirtVariant } from './product-tshirt'
 
 const collections: CollectionSlug[] = [
   'categories',
@@ -54,7 +54,6 @@ const baseAddressUSData: Transaction['billingAddress'] = {
   city: 'New York',
   state: 'NY',
   postalCode: '10001',
-  country: 'US',
 }
 
 const baseAddressUKData: Transaction['billingAddress'] = {
@@ -65,7 +64,6 @@ const baseAddressUKData: Transaction['billingAddress'] = {
   addressLine1: '48 Great Portland St',
   city: 'London',
   postalCode: 'W1W 7ND',
-  country: 'GB',
 }
 
 // Next.js revalidation errors are normal when seeding the database without a server running
@@ -94,7 +92,7 @@ export const seed = async ({
         slug: global,
         data: {
           navItems: [],
-        },
+        } as any,
         depth: 0,
         context: {
           disableRevalidate: true,
@@ -356,7 +354,7 @@ export const seed = async ({
   const pendingTransaction = await payload.create({
     collection: 'transactions',
     data: {
-      currency: 'USD',
+      currency: 'VND',
       customer: customer.id,
       paymentMethod: 'stripe',
       stripe: {
@@ -371,7 +369,7 @@ export const seed = async ({
   const succeededTransaction = await payload.create({
     collection: 'transactions',
     data: {
-      currency: 'USD',
+      currency: 'VND',
       customer: customer.id,
       paymentMethod: 'stripe',
       stripe: {
@@ -396,7 +394,7 @@ export const seed = async ({
     collection: 'carts',
     data: {
       customer: customer.id,
-      currency: 'USD',
+      currency: 'VND',
       items: [
         {
           product: productTshirt.id,
@@ -413,7 +411,7 @@ export const seed = async ({
   const abandonedCart = await payload.create({
     collection: 'carts',
     data: {
-      currency: 'USD',
+      currency: 'VND',
       createdAt: oldTimestamp,
       items: [
         {
@@ -429,7 +427,7 @@ export const seed = async ({
     collection: 'carts',
     data: {
       customer: customer.id,
-      currency: 'USD',
+      currency: 'VND',
       purchasedAt: new Date().toISOString(),
       subtotal: 7499,
       items: [
@@ -459,7 +457,7 @@ export const seed = async ({
     collection: 'orders',
     data: {
       amount: 7499,
-      currency: 'USD',
+      currency: 'VND',
       customer: customer.id,
       shippingAddress: baseAddressUSData,
       items: [
@@ -483,7 +481,7 @@ export const seed = async ({
     collection: 'orders',
     data: {
       amount: 7499,
-      currency: 'USD',
+      currency: 'VND',
       customer: customer.id,
       shippingAddress: baseAddressUSData,
       items: [
@@ -577,16 +575,17 @@ export const seed = async ({
 }
 
 async function fetchFileByURL(url: string): Promise<File> {
-  const res = await fetch(url, {
-    credentials: 'include',
-    method: 'GET',
-  })
-
-  if (!res.ok) {
-    throw new Error(`Failed to fetch file from ${url}, status: ${res.status}`)
+  let res
+  try {
+    res = await axios.get(url, {
+      responseType: 'arraybuffer',
+      withCredentials: true,
+    })
+  } catch (err: any) {
+    throw new Error(`Failed to fetch file from ${url}, status: ${err.response?.status}`)
   }
 
-  const data = await res.arrayBuffer()
+  const data = res.data
 
   return {
     name: url.split('/').pop() || `file-${Date.now()}`,

@@ -1,11 +1,10 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import type { Product, Variant } from '@/payload-types'
 
+import { useAuth } from '@/providers/Auth'
 import { useCart } from '@payloadcms/plugin-ecommerce/client/react'
-import clsx from 'clsx'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useCallback, useMemo } from 'react'
 import { toast } from 'sonner'
 type Props = {
@@ -14,6 +13,8 @@ type Props = {
 
 export function AddToCart({ product }: Props) {
   const { addItem, cart, isLoading } = useCart()
+  const { user } = useAuth()
+  const router = useRouter()
   const searchParams = useSearchParams()
 
   const variants = product.variants?.docs || []
@@ -41,14 +42,20 @@ export function AddToCart({ product }: Props) {
     (e: React.FormEvent<HTMLButtonElement>) => {
       e.preventDefault()
 
+      if (!user) {
+        toast.info('Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.')
+        router.push(`/login?redirect=/products/${product.slug}`)
+        return
+      }
+
       addItem({
         product: product.id,
         variant: selectedVariant?.id ?? undefined,
       }).then(() => {
-        toast.success('Item added to cart.')
+        toast.success('Đã thêm vào giỏ hàng!')
       })
     },
-    [addItem, product, selectedVariant],
+    [addItem, product, selectedVariant, user, router],
   )
 
   const disabled = useMemo<boolean>(() => {
@@ -94,18 +101,39 @@ export function AddToCart({ product }: Props) {
     return false
   }, [selectedVariant, cart?.items, product])
 
+  const isOutOfStock =
+    (product.enableVariants && selectedVariant && selectedVariant.inventory === 0) ||
+    (!product.enableVariants && product.inventory === 0)
+
+  const label = isOutOfStock
+    ? 'Hết hàng'
+    : disabled
+      ? 'Đã đạt giới hạn'
+      : 'Thêm vào giỏ'
+
   return (
-    <Button
+    <button
       aria-label="Add to cart"
-      variant={'outline'}
-      className={clsx({
-        'hover:opacity-90': true,
-      })}
       disabled={disabled || isLoading}
-      onClick={addToCart}
-      type="submit"
+      onClick={(e) => {
+        addToCart(e)
+      }}
+      type="button"
+      className="btn-zen relative w-full sm:w-auto transition-all duration-500 disabled:opacity-40 disabled:pointer-events-none"
+      style={{
+        background: disabled ? 'var(--muted)' : 'var(--matcha)',
+        color: disabled ? 'var(--muted-foreground)' : 'var(--washi)',
+        padding: '14px 32px',
+        borderRadius: '2px',
+        fontSize: '13px',
+        fontFamily: "'Noto Serif JP', serif",
+        fontWeight: 300,
+        letterSpacing: '0.1em',
+        border: 'none',
+        cursor: disabled || isLoading ? 'not-allowed' : 'pointer',
+      }}
     >
-      Add To Cart
-    </Button>
+      {label}
+    </button>
   )
 }

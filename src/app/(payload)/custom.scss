@@ -1,10 +1,624 @@
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+@import '~@payloadcms/ui/scss';
+
+// ══════════════════════════════════════════════════
+//  HỒNG THÁI ADMIN — 🎎 JAPANESE ZEN THEME
+//  Wabi-sabi · Matcha · Washi · Sumi-e
+//  Minimalist · Warm · Serene
+// ══════════════════════════════════════════════════
+
+
+// ─── Light Mode — Washi Paper ───
+:root {
+  --theme-elevation-0: #F8F6F1 !important;
+  --theme-elevation-50: #F2EFE8 !important;
+  --theme-elevation-100: #EDE9E2 !important;
+  --theme-elevation-150: #E5E1D8 !important;
+  --theme-elevation-200: #DDD9D0 !important;
+  --theme-elevation-250: #C9C5BB !important;
+  --theme-elevation-300: #B0ADA5 !important;
+  --theme-elevation-350: #96938C !important;
+  --theme-elevation-400: #7A7870 !important;
+  --theme-elevation-450: #5F5D56 !important;
+  --theme-elevation-500: #43413B !important;
+  --theme-elevation-550: #343229 !important;
+  --theme-elevation-600: #2A2822 !important;
+  --theme-elevation-650: #201E1A !important;
+  --theme-elevation-700: #1A1814 !important;
+  --theme-elevation-750: #151310 !important;
+  --theme-elevation-800: #110F0C !important;
+  --theme-elevation-850: #0C0B08 !important;
+  --theme-elevation-900: #080704 !important;
+  --theme-elevation-950: #050403 !important;
+  --theme-elevation-1000: #000000 !important;
+
+  --theme-success-500: #6B7A5E !important;
+  --theme-success-400: #7D8E6E !important;
+  --theme-error-500: #B85C44 !important;
+  --theme-error-400: #C96B52 !important;
+  --theme-warning-500: #C4A055 !important;
+  --theme-warning-400: #D4B066 !important;
+
+  --accent: #6B7A5E;
+  --accent-light: #7D8E6E;
+  --accent-dark: #4A5940;
+  --accent-bg: rgba(107, 122, 94, 0.06);
+  --accent-border: rgba(107, 122, 94, 0.25);
+
+  --kincha: #C4A055;
+  --kincha-bg: rgba(196, 160, 85, 0.06);
+
+  --sidebar-bg: #F2EFE8;
+  --sidebar-border: #E5E1D8;
+  --sidebar-text: #5F5D56;
+  --sidebar-text-hover: #1E1C17;
+  --sidebar-text-active: #4A5940;
+  --sidebar-label: #96938C;
+  --sidebar-hover-bg: #EDE9E2;
+  --sidebar-active-bg: rgba(107, 122, 94, 0.08);
+}
+
+// ─── Dark Mode — 墨夜 Sumi Night ───
+[data-theme="dark"] {
+  --theme-elevation-0: #0C0B08 !important;
+  --theme-elevation-50: #110F0C !important;
+  --theme-elevation-100: #151310 !important;
+  --theme-elevation-150: #1A1814 !important;
+  --theme-elevation-200: #201E1A !important;
+  --theme-elevation-250: #292620 !important;
+  --theme-elevation-300: #343229 !important;
+  --theme-elevation-350: #43413B !important;
+  --theme-elevation-400: #5F5D56 !important;
+  --theme-elevation-450: #7A7870 !important;
+  --theme-elevation-500: #918D85 !important;
+  --theme-elevation-550: #A3A09A !important;
+  --theme-elevation-600: #B0ADA5 !important;
+  --theme-elevation-650: #C0BDB5 !important;
+  --theme-elevation-700: #D0CDC5 !important;
+  --theme-elevation-750: #DDD9D0 !important;
+  --theme-elevation-800: #E5E1D8 !important;
+  --theme-elevation-850: #EDE9E2 !important;
+  --theme-elevation-900: #F2EFE8 !important;
+  --theme-elevation-950: #F8F6F1 !important;
+  --theme-elevation-1000: #ffffff !important;
+
+  --theme-success-500: #9AB487 !important;
+  --theme-error-500: #D47058 !important;
+  --theme-warning-500: #D4B880 !important;
+
+  --accent: #9AB487;
+  --accent-light: #AECC9A;
+  --accent-dark: #7A9E65;
+  --accent-bg: rgba(154, 180, 135, 0.08);
+  --accent-border: rgba(154, 180, 135, 0.2);
+
+  --kincha: #D4B880;
+  --kincha-bg: rgba(212, 184, 128, 0.08);
+
+  --sidebar-bg: #0C0B08;
+  --sidebar-border: #1A1814;
+  --sidebar-text: #7A7870;
+  --sidebar-text-hover: #E8E4DB;
+  --sidebar-text-active: #9AB487;
+  --sidebar-label: #43413B;
+  --sidebar-hover-bg: #151310;
+  --sidebar-active-bg: rgba(154, 180, 135, 0.08);
+}
+
+
+// ═══════════════════════════════════════
+//  SIDEBAR — Zen Navigation
+// ═══════════════════════════════════════
+.nav {
+  background: var(--sidebar-bg) !important;
+  border-right: 1px solid var(--sidebar-border) !important;
+  padding: 0 !important;
+  overflow-y: auto !important;
+
+  .nav__header {
+    padding: base(0.75) base(1) !important;
+    border-bottom: 1px solid var(--sidebar-border) !important;
+  }
+
+  // Group labels — zen uppercase
+  .nav__label,
+  .nav-group__toggle .nav-group__label {
+    font-size: 10px !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: var(--sidebar-label) !important;
+    font-weight: 500 !important;
+    padding: base(0.5) base(0.75) base(0.15) !important;
+  }
+
+  .nav-group {
+    padding: base(0.1) base(0.25) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .nav-group__toggle {
+    border-radius: 2px !important;
+    padding: base(0.2) base(0.5) !important;
+    margin: 0 !important;
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+    &:hover {
+      background: var(--sidebar-hover-bg) !important;
+    }
+
+    .chevron {
+      color: var(--sidebar-label) !important;
+    }
+  }
+
+  // Nav links — zen minimal
+  .nav-group__content .nav__link,
+  .nav__link {
+    border-radius: 2px !important;
+    padding: base(0.3) base(0.5) !important;
+    padding-left: base(1.8) !important;
+    margin: 1px base(0.25) !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.02em !important;
+    color: var(--sidebar-text) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    position: relative !important;
+
+    &:hover {
+      background: var(--sidebar-hover-bg) !important;
+      color: var(--sidebar-text-hover) !important;
+      text-decoration: none !important;
+    }
+
+    &.active,
+    &[aria-current="page"] {
+      background: var(--sidebar-active-bg) !important;
+      color: var(--sidebar-text-active) !important;
+      font-weight: 500 !important;
+
+      // Left accent bar — matcha green
+      &::after {
+        content: '' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 25% !important;
+        height: 50% !important;
+        width: 2px !important;
+        background: var(--accent) !important;
+        border-radius: 0 1px 1px 0 !important;
+      }
+
+      &::before {
+        opacity: 1 !important;
+        color: var(--accent) !important;
+      }
+    }
+  }
+
+  .nav-group__content ul {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  // ─── Icons ───
+  .nav-group__content .nav__link,
+  .nav__link {
+    &::before {
+      position: absolute !important;
+      left: base(0.45) !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      font-size: 12px !important;
+      width: 16px !important;
+      text-align: center !important;
+      line-height: 1 !important;
+      opacity: 0.5 !important;
+      transition: opacity 0.3s ease !important;
+      font-family: system-ui, -apple-system, sans-serif !important;
+    }
+
+    &:hover::before {
+      opacity: 0.8 !important;
+    }
+  }
+
+  // Collection icons — Zen symbols
+  [href="/admin/collections/products"]::before {
+    content: '◈' !important;
+  }
+
+  [href="/admin/collections/orders"]::before {
+    content: '◇' !important;
+  }
+
+  [href="/admin/collections/users"]::before {
+    content: '◎' !important;
+  }
+
+  [href="/admin/collections/pages"]::before {
+    content: '▤' !important;
+  }
+
+  [href="/admin/collections/categories"]::before {
+    content: '◫' !important;
+  }
+
+  [href="/admin/collections/media"]::before {
+    content: '◲' !important;
+  }
+
+  [href="/admin/collections/banners"]::before {
+    content: '▣' !important;
+  }
+
+  [href="/admin/collections/reviews"]::before {
+    content: '✦' !important;
+  }
+
+  [href="/admin/collections/addresses"]::before {
+    content: '⊕' !important;
+  }
+
+  [href="/admin/collections/variants"]::before {
+    content: '◑' !important;
+  }
+
+  [href="/admin/collections/variant-options"]::before {
+    content: '◐' !important;
+  }
+
+  [href="/admin/collections/posts"]::before {
+    content: '▥' !important;
+  }
+
+  [href="/admin/collections/carts"]::before {
+    content: '◆' !important;
+  }
+
+  [href="/admin/collections/transactions"]::before {
+    content: '◇' !important;
+  }
+
+  [href="/admin/collections/destinations"]::before {
+    content: '◉' !important;
+  }
+
+  [href="/admin/collections/rooms"]::before {
+    content: '⊞' !important;
+  }
+
+  [href="/admin/collections/forms"]::before {
+    content: '▦' !important;
+  }
+
+  [href="/admin/collections/form-submissions"]::before {
+    content: '▧' !important;
+  }
+
+  [href="/admin/globals/header"]::before {
+    content: '▬' !important;
+  }
+
+  [href="/admin/globals/footer"]::before {
+    content: '▭' !important;
+  }
+
+  [href="/admin/globals/home-page"]::before {
+    content: '⊡' !important;
+  }
+
+  [href="/admin/globals/site-settings"]::before {
+    content: '⊛' !important;
+  }
+
+  [href="/admin"]::before {
+    content: '◧' !important;
+  }
+
+  // Footer area
+  .nav__footer,
+  .nav__account {
+    border-top: 1px solid var(--sidebar-border) !important;
+    padding: base(0.5) base(0.6) !important;
+  }
+
+  .theme-switcher {
+    border-radius: 2px !important;
+
+    .theme-switcher__button {
+      border-radius: 2px !important;
+    }
+  }
+}
+
+
+// ═══════════════════════════════════════
+//  HEADER — Washi Paper Bar
+// ═══════════════════════════════════════
+header.app-header {
+  border-bottom: 1px solid var(--theme-elevation-150) !important;
+  background: var(--theme-elevation-0) !important;
+}
+
+[data-theme="dark"] header.app-header {
+  border-bottom-color: var(--theme-elevation-150) !important;
+}
+
+
+// ═══════════════════════════════════════
+//  LOGIN — Zen Card
+// ═══════════════════════════════════════
+.login .login__form {
+  border-radius: 2px !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  box-shadow: 0 2px 8px rgba(30, 28, 23, 0.04), 0 1px 2px rgba(30, 28, 23, 0.02) !important;
+}
+
+[data-theme="dark"] .login .login__form {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(154, 180, 135, 0.04) !important;
+}
+
+
+// ═══════════════════════════════════════
+//  CARDS — Washi Paper Style
+// ═══════════════════════════════════════
+.card {
+  border-radius: 2px !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden !important;
+
+  &:hover {
+    border-color: var(--accent-border) !important;
+    box-shadow: 0 4px 16px rgba(30, 28, 23, 0.06) !important;
+  }
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25), 0 0 12px var(--accent-bg) !important;
+}
+
+
+// ═══════════════════════════════════════
+//  BUTTONS — 抹茶 Matcha Zen
+// ═══════════════════════════════════════
+.btn {
+  border-radius: 2px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.04em !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+
+  &.btn--style-primary {
+    background: var(--accent) !important;
+    border-color: var(--accent-dark) !important;
+    color: #FDFCF8 !important;
+    box-shadow: 0 1px 3px rgba(74, 89, 64, 0.15) !important;
+
+    &:hover {
+      background: var(--accent-dark) !important;
+      color: #FDFCF8 !important;
+      box-shadow: 0 4px 16px rgba(74, 89, 64, 0.2) !important;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(74, 89, 64, 0.15) !important;
+    }
+  }
+
+  &.btn--style-secondary {
+    border-radius: 2px !important;
+
+    &:hover {
+      border-color: var(--accent) !important;
+      color: var(--accent) !important;
+      background: var(--accent-bg) !important;
+    }
+  }
+}
+
+// Dark mode buttons
+[data-theme="dark"] .btn {
+  &.btn--style-primary {
+    background: #9AB487 !important;
+    border-color: #7A9E65 !important;
+    color: #0C0B08 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 0 8px rgba(154, 180, 135, 0.06) !important;
+
+    &:hover {
+      background: #7A9E65 !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 16px rgba(154, 180, 135, 0.12) !important;
+    }
+  }
+}
+
+// Icon buttons — zen square
+.popup-button,
+.btn--icon-style-with-border {
+  border-radius: 2px !important;
+  border-color: var(--theme-elevation-200) !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    border-color: var(--accent) !important;
+    background: var(--accent-bg) !important;
+  }
+}
+
+[data-theme="dark"] .popup-button:hover,
+[data-theme="dark"] .btn--icon-style-with-border:hover {
+  border-color: rgba(154, 180, 135, 0.2) !important;
+  background: rgba(154, 180, 135, 0.08) !important;
+}
+
+.btn--icon-style-without-border {
+  border-radius: 2px !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    background: var(--accent-bg) !important;
+  }
+}
+
+
+// ═══════════════════════════════════════
+//  FORM FIELDS — Clean Zen Inputs
+// ═══════════════════════════════════════
+.field-type {
+
+  input,
+  textarea,
+  select {
+    border-radius: 2px !important;
+    border: 1px solid var(--theme-elevation-200) !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+
+    &:focus {
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 0 2px var(--accent-bg) !important;
+      outline: none !important;
+    }
+  }
+
+  .rich-text-lexical {
+    border-radius: 2px !important;
+    border: 1px solid var(--theme-elevation-200) !important;
+    overflow: hidden !important;
+  }
+}
+
+
+// ═══════════════════════════════════════
+//  TABLE — Zen Grid
+// ═══════════════════════════════════════
+.table {
+  border-radius: 2px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+
+  th {
+    background: var(--theme-elevation-50) !important;
+    font-size: 10px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    color: var(--theme-elevation-400) !important;
+  }
+
+  tr {
+    transition: background 0.3s ease !important;
+  }
+
+  tr:hover td {
+    background: var(--accent-bg) !important;
+  }
+}
+
+
+// ═══════════════════════════════════════
+//  TABS — Zen Style
+// ═══════════════════════════════════════
+.tabs-field__tabs .tabs-field__tab-button {
+  border-radius: 2px 2px 0 0 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.03em !important;
+
+  &--active {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+  }
+}
+
+
+// ═══════════════════════════════════════
+//  DASHBOARD CARDS
+// ═══════════════════════════════════════
+.dashboard .dashboard__card-list .card {
+  border-radius: 2px !important;
+}
+
+
+// ═══════════════════════════════════════
+//  PILLS / STATUS — Zen Tags
+// ═══════════════════════════════════════
+.status,
+.pill,
+.versions-count {
+  border-radius: 2px !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em !important;
+}
+
+
+// ═══════════════════════════════════════
+//  HEADINGS — Zen Typography
+// ═══════════════════════════════════════
+.doc-header h1,
+.collection-list__header h1 {
+  font-weight: 300 !important;
+  letter-spacing: 0.02em !important;
+}
+
+
+// ═══════════════════════════════════════
+//  POPUP / DRAWER / MODAL
+// ═══════════════════════════════════════
+.popup-content {
+  border-radius: 2px !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  box-shadow: 0 8px 32px rgba(30, 28, 23, 0.08) !important;
+}
+
+[data-theme="dark"] .popup-content {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(154, 180, 135, 0.04) !important;
+}
+
+.drawer__content {
+  border-radius: 2px !important;
+}
+
+
+// ═══════════════════════════════════════
+//  SCROLLBAR — Zen Thin
+// ═══════════════════════════════════════
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-elevation-250);
+  border-radius: 1px;
+
+  &:hover {
+    background: var(--theme-elevation-350);
+  }
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(154, 180, 135, 0.12);
+
+  &:hover {
+    background: rgba(154, 180, 135, 0.25);
+  }
+}
+
+
+// ═══════════════════════════════════════
+//  SELECTION — Matcha Highlight
+// ═══════════════════════════════════════
+::selection {
+  background: var(--accent-bg);
+  color: inherit;
 }

@@ -1,7 +1,6 @@
 import { CallToAction } from '@/blocks/CallToAction/config'
 import { Content } from '@/blocks/Content/config'
 import { MediaBlock } from '@/blocks/MediaBlock/config'
-import { slugField } from 'payload'
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { CollectionOverride } from '@payloadcms/plugin-ecommerce/types'
 import {
@@ -18,13 +17,13 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
-import { DefaultDocumentIDType, Where } from 'payload'
+import { DefaultDocumentIDType, slugField, Where } from 'payload'
 
 export const ProductsCollection: CollectionOverride = ({ defaultCollection }) => ({
   ...defaultCollection,
   admin: {
     ...defaultCollection?.admin,
-    defaultColumns: ['title', 'enableVariants', '_status', 'variants.variants'],
+    defaultColumns: ['title', 'categories', 'enableVariants', '_status', 'variants.variants'],
     livePreview: {
       url: ({ data, req }) =>
         generatePreviewPath({
@@ -49,7 +48,7 @@ export const ProductsCollection: CollectionOverride = ({ defaultCollection }) =>
     variants: true,
     enableVariants: true,
     gallery: true,
-    priceInUSD: true,
+    priceInVND: true,
     inventory: true,
     meta: true,
   },
@@ -144,6 +143,56 @@ export const ProductsCollection: CollectionOverride = ({ defaultCollection }) =>
           fields: [
             ...defaultCollection.fields,
             {
+              name: 'origin',
+              type: 'text',
+              label: 'Xuất xứ / Nguồn gốc',
+            },
+            {
+              name: 'weight',
+              type: 'number',
+              label: 'Khối lượng',
+            },
+            {
+              name: 'unit',
+              type: 'select',
+              label: 'Đơn vị',
+              options: [
+                { label: 'kg', value: 'kg' },
+                { label: 'g', value: 'g' },
+                { label: 'lít', value: 'lit' },
+                { label: 'ml', value: 'ml' },
+                { label: 'gói', value: 'goi' },
+                { label: 'hộp', value: 'hop' },
+                { label: 'chai', value: 'chai' },
+                { label: 'túi', value: 'tui' },
+                { label: 'cái', value: 'cai' },
+              ],
+              defaultValue: 'kg',
+              admin: {
+                position: 'sidebar',
+              },
+            },
+            {
+              name: 'usageInfo',
+              type: 'text',
+              label: 'Hướng dẫn sử dụng / Bảo quản',
+            },
+            {
+              name: 'detailInfo',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                  ]
+                },
+              }),
+              label: 'Thông tin chi tiết sản phẩm',
+            },
+            {
               name: 'relatedProducts',
               type: 'relationship',
               filterOptions: ({ id }) => {
@@ -200,6 +249,7 @@ export const ProductsCollection: CollectionOverride = ({ defaultCollection }) =>
     {
       name: 'categories',
       type: 'relationship',
+      label: 'Danh mục',
       admin: {
         position: 'sidebar',
         sortOptions: 'title',

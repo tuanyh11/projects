@@ -2,7 +2,6 @@
 
 import { AddressItem } from '@/components/addresses/AddressItem'
 import { CreateAddressModal } from '@/components/addresses/CreateAddressModal'
-import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -24,26 +23,35 @@ type Props = {
 
 export const CheckoutAddresses: React.FC<Props> = ({
   setAddress,
-  heading = 'Addresses',
-  description = 'Please select or add your shipping and billing addresses.',
+  heading = 'Địa chỉ',
+  description = 'Chọn hoặc thêm địa chỉ giao hàng và thanh toán.',
 }) => {
   const { addresses } = useAddresses()
 
   if (!addresses || addresses.length === 0) {
     return (
-      <div>
-        <p>No addresses found. Please add an address.</p>
-
+      <div className="flex flex-col gap-3">
+        <p
+          className="text-xs font-light text-muted-foreground/50"
+          style={{ fontFamily: "'Noto Serif JP', serif" }}
+        >
+          Chưa có địa chỉ. Vui lòng thêm địa chỉ mới.
+        </p>
         <CreateAddressModal />
       </div>
     )
   }
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-5">
       <div>
-        <h3 className="text-xl font-medium mb-2">{heading}</h3>
-        <p className="text-muted-foreground">{description}</p>
+        <h3
+          className="text-sm font-light text-foreground/60 mb-1"
+          style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
+        >
+          {heading}
+        </h3>
+        <p className="text-muted-foreground/40 text-[11px] font-light">{description}</p>
       </div>
       <AddressesModal setAddress={setAddress} />
     </div>
@@ -62,35 +70,74 @@ const AddressesModal: React.FC<Props> = ({ setAddress }) => {
   const { addresses } = useAddresses()
 
   if (!addresses || addresses.length === 0) {
-    return <p>No addresses found. Please add an address.</p>
+    return (
+      <p className="text-xs font-light text-muted-foreground/50" style={{ fontFamily: "'Noto Serif JP', serif" }}>
+        Chưa có địa chỉ. Vui lòng thêm địa chỉ mới.
+      </p>
+    )
   }
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button variant={'outline'}>{'Select an address'}</Button>
+        <button
+          className="self-start btn-zen transition-all duration-500"
+          style={{
+            padding: '10px 24px',
+            borderRadius: '2px',
+            fontSize: '12px',
+            fontFamily: "'Noto Serif JP', serif",
+            fontWeight: 300,
+            letterSpacing: '0.08em',
+            cursor: 'pointer',
+            background: 'transparent',
+            color: 'var(--foreground)',
+            border: '1px solid var(--border)',
+            opacity: 0.7,
+          }}
+        >
+          Chọn địa chỉ
+        </button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{'Select an address'}</DialogTitle>
+          <DialogTitle
+            className="text-base font-light"
+            style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
+          >
+            Chọn địa chỉ
+          </DialogTitle>
         </DialogHeader>
 
-        <div className="flex flex-col gap-12">
-          <ul className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8">
+          <ul className="flex flex-col gap-4">
             {addresses.map((address) => (
-              <li key={address.id} className="border-b pb-8 last:border-none">
+              <li key={address.id} className="last:border-none">
                 <AddressItem
                   address={address}
                   beforeActions={
-                    <Button
+                    <button
                       onClick={(e) => {
                         e.preventDefault()
                         setAddress(address)
                         closeModal()
                       }}
+                      className="btn-zen transition-all duration-500"
+                      style={{
+                        padding: '8px 20px',
+                        borderRadius: '2px',
+                        fontSize: '11px',
+                        fontFamily: "'Noto Serif JP', serif",
+                        fontWeight: 300,
+                        letterSpacing: '0.08em',
+                        cursor: 'pointer',
+                        background: 'var(--matcha)',
+                        color: 'var(--washi)',
+                        border: 'none',
+                      }}
                     >
-                      Select
-                    </Button>
+                      Chọn
+                    </button>
                   }
                 />
               </li>

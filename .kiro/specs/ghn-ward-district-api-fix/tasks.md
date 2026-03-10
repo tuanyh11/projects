@@ -1,0 +1,130 @@
+# Kế Hoạch Triển Khai - Sửa Lỗi Tích Hợp API Địa Chỉ GHN
+
+- [x] 1. Viết test khám phá điều kiện lỗi (bug condition exploration)
+  - **Property 1: Fault Condition** - API GHN Từ Chối Địa Chỉ Text
+  - **QUAN TRỌNG**: Viết property-based test này TRƯỚC KHI sửa code
+  - **MỤC TIÊU**: Tạo counterexamples chứng minh lỗi tồn tại
+  - **Phương pháp PBT có phạm vi**: Với các bug xác định, giới hạn property vào các trường hợp cụ thể bị lỗi để đảm bảo tái hiện được
+  - Test rằng createGHNOrder với địa chỉ text (addressLine2="Phường 14", city="Quận 10", state="Hồ Chí Minh") và không có district_id/ward_code sẽ bị API GHN từ chối với lỗi "Fail when get place name" (từ Fault Condition trong design)
+  - Các assertion test phải khớp với Expected Behavior Properties từ design: API GHN phải nhận to_district_id (integer) và to_ward_code (string)
+  - Chạy test trên code CHƯA SỬA
+  - **KẾT QUẢ MONG ĐỢI**: Test FAIL (đây là kết quả đúng - chứng minh lỗi tồn tại)
+  - Ghi lại counterexamples tìm được để hiểu nguyên nhân gốc rễ
+  - Đánh dấu task hoàn thành khi test đã được viết, chạy, và failure đã được ghi lại
+  - _Requirements: 1.1, 1.2, 1.3, 2.1, 2.2_
+
+- [x] 2. Viết preservation property tests (TRƯỚC KHI sửa code)
+  - **Property 2: Preservation** - Chức Năng Hiện Tại Không Đổi
+  - **QUAN TRỌNG**: Tuân theo phương pháp observation-first
+  - Quan sát: calculateShippingFee với to_district_id và to_ward_code trả về phí ship chính xác trên code chưa sửa
+  - Quan sát: trackGHNOrder với order_code trả về tracking info trên code chưa sửa
+  - Quan sát: Hook syncGHNOrder kiểm tra điều kiện (!previousDoc?.trackingCode && !doc?.trackingCode && doc?.shippingAddress?.addressLine1) trên code chưa sửa
+  - Quan sát: Telegram notification được gửi khi tạo đơn hàng mới trên code chưa sửa
+  - Viết property-based tests: Với mọi thao tác KHÔNG liên quan đến chọn địa chỉ tỉnh/quận/phường, kết quả phải giống hệt code gốc (từ Preservation Requirements trong design)
+  - Property-based testing tạo nhiều test cases tự động cho đảm bảo mạnh mẽ hơn
+  - Chạy tests trên code CHƯA SỬA
+  - **KẾT QUẢ MONG ĐỢI**: Tests PASS (xác nhận hành vi baseline cần bảo toàn)
+  - Đánh dấu task hoàn thành khi tests đã được viết, chạy, và pass trên code chưa sửa
+  - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
+
+- [x] 3. Sửa lỗi tích hợp API địa chỉ GHN
+
+  - [x] 3.1 Mở rộng schema shippingAddress với các trường GHN ID
+    - Thêm custom address fields vào ecommerce plugin config trong `src/plugins/index.ts`
+    - Thêm trường `province_id` (number) - Mã tỉnh/thành từ GHN
+    - Thêm trường `province_name` (text) - Tên tỉnh/thành hiển thị
+    - Thêm trường `district_id` (number) - Mã quận/huyện từ GHN
+    - Thêm trường `district_name` (text) - Tên quận/huyện hiển thị
+    - Thêm trường `ward_code` (text) - Mã phường/xã từ GHN
+    - Thêm trường `ward_name` (text) - Tên phường/xã hiển thị
+    - Đặt các trường là readOnly trong admin panel
+    - Giữ lại các trường cũ (addressLine2, city, state) để tương thích ngược
+    - Chạy `pnpm generate:types` để cập nhật TypeScript types
+    - _Bug_Condition: isBugCondition(orderData) where orderData.shippingAddress không có district_id/ward_code_
+    - _Expected_Behavior: Schema phải lưu được cả tên hiển thị và mã số GHN_
+    - _Preservation: Các trường hiện tại (firstName, lastName, phone, addressLine1, country) phải giữ nguyên_
+    - _Requirements: 2.1, 2.3, 3.1_
+
+  - [x] 3.2 Tạo GHN Master Data API endpoints
+    - Tạo file mới `src/endpoints/ghn-address.ts`
+    - Implement endpoint GET `/api/ghn/provinces` - Lấy danh sách tỉnh/thành từ GHN API
+    - Implement endpoint GET `/api/ghn/districts?province_id=202` - Lấy danh sách quận/huyện theo tỉnh
+    - Implement endpoint GET `/api/ghn/wards?district_id=1442` - Lấy danh sách phường/xã theo quận
+    - Sử dụng GHN_TOKEN từ environment variables
+    - Gọi GHN Master Data API: `https://dev-online-gateway.ghn.vn/shiip/public-api/master-data/province`
+    - Gọi GHN Master Data API: `https://dev-online-gateway.ghn.vn/shiip/public-api/master-data/district`
+    - Gọi GHN Master Data API: `https://dev-online-gateway.ghn.vn/shiip/public-api/master-data/ward`
+    - Thêm error handling cho trường hợp API GHN fail
+    - (Optional) Implement caching trong memory hoặc Redis để giảm API calls
+    - _Bug_Condition: Frontend không có cách lấy danh sách địa chỉ chuẩn từ GHN_
+    - _Expected_Behavior: Endpoints phải trả về danh sách tỉnh/quận/phường từ GHN_
+    - _Preservation: Không ảnh hưởng đến các endpoints hiện tại_
+    - _Requirements: 2.2, 2.4_
+
+  - [x] 3.3 Tạo AddressSelector component với cascading dropdowns
+    - Tạo file mới `src/components/AddressSelector.tsx`
+    - Đánh dấu là 'use client' component (cần React hooks)
+    - Implement dropdown 1: Chọn tỉnh/thành → Lưu province_id và province_name
+    - Implement dropdown 2: Chọn quận/huyện (disabled cho đến khi chọn tỉnh) → Lưu district_id và district_name
+    - Implement dropdown 3: Chọn phường/xã (disabled cho đến khi chọn quận) → Lưu ward_code và ward_name
+    - Sử dụng useState và useEffect để quản lý state
+    - Gọi API endpoints từ task 3.2 để fetch data
+    - Tự động cập nhật các hidden fields (province_id, district_id, ward_code, province_name, district_name, ward_name)
+    - Implement loading state khi fetch data
+    - Implement error handling nếu API fail
+    - Clear selection khi thay đổi cấp trên (chọn tỉnh mới → reset quận và phường)
+    - Thêm validation: Bắt buộc chọn đủ 3 cấp (tỉnh, quận, phường)
+    - _Bug_Condition: UI cho phép nhập text tự do thay vì chọn từ danh sách chuẩn_
+    - _Expected_Behavior: Component phải cho phép chọn địa chỉ từ danh sách GHN và lưu cả tên và mã số_
+    - _Preservation: Không ảnh hưởng đến các components hiện tại_
+    - _Requirements: 2.2, 2.3, 2.4_
+
+  - [x] 3.4 Tích hợp AddressSelector vào checkout flow
+    - Xác định file checkout frontend (có thể là `src/app/(frontend)/checkout/page.tsx`)
+    - Import AddressSelector component
+    - Replace text inputs cho addressLine2, city, state bằng AddressSelector
+    - Pass form state handlers để cập nhật shippingAddress
+    - Đảm bảo validation: Bắt buộc chọn đủ 3 cấp trước khi submit
+    - Giữ lại các trường khác (firstName, lastName, phone, addressLine1) như cũ
+    - Test UI flow: Chọn tỉnh → Quận hiện ra → Chọn quận → Phường hiện ra
+    - _Bug_Condition: Checkout flow cho phép nhập địa chỉ text tự do_
+    - _Expected_Behavior: Checkout flow phải bắt buộc chọn địa chỉ từ dropdown GHN_
+    - _Preservation: Các bước checkout khác không thay đổi_
+    - _Requirements: 2.2, 2.3, 2.4, 3.1_
+
+  - [x] 3.5 Sửa hàm createGHNOrder để sử dụng IDs thay vì text
+    - Mở file `src/utilities/ghn.ts`
+    - Tìm hàm `createGHNOrder` (khoảng dòng 55-57)
+    - Thay thế `to_ward_name`, `to_district_name`, `to_province_name` bằng `to_district_id` và `to_ward_code`
+    - Thêm validation: Kiểm tra district_id và ward_code tồn tại trước khi gọi API
+    - Throw error với message rõ ràng nếu thiếu thông tin: "Thiếu thông tin địa chỉ GHN (district_id hoặc ward_code)"
+    - Đảm bảo các tham số khác của API GHN không bị ảnh hưởng
+    - _Bug_Condition: createGHNOrder gửi to_ward_name, to_district_name, to_province_name (text) thay vì to_district_id và to_ward_code_
+    - _Expected_Behavior: createGHNOrder phải gửi to_district_id (integer) và to_ward_code (string) đến API GHN_
+    - _Preservation: Các tham số khác của API GHN không thay đổi_
+    - _Requirements: 2.1, 2.2, 2.5_
+
+  - [x] 3.6 Xác minh bug condition exploration test giờ đã pass
+    - **Property 1: Expected Behavior** - API GHN Chấp Nhận Địa Chỉ Với Mã Số
+    - **QUAN TRỌNG**: Chạy lại test GIỐNG HỆT từ task 1 - KHÔNG viết test mới
+    - Test từ task 1 encode expected behavior
+    - Khi test này pass, nó xác nhận expected behavior đã được thỏa mãn
+    - Chạy bug condition exploration test từ bước 1
+    - **KẾT QUẢ MONG ĐỢI**: Test PASS (xác nhận lỗi đã được sửa)
+    - _Requirements: Expected Behavior Properties từ design - 2.1, 2.2, 2.5_
+
+  - [x] 3.7 Xác minh preservation tests vẫn pass
+    - **Property 2: Preservation** - Chức Năng Hiện Tại Không Đổi
+    - **QUAN TRỌNG**: Chạy lại các test GIỐNG HỆT từ task 2 - KHÔNG viết test mới
+    - Chạy preservation property tests từ bước 2
+    - **KẾT QUẢ MONG ĐỢI**: Tests PASS (xác nhận không có regression)
+    - Xác nhận tất cả tests vẫn pass sau khi sửa (không có regression)
+    - _Requirements: Preservation Requirements từ design - 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
+
+- [x] 4. Checkpoint - Đảm bảo tất cả tests pass
+  - Chạy toàn bộ test suite
+  - Xác minh bug condition exploration test pass (lỗi đã được sửa)
+  - Xác minh preservation tests pass (không có regression)
+  - Xác minh TypeScript compilation không có lỗi: `tsc --noEmit`
+  - Test thủ công checkout flow trên browser
+  - Hỏi user nếu có câu hỏi phát sinh

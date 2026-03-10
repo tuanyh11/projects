@@ -1,7 +1,7 @@
 'use client'
 
 import type { User } from '@/payload-types'
-
+import axios from 'axios'
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react'
 
 // eslint-disable-next-line no-unused-vars
@@ -40,76 +40,49 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [status, setStatus] = useState<'loggedIn' | 'loggedOut' | undefined>()
   const create = useCallback<Create>(async (args) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/create`, {
-        body: JSON.stringify({
-          email: args.email,
-          password: args.password,
-          passwordConfirm: args.passwordConfirm,
-        }),
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/create`, {
+        email: args.email,
+        password: args.password,
+        passwordConfirm: args.passwordConfirm,
+      }, {
+        withCredentials: true,
       })
 
-      if (res.ok) {
-        const { data, errors } = await res.json()
-        if (errors) throw new Error(errors[0].message)
-        setUser(data?.loginUser?.user)
-        setStatus('loggedIn')
-      } else {
-        throw new Error('Invalid login')
-      }
-    } catch (e) {
+      if (data.errors) throw new Error(data.errors[0].message)
+      setUser(data?.data?.loginUser?.user || data?.loginUser?.user || data.user)
+      setStatus('loggedIn')
+    } catch (e: any) {
+      if (e.response?.data?.errors) throw new Error(e.response.data.errors[0].message)
       throw new Error('An error occurred while attempting to login.')
     }
   }, [])
 
   const login = useCallback<Login>(async (args) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/login`, {
-        body: JSON.stringify({
-          email: args.email,
-          password: args.password,
-        }),
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/login`, {
+        email: args.email,
+        password: args.password,
+      }, {
+        withCredentials: true,
       })
 
-      if (res.ok) {
-        const { errors, user } = await res.json()
-        if (errors) throw new Error(errors[0].message)
-        setUser(user)
-        setStatus('loggedIn')
-        return user
-      }
-
-      throw new Error('Invalid login')
-    } catch (e) {
+      if (data.errors) throw new Error(data.errors[0].message)
+      setUser(data.user)
+      setStatus('loggedIn')
+      return data.user
+    } catch (e: any) {
+      if (e.response?.data?.errors) throw new Error(e.response.data.errors[0].message)
       throw new Error('An error occurred while attempting to login.')
     }
   }, [])
 
   const logout = useCallback<Logout>(async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`, {
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
+      await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`, undefined, {
+        withCredentials: true,
       })
-
-      if (res.ok) {
-        setUser(null)
-        setStatus('loggedOut')
-      } else {
-        throw new Error('An error occurred while attempting to logout.')
-      }
+      setUser(null)
+      setStatus('loggedOut')
     } catch (e) {
       throw new Error('An error occurred while attempting to logout.')
     }
@@ -118,21 +91,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     const fetchMe = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/me`, {
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          method: 'GET',
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/me`, {
+          withCredentials: true,
         })
-
-        if (res.ok) {
-          const { user: meUser } = await res.json()
-          setUser(meUser || null)
-          setStatus(meUser ? 'loggedIn' : undefined)
-        } else {
-          throw new Error('An error occurred while fetching your account.')
-        }
+        setUser(data.user || null)
+        setStatus(data.user ? 'loggedIn' : undefined)
       } catch (e) {
         setUser(null)
         throw new Error('An error occurred while fetching your account.')
@@ -144,53 +107,36 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const forgotPassword = useCallback<ForgotPassword>(async (args) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/forgot-password`, {
-        body: JSON.stringify({
-          email: args.email,
-        }),
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/forgot-password`, {
+        email: args.email,
+      }, {
+        withCredentials: true,
       })
 
-      if (res.ok) {
-        const { data, errors } = await res.json()
-        if (errors) throw new Error(errors[0].message)
-        setUser(data?.loginUser?.user)
-      } else {
-        throw new Error('Invalid login')
-      }
-    } catch (e) {
+      if (data.errors) throw new Error(data.errors[0].message)
+      setUser(data?.data?.loginUser?.user || data?.loginUser?.user || data.user)
+    } catch (e: any) {
+      if (e.response?.data?.errors) throw new Error(e.response.data.errors[0].message)
       throw new Error('An error occurred while attempting to login.')
     }
   }, [])
 
   const resetPassword = useCallback<ResetPassword>(async (args) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/reset-password`, {
-        body: JSON.stringify({
-          password: args.password,
-          passwordConfirm: args.passwordConfirm,
-          token: args.token,
-        }),
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/reset-password`, {
+        password: args.password,
+        passwordConfirm: args.passwordConfirm,
+        token: args.token,
+      }, {
+        withCredentials: true,
       })
 
-      if (res.ok) {
-        const { data, errors } = await res.json()
-        if (errors) throw new Error(errors[0].message)
-        setUser(data?.loginUser?.user)
-        setStatus(data?.loginUser?.user ? 'loggedIn' : undefined)
-      } else {
-        throw new Error('Invalid login')
-      }
-    } catch (e) {
+      if (data.errors) throw new Error(data.errors[0].message)
+      const u = data?.data?.loginUser?.user || data?.loginUser?.user || data.user
+      setUser(u)
+      setStatus(u ? 'loggedIn' : undefined)
+    } catch (e: any) {
+      if (e.response?.data?.errors) throw new Error(e.response.data.errors[0].message)
       throw new Error('An error occurred while attempting to login.')
     }
   }, [])

@@ -3,7 +3,6 @@
 import { CartItem } from '@/components/Cart'
 import { useCart } from '@payloadcms/plugin-ecommerce/client/react'
 import clsx from 'clsx'
-import { MinusIcon, PlusIcon } from 'lucide-react'
 import React, { useMemo } from 'react'
 
 export function EditItemQuantityButton({ type, item }: { item: CartItem; type: 'minus' | 'plus' }) {
@@ -39,15 +38,30 @@ export function EditItemQuantityButton({ type, item }: { item: CartItem; type: '
         disabled={disabled || isLoading}
         aria-label={type === 'plus' ? 'Increase item quantity' : 'Reduce item quantity'}
         className={clsx(
-          'ease hover:cursor-pointer flex h-full min-w-[36px] max-w-[36px] flex-none items-center justify-center rounded-full px-2 transition-all duration-200 hover:border-neutral-800 hover:opacity-80',
+          'flex items-center justify-center transition-all duration-300 hover:cursor-pointer',
           {
-            'cursor-not-allowed': disabled || isLoading,
-            'ml-auto': type === 'minus',
+            'cursor-not-allowed opacity-30': disabled || isLoading,
           },
         )}
+        style={{
+          width: '28px',
+          height: '28px',
+          borderRadius: '0',
+          color: 'var(--foreground)',
+          opacity: disabled || isLoading ? 0.25 : 0.45,
+        }}
+        onMouseEnter={(e) => {
+          if (!disabled && !isLoading) {
+            e.currentTarget.style.opacity = '0.8'
+            e.currentTarget.style.background = 'rgba(107, 122, 94, 0.06)'
+          }
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.opacity = disabled || isLoading ? '0.25' : '0.45'
+          e.currentTarget.style.background = 'transparent'
+        }}
         onClick={(e: React.FormEvent<HTMLButtonElement>) => {
           e.preventDefault()
-
           if (item.id) {
             if (type === 'plus') {
               incrementItem(item.id)
@@ -59,9 +73,13 @@ export function EditItemQuantityButton({ type, item }: { item: CartItem; type: '
         type="button"
       >
         {type === 'plus' ? (
-          <PlusIcon className="h-4 w-4 dark:text-neutral-500 hover:text-blue-300" />
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M5 2V8M2 5H8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+          </svg>
         ) : (
-          <MinusIcon className="h-4 w-4 dark:text-neutral-500 hover:text-blue-300" />
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5H8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+          </svg>
         )}
       </button>
     </form>

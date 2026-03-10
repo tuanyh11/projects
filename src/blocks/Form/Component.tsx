@@ -1,17 +1,18 @@
 'use client'
 import type { Form as FormType } from '@payloadcms/plugin-form-builder/types'
 
-import { useRouter } from 'next/navigation'
-import React, { useCallback, useState } from 'react'
-import { useForm, FormProvider } from 'react-hook-form'
 import { RichText } from '@/components/RichText'
 import { Button } from '@/components/ui/button'
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
+import axios from 'axios'
+import { useRouter } from 'next/navigation'
+import React, { useCallback, useState } from 'react'
+import { FormProvider, useForm } from 'react-hook-form'
 
-import { buildInitialFormState } from './buildInitialFormState'
-import { fields } from './fields'
 import { getClientSideURL } from '@/utilities/getURL'
 import { DefaultDocumentIDType } from 'payload'
+import { buildInitialFormState } from './buildInitialFormState'
+import { fields } from './fields'
 
 export type Value = unknown
 
@@ -75,31 +76,16 @@ export const FormBlock: React.FC<
         }, 1000)
 
         try {
-          const req = await fetch(`${getClientSideURL()}/api/form-submissions`, {
-            body: JSON.stringify({
-              form: formID,
-              submissionData: dataToSend,
-            }),
+          await axios.post(`${getClientSideURL()}/api/form-submissions`, {
+            form: formID,
+            submissionData: dataToSend,
+          }, {
             headers: {
               'Content-Type': 'application/json',
             },
-            method: 'POST',
           })
 
-          const res = await req.json()
-
           clearTimeout(loadingTimerID)
-
-          if (req.status >= 400) {
-            setIsLoading(false)
-
-            setError({
-              message: res.errors?.[0]?.message || 'Internal Server Error',
-              status: res.status,
-            })
-
-            return
-          }
 
           setIsLoading(false)
           setHasSubmitted(true)
@@ -111,11 +97,13 @@ export const FormBlock: React.FC<
 
             if (redirectUrl) router.push(redirectUrl)
           }
-        } catch (err) {
+        } catch (err: any) {
+          clearTimeout(loadingTimerID)
           console.warn(err)
           setIsLoading(false)
           setError({
-            message: 'Something went wrong.',
+            message: err.response?.data?.errors?.[0]?.message || 'Something went wrong.',
+            status: err.response?.status || '500',
           })
         }
       }
@@ -126,7 +114,7 @@ export const FormBlock: React.FC<
   )
 
   return (
-    <div className="container lg:max-w-[48rem]">
+    <div className="container lg:max-w-3xl">
       {enableIntro && introContent && !hasSubmitted && (
         <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />
       )}

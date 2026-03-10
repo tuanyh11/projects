@@ -1,7 +1,8 @@
 'use client'
 
-import React, { Fragment, useCallback, useState, MouseEvent } from 'react'
 import { toast } from '@payloadcms/ui'
+import axios from 'axios'
+import React, { Fragment, MouseEvent, useCallback, useState } from 'react'
 
 import './index.scss'
 
@@ -42,9 +43,9 @@ export const SeedButton: React.FC = () => {
         toast.promise(
           new Promise((resolve, reject) => {
             try {
-              fetch('/next/seed', { method: 'POST', credentials: 'include' })
+              axios.post('/next/seed', undefined, { withCredentials: true })
                 .then((res) => {
-                  if (res.ok) {
+                  if (res.status >= 200 && res.status < 300) {
                     resolve(true)
                     setSeeded(true)
                   } else {

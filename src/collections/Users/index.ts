@@ -2,10 +2,11 @@ import type { CollectionConfig } from 'payload'
 
 import { adminOnly } from '@/access/adminOnly'
 import { adminOnlyFieldAccess } from '@/access/adminOnlyFieldAccess'
-import { publicAccess } from '@/access/publicAccess'
 import { adminOrSelf } from '@/access/adminOrSelf'
+import { publicAccess } from '@/access/publicAccess'
 import { checkRole } from '@/access/utilities'
 
+import { createCartForUser } from './hooks/createCartForUser'
 import { ensureFirstUserIsAdmin } from './hooks/ensureFirstUserIsAdmin'
 
 export const Users: CollectionConfig = {
@@ -23,7 +24,12 @@ export const Users: CollectionConfig = {
     useAsTitle: 'name',
   },
   auth: {
-    tokenExpiration: 1209600,
+    tokenExpiration: 604800, // 7 days
+    maxLoginAttempts: 5,
+    lockTime: 600000, // 10 minutes lockout
+  },
+  hooks: {
+    afterChange: [createCartForUser],
   },
   fields: [
     {

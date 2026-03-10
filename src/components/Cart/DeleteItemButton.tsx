@@ -3,7 +3,6 @@
 import type { CartItem } from '@/components/Cart'
 import { useCart } from '@payloadcms/plugin-ecommerce/client/react'
 import clsx from 'clsx'
-import { XIcon } from 'lucide-react'
 import React from 'react'
 
 export function DeleteItemButton({ item }: { item: CartItem }) {
@@ -15,11 +14,20 @@ export function DeleteItemButton({ item }: { item: CartItem }) {
       <button
         aria-label="Remove cart item"
         className={clsx(
-          'ease hover:cursor-pointer flex h-[17px] w-[17px] items-center justify-center rounded-full bg-neutral-500 transition-all duration-200',
+          'flex items-center justify-center transition-all duration-400 hover:cursor-pointer',
           {
-            'cursor-not-allowed px-0': !itemId || isLoading,
+            'cursor-not-allowed opacity-30': !itemId || isLoading,
           },
         )}
+        style={{
+          width: '22px',
+          height: '22px',
+          borderRadius: '2px',
+          color: 'var(--foreground)',
+          opacity: !itemId || isLoading ? 0.2 : 0.25,
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.6' }}
+        onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.25' }}
         disabled={!itemId || isLoading}
         onClick={(e: React.FormEvent<HTMLButtonElement>) => {
           e.preventDefault()
@@ -27,7 +35,10 @@ export function DeleteItemButton({ item }: { item: CartItem }) {
         }}
         type="button"
       >
-        <XIcon className="hover:text-accent-3 mx-[1px] h-4 w-4 text-white dark:text-black" />
+        {/* Minimal X — sumi ink style */}
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <path d="M2 2L8 8M8 2L2 8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+        </svg>
       </button>
     </form>
   )

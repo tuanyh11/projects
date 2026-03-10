@@ -1,12 +1,11 @@
 'use client'
 
 import { Message } from '@/components/Message'
-import { Button } from '@/components/ui/button'
+import { Address } from '@/payload-types'
+import { useCart, usePayments } from '@payloadcms/plugin-ecommerce/client/react'
 import { PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { useRouter } from 'next/navigation'
-import React, { useCallback, FormEvent } from 'react'
-import { useCart, usePayments } from '@payloadcms/plugin-ecommerce/client/react'
-import { Address } from '@/payload-types'
+import React, { FormEvent, useCallback } from 'react'
 
 type Props = {
   customerEmail?: string
@@ -51,7 +50,7 @@ export const CheckoutForm: React.FC<Props> = ({
                     city: billingAddress?.city,
                     state: billingAddress?.state,
                     postal_code: billingAddress?.postalCode,
-                    country: billingAddress?.country,
+                    country: 'VN',
                   },
                 },
               },
@@ -76,11 +75,7 @@ export const CheckoutForm: React.FC<Props> = ({
                 confirmResult.orderID
               ) {
                 const redirectUrl = `/orders/${confirmResult.orderID}${customerEmail ? `?email=${customerEmail}` : ''}`
-
-                // Clear the cart after successful payment
                 clearCart()
-
-                // Redirect to order confirmation page
                 router.push(redirectUrl)
               }
             } catch (err) {
@@ -113,7 +108,6 @@ export const CheckoutForm: React.FC<Props> = ({
       billingAddress?.city,
       billingAddress?.state,
       billingAddress?.postalCode,
-      billingAddress?.country,
       confirmOrder,
       clearCart,
       router,
@@ -125,9 +119,25 @@ export const CheckoutForm: React.FC<Props> = ({
       {error && <Message error={error} />}
       <PaymentElement />
       <div className="mt-8 flex gap-4">
-        <Button disabled={!stripe || isLoading} type="submit" variant="default">
-          {isLoading ? 'Loading...' : 'Pay now'}
-        </Button>
+        <button
+          disabled={!stripe || isLoading}
+          type="submit"
+          className="btn-zen transition-all duration-500 disabled:opacity-40 disabled:cursor-not-allowed"
+          style={{
+            background: !stripe || isLoading ? 'var(--muted)' : 'var(--matcha)',
+            color: !stripe || isLoading ? 'var(--muted-foreground)' : 'var(--washi)',
+            padding: '14px 32px',
+            borderRadius: '2px',
+            fontSize: '13px',
+            fontFamily: "'Noto Serif JP', serif",
+            fontWeight: 300,
+            letterSpacing: '0.08em',
+            border: 'none',
+            cursor: !stripe || isLoading ? 'not-allowed' : 'pointer',
+          }}
+        >
+          {isLoading ? 'Đang xử lý...' : 'Thanh toán ngay'}
+        </button>
       </div>
     </form>
   )
