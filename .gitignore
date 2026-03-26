@@ -1,0 +1,17 @@
+# Build artifacts
+*.o
+*.out
+/build/
+/tmp/
+
+# Database files
+*.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store

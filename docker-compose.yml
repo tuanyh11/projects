@@ -1,0 +1,16 @@
+services:
+  cpp-dev:
+    build: .
+    container_name: cpp-workspace
+    volumes:
+      # Mount thư mục c++ vào /workspace trong container
+      - .:/workspace
+    working_dir: /workspace
+    # Giữ container chạy
+    stdin_open: true
+    tty: true
+    # Cho phép dùng GDB
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE
