@@ -3,8 +3,8 @@ import Foundation
 final class APIService: Sendable {
     static let shared = APIService()
 
-    // Change this to your machine's IP when running on physical device
-    private let baseURL = "http://localhost:3000"
+    // Standalone API URL trên tài khoản Render mới
+    private let baseURL = "https://lingua-api-standalone.onrender.com"
 
     private var decoder: JSONDecoder {
         let d = JSONDecoder()
@@ -60,7 +60,9 @@ final class APIService: Sendable {
         try await get("/user_progress?user_id=eq.\(userId)")
     }
 
-    func saveProgress(userId: Int, storyId: Int?, lessonId: Int?, wpm: Int, accuracy: Int) async throws {
+    func saveProgress(userId: Int, storyId: Int?, lessonId: Int?, wpm: Int, accuracy: Int)
+        async throws
+    {
         let body = ProgressPayload(
             userId: userId,
             storyId: storyId,
@@ -88,7 +90,12 @@ final class APIService: Sendable {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
+
+        // Thêm JWT Token nếu có
+        if let token = await AuthService.shared.token {
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) else {
             throw URLError(.badServerResponse)
@@ -97,36 +104,46 @@ final class APIService: Sendable {
     }
 
     // MARK: - Generic POST
-    func post<T: Decodable & Sendable, U: Encodable & Sendable>(_ path: String, body: U) async throws -> T {
+    func post<T: Decodable & Sendable, U: Encodable & Sendable>(_ path: String, body: U)
+        async throws -> T
+    {
         guard let url = URL(string: baseURL + path) else {
             throw URLError(.badURL)
         }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("return=representation", forHTTPHeaderField: "Prefer")
-        
+
+        // Thêm JWT Token nếu có
+        if let token = await AuthService.shared.token {
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
         request.httpBody = try encoder.encode(body)
-        
+
         let (data, response) = try await URLSession.shared.data(for: request)
-        
+
         guard let http = response as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
         }
-        
+
         if !(200...299).contains(http.statusCode) {
             // Attempt to parse PostgREST error
             if let errorJson = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-               let message = errorJson["message"] as? String {
-                throw NSError(domain: "APIServiceError", code: http.statusCode, userInfo: [NSLocalizedDescriptionKey: message])
+                let message = errorJson["message"] as? String
+            {
+                throw NSError(
+                    domain: "APIServiceError", code: http.statusCode,
+                    userInfo: [NSLocalizedDescriptionKey: message])
             }
             throw URLError(.badServerResponse)
         }
-        
+
         return try decoder.decode(T.self, from: data)
     }
 }
