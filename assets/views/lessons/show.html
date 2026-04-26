@@ -1,0 +1,344 @@
+{% extends "base.html" %}
+
+{% block title %}{{ lesson.title }} — LinguaRust{% endblock %}
+
+{% block extra_styles %}
+  .lesson-layout {
+    max-width: 960px; margin: 0 auto;
+    padding: 2rem 2rem 5rem;
+  }
+  .breadcrumb {
+    font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem;
+  }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+
+  .lesson-header {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 20px; padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .lesson-header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.75rem; }
+  .lesson-chips { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.35rem 0.875rem; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--border);
+    font-size: 0.8rem; color: var(--text-muted);
+  }
+  .lesson-content {
+    font-size: 1rem; line-height: 1.8; color: var(--text-muted);
+    border-top: 1px solid var(--border); padding-top: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem; font-weight: 700; margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  /* VOCABULARY FLASHCARDS */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+  .vocab-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.5rem;
+    cursor: pointer; transition: all 0.3s;
+    perspective: 1000px;
+  }
+  .vocab-card:hover { border-color: var(--accent); box-shadow: 0 8px 24px rgba(124,111,255,0.15); }
+  .vocab-word { font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 0.2rem; }
+  .vocab-pronunciation { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.75rem; font-style: italic; }
+  .vocab-pos-badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 6px;
+    background: rgba(124,111,255,0.1); color: var(--accent);
+    font-size: 0.7rem; font-weight: 600; margin-bottom: 0.75rem;
+  }
+  .vocab-divider { height: 1px; background: var(--border); margin: 0.75rem 0; }
+  .vocab-translation { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+  .vocab-example { font-size: 0.85rem; color: var(--text-muted); font-style: italic; line-height: 1.5; }
+
+  /* Audio buttons */
+  .vocab-header { display: flex; justify-content: space-between; align-items: flex-start; }
+  .vocab-speak {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--accent); font-size: 1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.25s; flex-shrink: 0;
+  }
+  .vocab-speak:hover {
+    background: rgba(124,111,255,0.15); transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(124,111,255,0.3);
+  }
+  .vocab-speak.speaking {
+    animation: pulse-speak 1s ease-in-out infinite;
+    color: var(--accent3);
+  }
+  @keyframes pulse-speak {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(124,111,255,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(124,111,255,0); }
+  }
+  .quiz-word-row {
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .quiz-speak {
+    width: 42px; height: 42px; border-radius: 50%;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--accent); font-size: 1.1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.25s;
+  }
+  .quiz-speak:hover { background: rgba(124,111,255,0.15); transform: scale(1.1); }
+
+  /* QUIZ SECTION */
+  .quiz-section {
+    background: linear-gradient(135deg, rgba(124,111,255,0.1), rgba(0,229,197,0.05));
+    border: 1px solid rgba(124,111,255,0.2);
+    border-radius: 20px; padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .quiz-question { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; }
+  .quiz-word {
+    font-size: 2.5rem; font-weight: 900; color: var(--accent);
+    text-align: center; padding: 1.5rem; background: var(--bg3);
+    border-radius: 16px; margin-bottom: 1.5rem;
+  }
+  .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .quiz-option {
+    padding: 0.875rem 1rem; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--bg3);
+    color: var(--text); font-weight: 500; cursor: pointer;
+    transition: all 0.2s; text-align: center;
+  }
+  .quiz-option:hover { border-color: var(--accent); background: rgba(124,111,255,0.1); }
+  .quiz-option.correct { border-color: #00e5c5 !important; background: rgba(0,229,197,0.15) !important; color: #00e5c5 !important; }
+  .quiz-option.wrong { border-color: #ff6fa8 !important; background: rgba(255,111,168,0.15) !important; color: #ff6fa8 !important; }
+  .quiz-controls { display: flex; gap: 1rem; margin-top: 1.5rem; }
+
+  /* NAV BUTTONS */
+  .lesson-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 2rem; border-top: 1px solid var(--border);
+  }
+
+  .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+  .badge-beginner { background: rgba(0,229,197,0.15); color: #00e5c5; }
+  .badge-intermediate { background: rgba(124,111,255,0.15); color: #7c6fff; }
+  .badge-advanced { background: rgba(255,111,168,0.15); color: #ff6fa8; }
+
+  #quiz-result {
+    text-align: center; padding: 1rem;
+    font-size: 1.1rem; font-weight: 600;
+    border-radius: 12px; margin-top: 1rem;
+    display: none;
+  }
+  #quiz-result.show { display: block; }
+{% endblock %}
+
+{% block content %}
+  <div class="lesson-layout" style="margin-top: 2rem;">
+    <div class="breadcrumb">
+      <a href="/">Trang chủ</a> /
+      <a href="/languages">Ngôn ngữ</a> /
+      <a href="/languages/{{ lesson.language_id }}">Khóa học</a> /
+      {{ lesson.title }}
+    </div>
+
+    <!-- LESSON HEADER -->
+    <div class="lesson-header">
+      <h1>{{ lesson.title }}</h1>
+      <div class="lesson-chips">
+        <div class="chip">
+          <span class="badge badge-{{ lesson.level | lower }}">{{ lesson.level }}</span>
+        </div>
+        <div class="chip">⏱ {{ lesson.duration }} phút</div>
+        <div class="chip">📖 Bài {{ lesson.order }}</div>
+      </div>
+      <div class="lesson-content">{{ lesson.content }}</div>
+    </div>
+
+    <!-- VOCABULARY -->
+    {% if vocabularies %}
+      <div class="section-title">📚 Từ vựng bài học ({{ vocabularies | length }} từ)</div>
+      <div class="vocab-grid">
+        {% for vocab in vocabularies %}
+          <div class="vocab-card" id="vocab-{{ vocab.id }}">
+            <div class="vocab-header">
+              <div>
+                <div class="vocab-word">{{ vocab.word }}</div>
+                <div class="vocab-pronunciation">{{ vocab.pronunciation }}</div>
+              </div>
+              <button class="vocab-speak" onclick="speakWord('{{ vocab.word }}', this)" title="Nghe phát âm">🔊</button>
+            </div>
+            <div class="vocab-pos-badge">{{ vocab.part_of_speech }}</div>
+            <div class="vocab-divider"></div>
+            <div class="vocab-translation">🇻🇳 {{ vocab.translation }}</div>
+            <div class="vocab-example" onclick="speakSentence('{{ vocab.example }}', this)" style="cursor:pointer" title="Click để nghe">💬 {{ vocab.example }}</div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- MINI QUIZ -->
+      <div class="section-title">🎯 Ôn tập nhanh</div>
+      <div class="quiz-section" id="quiz-section">
+        <div class="quiz-question">Từ này có nghĩa là gì?</div>
+        <div class="quiz-word-row">
+          <div class="quiz-word" id="quiz-word">---</div>
+          <button class="quiz-speak" onclick="speakQuizWord()" title="Nghe phát âm">🔊</button>
+        </div>
+        <div class="quiz-options" id="quiz-options"></div>
+        <div id="quiz-result"></div>
+        <div class="quiz-controls">
+          <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">Câu tiếp theo →</button>
+          <span id="quiz-score" style="color: var(--text-muted); font-size: 0.9rem; align-self: center;"></span>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- NAV -->
+    <div class="lesson-nav">
+      <a href="/languages/{{ lesson.language_id }}" class="btn btn-outline">← Quay lại khóa học</a>
+      <div style="color: var(--text-muted); font-size: 0.875rem;">Bài {{ lesson.order }}</div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  const vocabs = [
+    {% for v in vocabularies %}
+    { word: "{{ v.word }}", translation: "{{ v.translation }}" },
+    {% endfor %}
+  ];
+
+  let currentIdx = 0;
+  let score = 0;
+  let total = 0;
+  let answered = false;
+  let currentAudio = null;
+
+  // ===== AUDIO ENGINE =====
+  let audioCtx = null;
+  function getAudioCtx() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
+  function speakWord(word, btn) {
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+    if (btn) btn.classList.add('speaking');
+    const audio = new Audio(`/api/tts?text=${encodeURIComponent(word)}&lang=en`);
+    currentAudio = audio;
+    audio.volume = 0.9;
+    audio.onended = () => { currentAudio = null; if (btn) btn.classList.remove('speaking'); };
+    audio.onerror = () => { currentAudio = null; if (btn) btn.classList.remove('speaking'); };
+    audio.play().catch(() => { currentAudio = null; if (btn) btn.classList.remove('speaking'); });
+  }
+
+  function speakSentence(text, el) {
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+    const audio = new Audio(`/api/tts?text=${encodeURIComponent(text)}&lang=en`);
+    currentAudio = audio;
+    audio.volume = 0.9;
+    audio.onended = () => { currentAudio = null; };
+    audio.onerror = () => { currentAudio = null; };
+    audio.play().catch(() => { currentAudio = null; });
+  }
+
+  function speakQuizWord() {
+    const word = document.getElementById('quiz-word').textContent;
+    if (word && word !== '---') speakWord(word, null);
+  }
+
+  function playCorrect() {
+    const ctx = getAudioCtx();
+    [523, 659, 784].forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine'; osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.1, ctx.currentTime + i * 0.1);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.1 + 0.2);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(ctx.currentTime + i * 0.1); osc.stop(ctx.currentTime + i * 0.1 + 0.2);
+    });
+  }
+
+  function playWrong() {
+    const ctx = getAudioCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'square'; osc.frequency.value = 180;
+    gain.gain.setValueAtTime(0.12, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(); osc.stop(ctx.currentTime + 0.25);
+  }
+
+  // ===== QUIZ LOGIC =====
+  function shuffle(arr) {
+    return [...arr].sort(() => Math.random() - 0.5);
+  }
+
+  function nextQuestion() {
+    if (vocabs.length < 2) return;
+    answered = false;
+    document.getElementById('quiz-result').classList.remove('show');
+    const current = vocabs[currentIdx % vocabs.length];
+    document.getElementById('quiz-word').textContent = current.word;
+
+    // Auto-speak the quiz word
+    setTimeout(() => speakWord(current.word, null), 300);
+
+    const others = vocabs.filter((_, i) => i !== currentIdx % vocabs.length);
+    const wrong = shuffle(others).slice(0, 3).map(v => v.translation);
+    const options = shuffle([current.translation, ...wrong]);
+
+    const container = document.getElementById('quiz-options');
+    container.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-option';
+      btn.textContent = opt;
+      btn.onclick = () => checkAnswer(btn, opt, current.translation, current.word);
+      container.appendChild(btn);
+    });
+    currentIdx++;
+  }
+
+  function checkAnswer(btn, selected, correct, word) {
+    if (answered) return;
+    answered = true;
+    total++;
+    const result = document.getElementById('quiz-result');
+    if (selected === correct) {
+      btn.classList.add('correct');
+      score++;
+      playCorrect();
+      result.textContent = '✅ Chính xác! Xuất sắc!';
+      result.style.background = 'rgba(0,229,197,0.1)';
+      result.style.color = '#00e5c5';
+    } else {
+      btn.classList.add('wrong');
+      playWrong();
+      document.querySelectorAll('.quiz-option').forEach(b => {
+        if (b.textContent === correct) b.classList.add('correct');
+      });
+      result.textContent = `❌ Sai rồi! Đáp án đúng là: "${correct}"`;
+      result.style.background = 'rgba(255,111,168,0.1)';
+      result.style.color = '#ff6fa8';
+    }
+    result.classList.add('show');
+    document.getElementById('quiz-score').textContent = `Điểm: ${score}/${total}`;
+    // Speak the word again after answering
+    setTimeout(() => speakWord(word, null), 500);
+  }
+
+  if (vocabs.length >= 2) nextQuestion();
+  else document.getElementById('quiz-section').style.display = 'none';
+</script>
+{% endblock %}

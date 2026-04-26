@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>12</integer>
+	<key>logs</key>
+	<dict>
+		<key>0F9B04C5-70AB-4DEE-B653-307A324E68E2</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0F9B04C5-70AB-4DEE-B653-307A324E68E2.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>7</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>LinguaApp project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>LinguaApp</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project LinguaApp with scheme LinguaApp</string>
+			<key>timeStartedRecording</key>
+			<real>798841775.45929396</real>
+			<key>timeStoppedRecording</key>
+			<real>798841783.09254503</real>
+			<key>title</key>
+			<string>Building project LinguaApp with scheme LinguaApp</string>
+			<key>uniqueIdentifier</key>
+			<string>0F9B04C5-70AB-4DEE-B653-307A324E68E2</string>
+		</dict>
+		<key>9769B2C8-8D24-4703-A34F-5A09AD67504E</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>9769B2C8-8D24-4703-A34F-5A09AD67504E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>7</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>LinguaApp project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>LinguaApp</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project LinguaApp with scheme LinguaApp</string>
+			<key>timeStartedRecording</key>
+			<real>798842017.65118504</real>
+			<key>timeStoppedRecording</key>
+			<real>798842029.73795402</real>
+			<key>title</key>
+			<string>Building project LinguaApp with scheme LinguaApp</string>
+			<key>uniqueIdentifier</key>
+			<string>9769B2C8-8D24-4703-A34F-5A09AD67504E</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

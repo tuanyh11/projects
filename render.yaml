@@ -1,0 +1,27 @@
+services:
+  # 1. PostgREST API Server
+  - type: web
+    name: lingua-api
+    env: docker
+    plan: free # Có thể đổi sang starter nếu cần
+    dockerContext: .
+    dockerCommand: postgrest
+    envVars:
+      - key: PGRST_DB_URI
+        fromDatabase:
+          name: lingua-db
+          property: connectionString
+      - key: PGRST_DB_SCHEMA
+        value: public
+      - key: PGRST_DB_ANON_ROLE
+        value: anon
+      - key: PGRST_JWT_SECRET
+        value: your-super-secret-jwt-token-at-least-32-chars-long
+    healthCheckPath: /
+
+# 2. PostgreSQL Database
+databases:
+  - name: lingua-db
+    plan: free
+    databaseName: lingua_app
+    user: lingua_user

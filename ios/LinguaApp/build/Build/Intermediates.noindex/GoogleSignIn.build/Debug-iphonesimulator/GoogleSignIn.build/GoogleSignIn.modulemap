@@ -1,0 +1,4 @@
+module GoogleSignIn {
+umbrella header "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/Public/GoogleSignIn/GoogleSignIn.h"
+export *
+}

@@ -1,0 +1,23 @@
+{
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.dia",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.swiftdeps"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.dia",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.swiftdeps"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Theme/AppTheme.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.dia",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.swiftdeps"
+  }
+}

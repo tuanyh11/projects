@@ -1,0 +1,27 @@
+dependencies: \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDSignIn.m \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/GoogleSignIn.build/Debug-iphonesimulator/GoogleSignIn.build/DerivedSources/resource_bundle_accessor.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/include/DarwinFoundation1.modulemap \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/Public/GoogleSignIn/GIDSignIn.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework/Modules/module.modulemap \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDSignIn_Private.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/Public/GoogleSignIn/GIDConfiguration.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/Public/GoogleSignIn/GIDGoogleUser.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/GTMSessionFetcherCore.modulemap \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/Public/GoogleSignIn/GIDProfileData.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/Public/GoogleSignIn/GIDSignInResult.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDEMMSupport.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/GTMAppAuth.modulemap \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDSignInInternalOptions.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDSignInPreferences.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDCallbackQueue.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDScopes.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDSignInCallbackSchemes.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDAuthStateMigration.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDEMMErrorHandler.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDGoogleUser_Private.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/AppAuth.modulemap \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/GeneratedModuleMaps-iphonesimulator/AppAuthCore.modulemap \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDProfileData_Private.h \
+  /Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/GoogleSignIn-iOS/GoogleSignIn/Sources/GIDSignInResult_Private.h

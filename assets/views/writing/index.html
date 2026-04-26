@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Luyện viết Essay — LinguaRust{% endblock %}
+
+{% block extra_styles %}
+  .writing-hero {
+    background: linear-gradient(135deg, var(--bg2) 0%, var(--bg) 100%);
+    padding: 5rem 2rem 4rem;
+    text-align: left; max-width: 1100px; margin: 0 auto;
+  }
+  .writing-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900; line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .writing-hero h1 span { color: var(--accent); }
+  .writing-hero p {
+    font-size: 1.1rem; color: var(--text-muted);
+    max-width: 600px; line-height: 1.7;
+  }
+  .exam-badges {
+    display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;
+  }
+  .exam-badge {
+    padding: 0.4rem 1rem; border-radius: 999px;
+    font-size: 0.8rem; font-weight: 700;
+    border: 1px solid var(--border);
+    background: var(--surface); color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+  .exam-badge.ielts { border-color: rgba(255,111,168,0.4); color: #ff6fa8; }
+  .exam-badge.toefl { border-color: rgba(0,229,197,0.4); color: #00e5c5; }
+
+  .prompts-section {
+    max-width: 1100px; margin: 0 auto;
+    padding: 2rem 2rem 5rem;
+  }
+  .type-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 1.25rem; margin-top: 2.5rem;
+  }
+  .type-title {
+    font-size: 1.3rem; font-weight: 800;
+  }
+  .type-count { font-size: 0.85rem; color: var(--text-muted); }
+
+  .prompt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+  .prompt-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.75rem;
+    transition: all 0.3s; cursor: pointer;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+  }
+  .prompt-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px rgba(124,111,255,0.12);
+    transform: translateY(-2px);
+  }
+  .prompt-title {
+    font-size: 1.1rem; font-weight: 700;
+    margin-bottom: 0.5rem; color: var(--text);
+  }
+  .prompt-category {
+    font-size: 0.8rem; color: var(--accent);
+    margin-bottom: 1rem; font-weight: 600;
+  }
+  .prompt-meta {
+    display: flex; gap: 1rem; margin-top: auto;
+    padding-top: 1rem; border-top: 1px solid var(--border);
+    font-size: 0.78rem; color: var(--text-muted);
+  }
+  .prompt-meta span { display: flex; align-items: center; gap: 0.3rem; }
+  .difficulty-dot {
+    width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+  }
+  .difficulty-dot.beginner { background: #00e5c5; }
+  .difficulty-dot.intermediate { background: #7c6fff; }
+  .difficulty-dot.advanced { background: #ff6fa8; }
+{% endblock %}
+
+{% block content %}
+  <div class="writing-hero">
+    <h1>essay writing.<br><span>exam ready.</span></h1>
+    <p>Luyện viết essay theo chuẩn IELTS Task 2. Timer thực tế, đếm từ real-time, cấu trúc bài viết rõ ràng.</p>
+    <div class="exam-badges">
+      <span class="exam-badge ielts">IELTS Task 2</span>
+      <span class="exam-badge toefl">TOEFL Writing</span>
+      <span class="exam-badge">Cambridge</span>
+    </div>
+  </div>
+
+  <div class="prompts-section">
+    {% for group in groups %}
+      <div class="type-header">
+        <div class="type-title">{{ group.task_type }}</div>
+        <div class="type-count">{{ group.prompts | length }} đề bài</div>
+      </div>
+      <div class="prompt-grid">
+        {% for p in group.prompts %}
+          <a href="/writing/{{ p.id }}" class="prompt-card">
+            <div class="prompt-title">{{ p.title }}</div>
+            <div class="prompt-category">{{ p.category }}</div>
+            <div class="prompt-meta">
+              <span>⏱ {{ p.time_limit_minutes }} phút</span>
+              <span>📝 {{ p.min_words }}–{{ p.max_words }} từ</span>
+              <span><span class="difficulty-dot {{ p.difficulty | lower }}"></span> {{ p.difficulty }}</span>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

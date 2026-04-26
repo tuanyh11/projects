@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Tất cả ngôn ngữ — LinguaRust{% endblock %}
+
+{% block extra_styles %}
+  .page-header {
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(124,111,255,0.2), transparent);
+    border-bottom: 1px solid var(--border);
+  }
+  .page-header h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; }
+  .page-header p { color: var(--text-muted); font-size: 1.05rem; }
+
+  .filters {
+    display: flex; gap: 0.75rem; justify-content: center;
+    padding: 2rem 2rem 0; flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 0.4rem 1rem; border-radius: 999px;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-muted); font-size: 0.85rem; font-weight: 500;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--accent); border-color: var(--accent);
+    color: #fff;
+  }
+
+  .section { padding: 3rem 2rem 5rem; max-width: 1200px; margin: 0 auto; }
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .lang-card {
+    position: relative; overflow: hidden;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 20px; padding: 2rem;
+    text-decoration: none; color: var(--text);
+    transition: all 0.3s; display: block;
+  }
+  .lang-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--card-color, var(--accent));
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .lang-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.15); box-shadow: 0 24px 48px rgba(0,0,0,0.4); }
+  .lang-card:hover::before { opacity: 1; }
+  .lang-flag { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+  .lang-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .lang-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.5; }
+  .lang-meta { display: flex; justify-content: space-between; align-items: center; }
+  .lang-stats { font-size: 0.8rem; color: var(--text-muted); }
+  .lang-stats strong { color: var(--text); }
+  .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+  .badge-beginner { background: rgba(0,229,197,0.15); color: #00e5c5; }
+  .badge-intermediate { background: rgba(124,111,255,0.15); color: #7c6fff; }
+  .badge-advanced { background: rgba(255,111,168,0.15); color: #ff6fa8; }
+{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+    <h1>Khám Phá Ngôn Ngữ 🌏</h1>
+    <p>Chọn ngôn ngữ bạn muốn học và bắt đầu hành trình của mình</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterLang('all')">Tất cả</button>
+    <button class="filter-btn" onclick="filterLang('Beginner')">Mới bắt đầu</button>
+    <button class="filter-btn" onclick="filterLang('Intermediate')">Trung cấp</button>
+    <button class="filter-btn" onclick="filterLang('Advanced')">Nâng cao</button>
+  </div>
+
+  <div class="section">
+    <div class="lang-grid" id="lang-grid">
+      {% for lang in languages %}
+        <a href="/languages/{{ lang.id }}" class="lang-card"
+           style="--card-color: {{ lang.color }};"
+           data-level="{{ lang.level }}">
+          <span class="lang-flag">{{ lang.flag }}</span>
+          <div class="lang-name">{{ lang.name }}</div>
+          <div class="lang-desc">{{ lang.description }}</div>
+          <div class="lang-meta">
+            <span class="badge badge-{{ lang.level | lower }}">{{ lang.level }}</span>
+            <div class="lang-stats">
+              <strong>{{ lang.total_lessons }}</strong> bài ·
+              <strong>{{ lang.total_students }}</strong> HV
+            </div>
+          </div>
+        </a>
+      {% else %}
+        <p style="grid-column:1/-1; text-align:center; color: var(--text-muted); padding: 3rem;">
+          Chưa có ngôn ngữ nào. Hãy thêm dữ liệu qua API!
+        </p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  function filterLang(level) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.lang-card').forEach(card => {
+      if (level === 'all' || card.dataset.level === level) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+{% endblock %}

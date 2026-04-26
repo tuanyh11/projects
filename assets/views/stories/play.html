@@ -1,0 +1,811 @@
+{% extends "base.html" %}
+
+{% block title %}{{ story.title }} — LinguaRust{% endblock %}
+
+{% block extra_styles %}
+  body { overflow: hidden; }
+  main { padding-top: 0; height: calc(100vh - 64px); }
+
+  .play-container {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    height: 100%;
+    background: var(--bg);
+  }
+
+  /* LEFT SIDEBAR — completed lines */
+  .sidebar {
+    border-right: 1px solid var(--border);
+    overflow-y: auto; padding: 0;
+    background: var(--bg2);
+  }
+  .sidebar-header {
+    position: sticky; top: 0; z-index: 2;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.25rem;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-header a {
+    color: var(--text-muted); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500;
+  }
+  .sidebar-header a:hover { color: var(--accent); }
+  .story-title-bar {
+    display: flex; gap: 0.75rem; align-items: baseline;
+    font-size: 0.9rem;
+  }
+  .story-title-en { font-weight: 700; color: var(--text); }
+  .story-title-vi { color: var(--text-muted); font-size: 0.8rem; }
+  .sidebar-progress {
+    font-size: 0.8rem; color: var(--text-muted); font-weight: 600;
+  }
+  .sidebar-label {
+    padding: 0.75rem 1.25rem 0.5rem;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .completed-line {
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    animation: slideIn 0.3s ease;
+  }
+  .completed-num { font-size: 0.7rem; color: var(--text-muted); margin-right: 0.35rem; }
+  .completed-en { font-size: 0.85rem; color: var(--text); line-height: 1.4; }
+  .completed-vi {
+    font-size: 0.78rem; color: var(--text-muted);
+    margin-top: 0.25rem; margin-left: 1rem;
+    border-left: 2px solid rgba(124,111,255,0.3);
+    padding-left: 0.5rem;
+  }
+  .replay-btn {
+    font-size: 0.75rem; color: var(--accent);
+    cursor: pointer; background: none; border: none;
+    font-weight: 600;
+  }
+  .replay-btn:hover { text-decoration: underline; }
+
+  /* RIGHT MAIN — typing area */
+  .typing-area {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 2rem;
+    position: relative;
+    outline: none;
+    cursor: text;
+  }
+
+  /* Word tooltip */
+  .word-hint {
+    display: flex; align-items: center; gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    min-height: 2rem;
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .word-hint.visible { opacity: 1; }
+  .hint-en {
+    font-size: 1rem; font-weight: 700;
+    color: var(--accent);
+  }
+  .hint-arrow { color: var(--text-muted); font-size: 0.85rem; }
+  .hint-vi { font-size: 1rem; color: var(--text-muted); }
+
+  /* Main sentence display */
+  .sentence-display {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+    user-select: none;
+  }
+  .word {
+    display: inline-block;
+    transition: color 0.15s, transform 0.15s;
+    margin: 0 0.15em;
+  }
+  .word.completed { color: var(--text-muted); }
+  .word.active { color: var(--accent); transform: scale(1.05); }
+  .word.error { color: #ff4466; animation: shake 0.3s; }
+  .word.pending { color: rgba(255,255,255,0.3); }
+
+  /* Typing cursor */
+  .cursor-indicator {
+    display: inline-block;
+    width: 2px; height: 1.2em;
+    background: var(--accent);
+    animation: blink 1s step-end infinite;
+    margin-left: -0.1em;
+    vertical-align: text-bottom;
+  }
+
+  /* Sentence translation */
+  .sentence-vi {
+    font-size: 1rem;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 700px;
+    min-height: 1.5rem;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: flex; gap: 2.5rem;
+    margin-top: 3rem;
+  }
+  .stat-item { text-align: center; }
+  .stat-val {
+    font-size: 1.75rem; font-weight: 800;
+    color: var(--text);
+  }
+  .stat-val.accent { color: var(--accent3); }
+  .stat-label {
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 0.15rem;
+  }
+
+  /* Completion overlay */
+  .completion-overlay {
+    position: absolute; inset: 0;
+    background: rgba(10,10,15,0.92);
+    display: none; align-items: center; justify-content: center;
+    flex-direction: column; z-index: 10;
+    backdrop-filter: blur(8px);
+  }
+  .completion-overlay.show { display: flex; }
+  .completion-emoji { font-size: 4rem; margin-bottom: 1rem; }
+  .completion-title {
+    font-size: 2rem; font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  .completion-sub { color: var(--text-muted); margin-bottom: 2rem; }
+  .completion-stats {
+    display: flex; gap: 3rem; margin-bottom: 2rem;
+  }
+
+  /* Focus hint */
+  .focus-hint {
+    position: absolute; bottom: 1.5rem;
+    font-size: 0.75rem; color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  /* Audio controls */
+  .audio-controls {
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .audio-btn {
+    width: 32px; height: 32px; border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface); color: var(--text-muted);
+    font-size: 0.9rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .audio-btn:hover { background: var(--surface-hover); color: var(--text); }
+  .audio-btn.active { color: var(--accent); border-color: var(--accent); }
+  .audio-btn.muted { opacity: 0.4; }
+
+  .speak-btn {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface); color: var(--accent);
+    font-size: 1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.25s; flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+  .speak-btn:hover {
+    background: rgba(124,111,255,0.15);
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(124,111,255,0.3);
+  }
+  .speak-btn.speaking {
+    animation: pulse-speak 1s ease-in-out infinite;
+    color: var(--accent3);
+  }
+  .sentence-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.5rem; margin-bottom: 1.5rem;
+    max-width: 850px; width: 100%;
+  }
+
+  @keyframes pulse-speak {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(124,111,255,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(124,111,255,0); }
+  }
+
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .play-container { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .sentence-display { font-size: 1.5rem; }
+  }
+{% endblock %}
+
+{% block content %}
+  <div class="play-container">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <a href="/stories">← Stories</a>
+        <div class="story-title-bar">
+          <span class="story-title-en">{{ story.title }}</span>
+          <span class="story-title-vi">{{ story.title_vi }}</span>
+        </div>
+        <div class="audio-controls">
+          <button class="audio-btn" id="btn-mute" title="Tắt/Bật âm thanh" onclick="toggleMute()">🔊</button>
+          <div class="sidebar-progress" id="progress">1/{{ story.total_lines }}</div>
+        </div>
+      </div>
+      <div class="sidebar-label" id="completed-label" style="display:none;">COMPLETED</div>
+      <div id="completed-lines"></div>
+    </div>
+
+    <!-- TYPING AREA -->
+    <div class="typing-area" id="typing-area" tabindex="0" autofocus>
+      <div class="word-hint" id="word-hint">
+        <span class="hint-en" id="hint-en"></span>
+        <span class="hint-arrow">→</span>
+        <span class="hint-vi" id="hint-vi"></span>
+      </div>
+
+      <div class="sentence-row">
+        <div class="sentence-display" id="sentence-display"></div>
+        <button class="speak-btn" id="speak-btn" onclick="speakCurrentSentence()" title="Nghe phát âm">🔊</button>
+      </div>
+      <div class="sentence-vi" id="sentence-vi"></div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-val" id="wpm">0</div>
+          <div class="stat-label">WPM</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val accent" id="accuracy">100%</div>
+          <div class="stat-label">ACCURACY</div>
+        </div>
+      </div>
+
+      <div class="focus-hint">Click here or press any key to start typing</div>
+
+      <!-- Completion overlay -->
+      <div class="completion-overlay" id="completion">
+        <div class="completion-emoji">🎉</div>
+        <div class="completion-title">Hoàn thành!</div>
+        <div class="completion-sub">Bạn đã hoàn thành "{{ story.title }}"</div>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-val" id="final-wpm">0</div>
+            <div class="stat-label">WPM</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val accent" id="final-accuracy">100%</div>
+            <div class="stat-label">ACCURACY</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" id="final-lines">0</div>
+            <div class="stat-label">LINES</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;">
+          <button class="btn btn-primary" onclick="replayStory()">Chơi lại</button>
+          <a href="/stories" class="btn btn-outline">← Danh sách truyện</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script id="story-data" type="application/json">
+[
+  {% for line in lines %}
+  {
+    "order": {{ line.order }},
+    "text_en": "{{ line.text_en }}",
+    "text_vi": "{{ line.text_vi }}",
+    "words": {{ line.words_json | safe }}
+  }{% if not loop.last %},{% endif %}
+  {% endfor %}
+]
+</script>
+<script>
+  // ===== STORY DATA =====
+  const storyLines = JSON.parse(document.getElementById('story-data').textContent).map(line => ({
+    order: line.order,
+    textEn: line.text_en,
+    textVi: line.text_vi,
+    words: line.words,
+  }));
+
+  // ===== STATE =====
+  let currentLineIdx = 0;
+  let currentWordIdx = 0;
+  let currentCharIdx = 0;
+  let totalChars = 0;
+  let correctChars = 0;
+  let errorChars = 0;
+  let startTime = null;
+  let typedBuffer = '';
+
+  // ===== INIT =====
+  const typingArea = document.getElementById('typing-area');
+  const sentenceEl = document.getElementById('sentence-display');
+  const sentenceViEl = document.getElementById('sentence-vi');
+  const hintEl = document.getElementById('word-hint');
+  const hintEnEl = document.getElementById('hint-en');
+  const hintViEl = document.getElementById('hint-vi');
+  const wpmEl = document.getElementById('wpm');
+  const accEl = document.getElementById('accuracy');
+  const progressEl = document.getElementById('progress');
+  const completedEl = document.getElementById('completed-lines');
+  const completedLabelEl = document.getElementById('completed-label');
+
+  function renderLine() {
+    const line = storyLines[currentLineIdx];
+    if (!line) { showCompletion(); return; }
+
+    sentenceEl.innerHTML = '';
+    line.words.forEach((w, i) => {
+      const span = document.createElement('span');
+      span.className = 'word ' + (i === 0 ? 'active' : 'pending');
+      span.textContent = w.en;
+      span.dataset.idx = i;
+      span.style.cursor = 'pointer';
+      span.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (typeof speakWord === 'function') speakWord(w.en);
+      });
+      if (i === 0) {
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor-indicator';
+        span.prepend(cursor);
+      }
+      sentenceEl.appendChild(span);
+      if (i < line.words.length - 1) sentenceEl.appendChild(document.createTextNode(' '));
+    });
+
+    sentenceViEl.textContent = line.textVi;
+    currentWordIdx = 0;
+    currentCharIdx = 0;
+    typedBuffer = '';
+    updateWordHint();
+    progressEl.textContent = `${currentLineIdx + 1}/${storyLines.length}`;
+  }
+
+  function updateWordHint() {
+    const line = storyLines[currentLineIdx];
+    if (!line) return;
+    const word = line.words[currentWordIdx];
+    if (word) {
+      hintEnEl.textContent = word.en;
+      hintViEl.textContent = word.vi;
+      hintEl.classList.add('visible');
+    } else {
+      hintEl.classList.remove('visible');
+    }
+  }
+
+  function getWordSpans() {
+    return sentenceEl.querySelectorAll('.word');
+  }
+
+  // ===== TYPING HANDLER =====
+  typingArea.addEventListener('keydown', function(e) {
+    // Ignore modifiers
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'Tab' || e.key === 'Escape') return;
+
+    if (!startTime) startTime = Date.now();
+
+    const line = storyLines[currentLineIdx];
+    if (!line) return;
+
+    const currentWord = line.words[currentWordIdx];
+    if (!currentWord) return;
+
+    const targetText = currentWord.en;
+    const wordSpans = getWordSpans();
+    const activeSpan = wordSpans[currentWordIdx];
+
+    if (e.key === 'Backspace') {
+      e.preventDefault();
+      if (currentCharIdx > 0) {
+        currentCharIdx--;
+        typedBuffer = typedBuffer.slice(0, -1);
+        renderWordProgress(activeSpan, targetText);
+      }
+      return;
+    }
+
+    // Only accept printable chars
+    if (e.key.length !== 1) return;
+    e.preventDefault();
+
+    totalChars++;
+    const expectedChar = targetText[currentCharIdx];
+
+    if (e.key === expectedChar) {
+      correctChars++;
+      currentCharIdx++;
+      typedBuffer += e.key;
+
+      // Check if word is complete
+      if (currentCharIdx >= targetText.length) {
+        activeSpan.className = 'word completed';
+        activeSpan.textContent = targetText;
+
+        // Move to next word or next line
+        currentWordIdx++;
+        currentCharIdx = 0;
+        typedBuffer = '';
+
+        if (currentWordIdx >= line.words.length) {
+          // Sentence complete — need to handle space/punctuation
+          completeLine();
+        } else {
+          // If next char is a space, auto-advance
+          const wordSpansList = getWordSpans();
+          const nextSpan = wordSpansList[currentWordIdx];
+          nextSpan.className = 'word active';
+          // Add cursor to new active word
+          removeCursors();
+          const cursor = document.createElement('span');
+          cursor.className = 'cursor-indicator';
+          nextSpan.prepend(cursor);
+          updateWordHint();
+        }
+      } else {
+        renderWordProgress(activeSpan, targetText);
+      }
+    } else {
+      // Wrong key
+      errorChars++;
+      activeSpan.className = 'word error';
+      setTimeout(() => {
+        if (activeSpan.classList.contains('error')) {
+          activeSpan.className = 'word active';
+        }
+      }, 300);
+    }
+
+    updateStats();
+  });
+
+  // Handle space key — advance to next word
+  typingArea.addEventListener('keypress', function(e) {
+    // Space between words is handled automatically
+  });
+
+  function renderWordProgress(span, targetText) {
+    removeCursors();
+    const typed = typedBuffer;
+    const remaining = targetText.slice(typed.length);
+    span.innerHTML = '';
+
+    const typedSpan = document.createElement('span');
+    typedSpan.style.color = 'var(--accent)';
+    typedSpan.textContent = typed;
+    span.appendChild(typedSpan);
+
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor-indicator';
+    span.appendChild(cursor);
+
+    const restSpan = document.createElement('span');
+    restSpan.textContent = remaining;
+    span.appendChild(restSpan);
+  }
+
+  function removeCursors() {
+    sentenceEl.querySelectorAll('.cursor-indicator').forEach(c => c.remove());
+  }
+
+  function completeLine() {
+    const line = storyLines[currentLineIdx];
+
+    // Add to completed sidebar
+    completedLabelEl.style.display = 'block';
+    const div = document.createElement('div');
+    div.className = 'completed-line';
+    div.innerHTML = `
+      <div class="completed-en">
+        <span class="completed-num">${line.order}.</span>
+        ${line.textEn}
+      </div>
+      <div class="completed-vi">${line.textVi}</div>
+    `;
+    completedEl.appendChild(div);
+    div.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
+    // Next line
+    currentLineIdx++;
+    renderLine();
+  }
+
+  function updateStats() {
+    const elapsed = (Date.now() - (startTime || Date.now())) / 60000; // minutes
+    const wordsTyped = correctChars / 5; // standard: 5 chars = 1 word
+    const wpm = elapsed > 0 ? Math.round(wordsTyped / elapsed) : 0;
+    const acc = totalChars > 0 ? Math.round((correctChars / totalChars) * 100) : 100;
+
+    wpmEl.textContent = wpm;
+    accEl.textContent = acc + '%';
+  }
+
+  function showCompletion() {
+    const elapsed = (Date.now() - (startTime || Date.now())) / 60000;
+    const wordsTyped = correctChars / 5;
+    const wpm = elapsed > 0 ? Math.round(wordsTyped / elapsed) : 0;
+    const acc = totalChars > 0 ? Math.round((correctChars / totalChars) * 100) : 100;
+
+    document.getElementById('final-wpm').textContent = wpm;
+    document.getElementById('final-accuracy').textContent = acc + '%';
+    document.getElementById('final-lines').textContent = storyLines.length;
+    document.getElementById('completion').classList.add('show');
+  }
+
+  function replayStory() {
+    currentLineIdx = 0;
+    currentWordIdx = 0;
+    currentCharIdx = 0;
+    totalChars = 0;
+    correctChars = 0;
+    errorChars = 0;
+    startTime = null;
+    typedBuffer = '';
+    completedEl.innerHTML = '';
+    completedLabelEl.style.display = 'none';
+    document.getElementById('completion').classList.remove('show');
+    wpmEl.textContent = '0';
+    accEl.textContent = '100%';
+    renderLine();
+    typingArea.focus();
+  }
+
+  // ===== AUDIO ENGINE =====
+  let audioMuted = false;
+  let audioCtx = null;
+
+  function getAudioCtx() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
+  function toggleMute() {
+    audioMuted = !audioMuted;
+    const btn = document.getElementById('btn-mute');
+    btn.textContent = audioMuted ? '🔇' : '🔊';
+    btn.classList.toggle('muted', audioMuted);
+    if (audioMuted) window.speechSynthesis.cancel();
+  }
+
+  // --- Typing Sounds (Web Audio API oscillators) ---
+  function playTick() {
+    if (audioMuted) return;
+    const ctx = getAudioCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = 1200;
+    gain.gain.setValueAtTime(0.08, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.06);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(); osc.stop(ctx.currentTime + 0.06);
+  }
+
+  function playError() {
+    if (audioMuted) return;
+    const ctx = getAudioCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'square';
+    osc.frequency.value = 200;
+    gain.gain.setValueAtTime(0.12, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(); osc.stop(ctx.currentTime + 0.15);
+  }
+
+  function playWordComplete() {
+    if (audioMuted) return;
+    const ctx = getAudioCtx();
+    [800, 1000].forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.06, ctx.currentTime + i * 0.08);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.08 + 0.1);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(ctx.currentTime + i * 0.08);
+      osc.stop(ctx.currentTime + i * 0.08 + 0.1);
+    });
+  }
+
+  function playLineComplete() {
+    if (audioMuted) return;
+    const ctx = getAudioCtx();
+    [523, 659, 784].forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.1, ctx.currentTime + i * 0.1);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.1 + 0.2);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(ctx.currentTime + i * 0.1);
+      osc.stop(ctx.currentTime + i * 0.1 + 0.2);
+    });
+  }
+
+  function playStoryComplete() {
+    if (audioMuted) return;
+    const ctx = getAudioCtx();
+    [523, 659, 784, 1047].forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.15, ctx.currentTime + i * 0.15);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.15 + 0.4);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(ctx.currentTime + i * 0.15);
+      osc.stop(ctx.currentTime + i * 0.15 + 0.4);
+    });
+  }
+
+  // --- Text-to-Speech (via backend proxy for natural voice) ---
+  let currentAudio = null;
+
+  function speakText(text, lang = 'en') {
+    if (audioMuted) return;
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+    const btn = document.getElementById('speak-btn');
+    btn.classList.add('speaking');
+
+    // Use our backend proxy — bypasses CORS & blocking
+    const encoded = encodeURIComponent(text);
+    const ttsUrl = `/api/tts?text=${encoded}&lang=${lang}`;
+
+    const audio = new Audio(ttsUrl);
+    currentAudio = audio;
+    audio.volume = 0.9;
+    audio.playbackRate = 0.92;
+
+    audio.onended = () => {
+      btn.classList.remove('speaking');
+      currentAudio = null;
+    };
+    audio.onerror = () => {
+      btn.classList.remove('speaking');
+      currentAudio = null;
+      speakFallback(text, lang);
+    };
+    audio.play().catch(() => {
+      btn.classList.remove('speaking');
+      currentAudio = null;
+      speakFallback(text, lang);
+    });
+  }
+
+  // Fallback using Web Speech API
+  function speakFallback(text, lang) {
+    if (!window.speechSynthesis) return;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = lang === 'en' ? 'en-US' : lang;
+    utter.rate = 0.85;
+    const voices = window.speechSynthesis.getVoices();
+    const enVoice = voices.find(v => v.lang.startsWith('en') && v.name.includes('Google'))
+      || voices.find(v => v.lang.startsWith('en') && v.name.includes('Samantha'))
+      || voices.find(v => v.lang.startsWith('en-US'))
+      || voices.find(v => v.lang.startsWith('en'));
+    if (enVoice) utter.voice = enVoice;
+    const btn = document.getElementById('speak-btn');
+    btn.classList.add('speaking');
+    utter.onend = () => btn.classList.remove('speaking');
+    utter.onerror = () => btn.classList.remove('speaking');
+    window.speechSynthesis.speak(utter);
+  }
+
+  // Speak a single word (via backend proxy)
+  function speakWord(word) {
+    if (audioMuted) return;
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+    const encoded = encodeURIComponent(word);
+    const audio = new Audio(`/api/tts?text=${encoded}&lang=en`);
+    currentAudio = audio;
+    audio.volume = 0.9;
+    audio.onended = () => { currentAudio = null; };
+    audio.onerror = () => { currentAudio = null; };
+    audio.play().catch(() => { currentAudio = null; });
+  }
+
+  function speakCurrentSentence() {
+    const line = storyLines[currentLineIdx];
+    if (line) speakText(line.textEn);
+  }
+
+  // Preload voices for fallback
+  if (window.speechSynthesis) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+  }
+
+  // ===== HOOK AUDIO INTO EXISTING FUNCTIONS =====
+  // Override renderLine to auto-speak
+  const _origRenderLine = renderLine;
+  renderLine = function() {
+    _origRenderLine();
+    // Auto-speak the new sentence after a short delay
+    const line = storyLines[currentLineIdx];
+    if (line) setTimeout(() => speakText(line.textEn), 300);
+  };
+
+  // Override completeLine to play chime
+  const _origCompleteLine = completeLine;
+  completeLine = function() {
+    playLineComplete();
+    _origCompleteLine();
+  };
+
+  // Override showCompletion to play fanfare  
+  const _origShowCompletion = showCompletion;
+  showCompletion = function() {
+    playStoryComplete();
+    _origShowCompletion();
+  };
+
+  // Patch keydown handler — add sound to correct/error
+  const _origKeydown = typingArea.onkeydown;
+  typingArea.addEventListener('keydown', function audioKeyHandler(e) {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'Tab' || e.key === 'Escape' || e.key === 'Backspace') return;
+    if (e.key.length !== 1) return;
+
+    const line = storyLines[currentLineIdx];
+    if (!line) return;
+    const currentWord = line.words[currentWordIdx];
+    if (!currentWord) return;
+    const expectedChar = currentWord.en[currentCharIdx];
+
+    if (e.key === expectedChar) {
+      playTick();
+      // Check if this keystroke completes a word
+      if (currentCharIdx + 1 >= currentWord.en.length) {
+        setTimeout(() => playWordComplete(), 30);
+      }
+    } else {
+      playError();
+    }
+  }, true); // capture phase — runs before the main handler
+
+  // Auto-focus
+  typingArea.addEventListener('click', () => typingArea.focus());
+  window.addEventListener('load', () => {
+    renderLine();
+    typingArea.focus();
+  });
+</script>
+{% endblock %}
+

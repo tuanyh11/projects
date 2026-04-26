@@ -1,0 +1,4 @@
+module GTMSessionFetcherCore {
+umbrella "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/gtm-session-fetcher/Sources/Core/Public"
+export *
+}

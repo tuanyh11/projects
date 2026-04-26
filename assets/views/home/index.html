@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% block title %}LinguaRust — Học Ngôn Ngữ Cùng Rust{% endblock %}
+
+{% block extra_styles %}
+  .hero {
+    position: relative; overflow: hidden;
+    padding: 7rem 2rem 5rem;
+    text-align: center;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124,111,255,0.25), transparent),
+      radial-gradient(ellipse 40% 40% at 80% 60%, rgba(255,111,168,0.15), transparent),
+      radial-gradient(ellipse 40% 40% at 20% 70%, rgba(0,229,197,0.1), transparent);
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.4rem 1rem; border-radius: 999px;
+    background: rgba(124,111,255,0.15); border: 1px solid rgba(124,111,255,0.3);
+    font-size: 0.78rem; font-weight: 600; color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900; line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 .gradient {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 1.15rem; color: var(--text-muted);
+    max-width: 520px; margin: 0 auto 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .hero-stats {
+    display: flex; gap: 3rem; justify-content: center;
+    margin-top: 4rem; flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-value { font-size: 2rem; font-weight: 800; color: var(--accent); }
+  .stat-label { font-size: 0.85rem; color: var(--text-muted); }
+
+  .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-header h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .section-header p { color: var(--text-muted); }
+
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .lang-card {
+    position: relative; overflow: hidden;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 20px; padding: 2rem;
+    text-decoration: none; color: var(--text);
+    transition: all 0.3s; display: block;
+  }
+  .lang-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--card-color, var(--accent));
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .lang-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.15); box-shadow: 0 24px 48px rgba(0,0,0,0.4); }
+  .lang-card:hover::before { opacity: 1; }
+  .lang-flag { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+  .lang-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .lang-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.5; }
+  .lang-meta { display: flex; justify-content: space-between; align-items: center; }
+  .lang-stats { font-size: 0.8rem; color: var(--text-muted); }
+  .lang-stats strong { color: var(--text); }
+  .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+  .badge-beginner { background: rgba(0,229,197,0.15); color: var(--accent3); }
+  .badge-intermediate { background: rgba(124,111,255,0.15); color: var(--accent); }
+  .badge-advanced { background: rgba(255,111,168,0.15); color: var(--accent2); }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .feature-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.75rem;
+  }
+  .feature-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-bottom: 1rem;
+    background: rgba(124,111,255,0.1);
+  }
+  .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .feature-card p { font-size: 0.875rem; color: var(--text-muted); }
+
+  .cta-banner {
+    background: linear-gradient(135deg, rgba(124,111,255,0.2), rgba(255,111,168,0.15));
+    border: 1px solid rgba(124,111,255,0.3);
+    border-radius: 24px; padding: 4rem 2rem;
+    text-align: center; margin: 0 2rem;
+  }
+  .cta-banner h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.75rem; }
+  .cta-banner p { color: var(--text-muted); margin-bottom: 2rem; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .hero-emoji { font-size: 5rem; display: block; animation: float 4s ease-in-out infinite; margin-bottom: 1rem; }
+{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-emoji">🌍</span>
+      <div class="hero-tag">⚡ Powered by Rust — Nhanh nhất, Mượt nhất</div>
+      <h1>Học Ngôn Ngữ<br/><span class="gradient">Không Giới Hạn</span></h1>
+      <p>Nền tảng học ngôn ngữ hiện đại, khoa học và hiệu quả. Từ vựng, ngữ pháp, luyện đọc — tất cả trong một ứng dụng.</p>
+      <div class="hero-actions">
+        <a href="/languages" class="btn btn-primary">🚀 Khám phá ngay</a>
+        <a href="#features" class="btn btn-outline">Tìm hiểu thêm →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-value">50+</div><div class="stat-label">Ngôn ngữ</div></div>
+        <div class="stat"><div class="stat-value">1K+</div><div class="stat-label">Bài học</div></div>
+        <div class="stat"><div class="stat-value">10K+</div><div class="stat-label">Học viên</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="languages">
+    <div class="section-header">
+      <h2>Chọn Ngôn Ngữ Của Bạn</h2>
+      <p>Bắt đầu hành trình học ngôn ngữ với các khóa học được thiết kế bởi chuyên gia</p>
+    </div>
+    <div class="lang-grid">
+      {% for lang in languages %}
+        <a href="/languages/{{ lang.id }}" class="lang-card" style="--card-color: {{ lang.color }};">
+          <span class="lang-flag">{{ lang.flag }}</span>
+          <div class="lang-name">{{ lang.name }}</div>
+          <div class="lang-desc">{{ lang.description }}</div>
+          <div class="lang-meta">
+            <span class="badge badge-{{ lang.level | lower }}">{{ lang.level }}</span>
+            <div class="lang-stats">
+              <strong>{{ lang.total_lessons }}</strong> bài ·
+              <strong>{{ lang.total_students }}</strong> HV
+            </div>
+          </div>
+        </a>
+      {% else %}
+        <p style="grid-column:1/-1; text-align:center; padding:3rem; color:var(--text-muted);">
+          🌐 Đang tải dữ liệu...
+        </p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="section-header">
+      <h2>Tại Sao Chọn LinguaRust?</h2>
+      <p>Học thông minh hơn, không phải học nhiều hơn</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>Flashcard Thông Minh</h3>
+        <p>Hệ thống lặp lại ngắt quãng (SRS) giúp bạn ghi nhớ từ vựng lâu dài và hiệu quả.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Siêu Nhanh với Rust</h3>
+        <p>Backend viết bằng Rust đảm bảo tốc độ phản hồi cực nhanh, không lag không đơ.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Theo Dõi Tiến Độ</h3>
+        <p>Dashboard trực quan hiển thị tiến trình học tập hàng ngày, tuần và tháng của bạn.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎮</div>
+        <h3>Gamification</h3>
+        <p>Huy hiệu, điểm kinh nghiệm và bảng xếp hạng giúp việc học trở nên thú vị hơn.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎧</div>
+        <h3>Phát Âm Chuẩn</h3>
+        <p>Audio chất lượng cao từ người bản ngữ giúp bạn luyện phát âm chính xác.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Học Mọi Nơi</h3>
+        <p>Responsive hoàn hảo trên mọi thiết bị — máy tính, tablet, điện thoại.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 0 5rem;" id="about">
+    <div class="cta-banner">
+      <h2>Sẵn Sàng Bắt Đầu Chưa? 🚀</h2>
+      <p>Tham gia cùng hàng nghìn học viên đang học ngôn ngữ mới mỗi ngày</p>
+      <a href="/api/auth/register" class="btn btn-primary" style="font-size:1rem; padding: 0.875rem 2rem;">
+        Đăng ký miễn phí ngay →
+      </a>
+    </div>
+  </section>
+{% endblock %}

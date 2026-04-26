@@ -1,0 +1,520 @@
+{% extends "base.html" %}
+
+{% block title %}{{ prompt.title }} — LinguaRust{% endblock %}
+
+{% block extra_styles %}
+  body { overflow: hidden; }
+  nav { display: none; }
+  main { padding-top: 0; height: 100vh; overflow: hidden; }
+
+  .write-container {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    height: 100%;
+    background: var(--bg);
+  }
+
+  /* LEFT PANEL — prompt & tools */
+  .write-panel {
+    border-right: 1px solid var(--border);
+    overflow-y: auto; background: var(--bg2);
+    display: flex; flex-direction: column;
+  }
+  .panel-header {
+    position: sticky; top: 0; z-index: 2;
+    padding: 1rem 1.25rem;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .panel-header a {
+    color: var(--text-muted); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500;
+  }
+  .panel-header a:hover { color: var(--accent); }
+
+  .prompt-box {
+    padding: 1.25rem; flex: 1;
+  }
+  .prompt-type-badge {
+    display: inline-block; padding: 0.25rem 0.75rem;
+    border-radius: 999px; font-size: 0.7rem; font-weight: 700;
+    background: rgba(255,111,168,0.12); color: #ff6fa8;
+    margin-bottom: 0.75rem; letter-spacing: 0.05em;
+  }
+  .prompt-title-side {
+    font-size: 1.1rem; font-weight: 800;
+    margin-bottom: 0.75rem; line-height: 1.3;
+  }
+  .prompt-text {
+    font-size: 0.9rem; line-height: 1.7;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Tips accordion */
+  .tips-toggle {
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--accent); cursor: pointer;
+    margin-bottom: 0.5rem;
+    user-select: none;
+  }
+  .tips-toggle:hover { text-decoration: underline; }
+  .tips-content {
+    font-size: 0.82rem; color: var(--text-muted);
+    line-height: 1.6; display: none;
+    background: rgba(124,111,255,0.05);
+    border-radius: 10px; padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .tips-content.show { display: block; }
+  .tips-content ul { padding-left: 1.2rem; margin: 0.5rem 0; }
+  .tips-content li { margin-bottom: 0.3rem; }
+
+  /* Outline */
+  .outline-section {
+    border-top: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+  }
+  .outline-label {
+    font-size: 0.65rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-muted); margin-bottom: 0.5rem;
+  }
+  .outline-text {
+    font-size: 0.8rem; color: var(--text-muted);
+    line-height: 1.6; white-space: pre-line;
+  }
+
+  /* RIGHT — writing area */
+  .write-area {
+    display: flex; flex-direction: column;
+    height: 100%;
+  }
+
+  /* Top toolbar */
+  .write-toolbar {
+    display: flex; justify-content: space-between;
+    align-items: center; padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg2);
+    flex-shrink: 0;
+  }
+  .toolbar-left { display: flex; align-items: center; gap: 1.5rem; }
+  .toolbar-right { display: flex; align-items: center; gap: 1rem; }
+
+  .timer {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 1.1rem; font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+  }
+  .timer.warning { color: #ff6fa8; animation: pulse-timer 1s infinite; }
+  .timer-icon { font-size: 1.2rem; }
+
+  .word-count {
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--text-muted);
+  }
+  .word-count .count { color: var(--accent); font-size: 1.1rem; font-weight: 800; }
+  .word-count .target { font-size: 0.75rem; }
+  .word-count.low .count { color: #ff6fa8; }
+  .word-count.good .count { color: #00e5c5; }
+  .word-count.over .count { color: #ff6fa8; }
+
+  .toolbar-btn {
+    padding: 0.4rem 0.875rem; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--text-muted); font-size: 0.8rem; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .toolbar-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .toolbar-btn.primary {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+  .toolbar-btn.primary:hover { opacity: 0.9; }
+
+  /* Editor */
+  .editor-wrapper {
+    flex: 1; overflow-y: auto;
+    padding: 2rem 3rem;
+    display: flex; justify-content: center;
+  }
+  .editor {
+    width: 100%; max-width: 720px;
+    min-height: 100%;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.05rem; line-height: 1.9;
+    color: var(--text);
+    background: transparent;
+    border: none; outline: none;
+    resize: none;
+    caret-color: var(--accent);
+  }
+  .editor::placeholder {
+    color: rgba(255,255,255,0.2);
+    font-style: italic;
+  }
+
+  /* Status bar */
+  .status-bar {
+    display: flex; justify-content: space-between;
+    align-items: center; padding: 0.5rem 1.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg2); flex-shrink: 0;
+    font-size: 0.75rem; color: var(--text-muted);
+  }
+  .status-left { display: flex; gap: 1.5rem; }
+  .status-item { display: flex; align-items: center; gap: 0.3rem; }
+
+  /* Progress bar */
+  .progress-track {
+    width: 120px; height: 4px; border-radius: 2px;
+    background: var(--surface); overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; border-radius: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+  .progress-fill.good { background: #00e5c5; }
+  .progress-fill.over { background: #ff6fa8; }
+
+  /* Submit overlay */
+  .submit-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10,10,15,0.9);
+    backdrop-filter: blur(8px);
+    display: none; align-items: center; justify-content: center;
+    flex-direction: column; z-index: 100;
+  }
+  .submit-overlay.show { display: flex; }
+  .submit-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 20px; padding: 2.5rem; max-width: 480px;
+    text-align: center;
+  }
+  .submit-emoji { font-size: 3.5rem; margin-bottom: 1rem; }
+  .submit-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .submit-sub { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+  .submit-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin-bottom: 2rem;
+  }
+  .submit-stat-val { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+  .submit-stat-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .submit-btns { display: flex; gap: 1rem; justify-content: center; }
+
+  @keyframes pulse-timer {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  @media (max-width: 768px) {
+    .write-container { grid-template-columns: 1fr; }
+    .write-panel { display: none; }
+    .editor-wrapper { padding: 1.5rem; }
+  }
+{% endblock %}
+
+{% block content %}
+  <div class="write-container">
+    <!-- LEFT PANEL -->
+    <div class="write-panel">
+      <div class="panel-header">
+        <a href="/writing">← Đề bài</a>
+      </div>
+      <div class="prompt-box">
+        <div class="prompt-type-badge">{{ prompt.task_type }}</div>
+        <div class="prompt-title-side">{{ prompt.title }}</div>
+        <div class="prompt-text">{{ prompt.prompt }}</div>
+
+        <div class="tips-toggle" onclick="toggleTips()">💡 Gợi ý viết bài ▸</div>
+        <div class="tips-content" id="tips-content">{{ prompt.tips | safe }}</div>
+
+        {% if prompt.sample_outline %}
+        <div class="outline-section" style="border: none; padding: 0;">
+          <div class="outline-label">📋 Dàn ý gợi ý</div>
+          <div class="outline-text">{{ prompt.sample_outline }}</div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- RIGHT WRITING AREA -->
+    <div class="write-area">
+      <div class="write-toolbar">
+        <div class="toolbar-left">
+          <div class="timer" id="timer">
+            <span class="timer-icon">⏱</span>
+            <span id="timer-display">{{ prompt.time_limit_minutes }}:00</span>
+          </div>
+          <div class="word-count" id="word-count">
+            <span class="count" id="wc-count">0</span>
+            <span class="target">/ {{ prompt.min_words }}–{{ prompt.max_words }} từ</span>
+          </div>
+        </div>
+        <div class="toolbar-right">
+          <button class="toolbar-btn" onclick="toggleTimer()" id="timer-btn">▶ Bắt đầu</button>
+          <button class="toolbar-btn" onclick="resetEssay()">🗑 Xóa</button>
+          <button class="toolbar-btn primary" onclick="submitEssay()">✅ Nộp bài</button>
+        </div>
+      </div>
+
+      <div class="editor-wrapper">
+        <textarea class="editor" id="editor"
+          placeholder="Bắt đầu viết essay của bạn ở đây...
+
+Paragraph 1: Introduction
+- Hook the reader
+- State your position/thesis
+
+Paragraph 2-3: Body paragraphs
+- Topic sentence
+- Supporting evidence
+- Examples
+
+Paragraph 4: Conclusion
+- Summarize key points
+- Restate your position"
+          spellcheck="true"></textarea>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-left">
+          <div class="status-item">📝 <span id="para-count">0</span> đoạn</div>
+          <div class="status-item">📄 <span id="sentence-count">0</span> câu</div>
+          <div class="status-item">🔤 <span id="char-count">0</span> ký tự</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <span id="progress-label">0%</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit overlay -->
+  <div class="submit-overlay" id="submit-overlay">
+    <div class="submit-card">
+      <div class="submit-emoji">📝</div>
+      <div class="submit-title">Bài viết đã nộp!</div>
+      <div class="submit-sub">Đây là thống kê bài viết của bạn</div>
+      <div class="submit-stats">
+        <div>
+          <div class="submit-stat-val" id="final-words">0</div>
+          <div class="submit-stat-label">Số từ</div>
+        </div>
+        <div>
+          <div class="submit-stat-val" id="final-time">0:00</div>
+          <div class="submit-stat-label">Thời gian</div>
+        </div>
+        <div>
+          <div class="submit-stat-val" id="final-paras">0</div>
+          <div class="submit-stat-label">Đoạn văn</div>
+        </div>
+      </div>
+      <div class="submit-btns">
+        <button class="btn btn-primary" onclick="closeSubmit()">Viết lại</button>
+        <a href="/writing" class="btn btn-outline">← Danh sách đề</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  // ===== CONFIG =====
+  const TIME_LIMIT = {{ prompt.time_limit_minutes }} * 60; // seconds
+  const MIN_WORDS = {{ prompt.min_words }};
+  const MAX_WORDS = {{ prompt.max_words }};
+
+  // ===== STATE =====
+  let timeRemaining = TIME_LIMIT;
+  let timerInterval = null;
+  let timerRunning = false;
+  let startedAt = null;
+
+  // ===== ELEMENTS =====
+  const editor = document.getElementById('editor');
+  const timerDisplay = document.getElementById('timer-display');
+  const timerEl = document.getElementById('timer');
+  const timerBtn = document.getElementById('timer-btn');
+  const wcCount = document.getElementById('wc-count');
+  const wcEl = document.getElementById('word-count');
+  const paraCount = document.getElementById('para-count');
+  const sentenceCount = document.getElementById('sentence-count');
+  const charCount = document.getElementById('char-count');
+  const progressFill = document.getElementById('progress-fill');
+  const progressLabel = document.getElementById('progress-label');
+
+  // ===== TIMER =====
+  function toggleTimer() {
+    if (timerRunning) {
+      pauseTimer();
+    } else {
+      startTimer();
+    }
+  }
+
+  function startTimer() {
+    if (!startedAt) startedAt = Date.now();
+    timerRunning = true;
+    timerBtn.textContent = '⏸ Tạm dừng';
+    editor.focus();
+
+    timerInterval = setInterval(() => {
+      timeRemaining--;
+      updateTimerDisplay();
+
+      if (timeRemaining <= 0) {
+        clearInterval(timerInterval);
+        timerRunning = false;
+        timerBtn.textContent = '⏰ Hết giờ!';
+        timerBtn.disabled = true;
+        timerEl.classList.add('warning');
+        // Auto-submit
+        submitEssay();
+      } else if (timeRemaining <= 300) {
+        // Last 5 minutes — warning
+        timerEl.classList.add('warning');
+      }
+    }, 1000);
+  }
+
+  function pauseTimer() {
+    clearInterval(timerInterval);
+    timerRunning = false;
+    timerBtn.textContent = '▶ Tiếp tục';
+  }
+
+  function updateTimerDisplay() {
+    const m = Math.floor(timeRemaining / 60);
+    const s = timeRemaining % 60;
+    timerDisplay.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+  }
+
+  // ===== WORD COUNT & STATS =====
+  function updateStats() {
+    const text = editor.value.trim();
+
+    // Word count
+    const words = text ? text.split(/\s+/).filter(w => w.length > 0).length : 0;
+    wcCount.textContent = words;
+
+    // Word count status
+    wcEl.classList.remove('low', 'good', 'over');
+    if (words < MIN_WORDS) wcEl.classList.add('low');
+    else if (words > MAX_WORDS) wcEl.classList.add('over');
+    else wcEl.classList.add('good');
+
+    // Progress bar
+    const pct = Math.min(100, Math.round((words / MIN_WORDS) * 100));
+    progressFill.style.width = pct + '%';
+    progressLabel.textContent = pct + '%';
+    progressFill.classList.remove('good', 'over');
+    if (words >= MIN_WORDS && words <= MAX_WORDS) progressFill.classList.add('good');
+    else if (words > MAX_WORDS) progressFill.classList.add('over');
+
+    // Paragraph count
+    const paras = text ? text.split(/\n\s*\n/).filter(p => p.trim().length > 0).length : 0;
+    paraCount.textContent = paras;
+
+    // Sentence count
+    const sentences = text ? text.split(/[.!?]+/).filter(s => s.trim().length > 0).length : 0;
+    sentenceCount.textContent = sentences;
+
+    // Character count
+    charCount.textContent = text.length;
+
+    // Auto-save to localStorage
+    localStorage.setItem('essay_draft_{{ prompt.id }}', editor.value);
+  }
+
+  // Debounced stats update
+  let statsTimeout;
+  editor.addEventListener('input', () => {
+    clearTimeout(statsTimeout);
+    statsTimeout = setTimeout(updateStats, 150);
+
+    // Auto-start timer on first keystroke
+    if (!timerRunning && !startedAt) {
+      startTimer();
+    }
+  });
+
+  // ===== TIPS TOGGLE =====
+  function toggleTips() {
+    document.getElementById('tips-content').classList.toggle('show');
+  }
+
+  // ===== SUBMIT =====
+  function submitEssay() {
+    pauseTimer();
+
+    const text = editor.value.trim();
+    const words = text ? text.split(/\s+/).filter(w => w.length > 0).length : 0;
+    const paras = text ? text.split(/\n\s*\n/).filter(p => p.trim().length > 0).length : 0;
+
+    const elapsed = startedAt ? Math.floor((Date.now() - startedAt) / 1000) : 0;
+    const em = Math.floor(elapsed / 60);
+    const es = elapsed % 60;
+
+    document.getElementById('final-words').textContent = words;
+    document.getElementById('final-time').textContent = `${em}:${es.toString().padStart(2, '0')}`;
+    document.getElementById('final-paras').textContent = paras;
+
+    document.getElementById('submit-overlay').classList.add('show');
+  }
+
+  function closeSubmit() {
+    document.getElementById('submit-overlay').classList.remove('show');
+  }
+
+  // ===== RESET =====
+  function resetEssay() {
+    if (!confirm('Bạn có chắc muốn xóa toàn bộ bài viết?')) return;
+    editor.value = '';
+    timeRemaining = TIME_LIMIT;
+    timerRunning = false;
+    startedAt = null;
+    clearInterval(timerInterval);
+    timerBtn.textContent = '▶ Bắt đầu';
+    timerBtn.disabled = false;
+    timerEl.classList.remove('warning');
+    updateTimerDisplay();
+    updateStats();
+    localStorage.removeItem('essay_draft_{{ prompt.id }}');
+    editor.focus();
+  }
+
+  // ===== KEYBOARD SHORTCUTS =====
+  document.addEventListener('keydown', (e) => {
+    // Ctrl/Cmd + S → Submit
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      e.preventDefault();
+      submitEssay();
+    }
+    // Ctrl/Cmd + Enter → Start/pause timer
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault();
+      toggleTimer();
+    }
+  });
+
+  // ===== INIT =====
+  // Restore draft
+  const saved = localStorage.getItem('essay_draft_{{ prompt.id }}');
+  if (saved) {
+    editor.value = saved;
+  }
+  updateStats();
+  updateTimerDisplay();
+  editor.focus();
+</script>
+{% endblock %}

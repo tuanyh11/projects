@@ -1,0 +1,189 @@
+{
+  "" : {
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-primary.dia",
+    "emit-module-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-primary-emit-module.dia",
+    "pch" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-primary.swiftdeps"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Models.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/Models.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/Models.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/Models.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/Models.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/Models.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/Models.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/Models.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/Models~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/APIService~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/LocalizationService.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LocalizationService.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LocalizationService.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LocalizationService.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LocalizationService.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LocalizationService.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LocalizationService.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LocalizationService.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LocalizationService~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Theme/AppTheme.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AppTheme~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/HomeView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/HomeView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/HomeView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/HomeView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/HomeView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/HomeView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/HomeView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/HomeView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/HomeView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguageHubView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguageHubView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguageHubView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguageHubView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguageHubView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguageHubView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguageHubView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguageHubView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguageHubView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguagesView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguagesView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguagesView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguagesView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguagesView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguagesView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguagesView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguagesView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LanguagesView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LoginView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LoginView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LoginView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LoginView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LoginView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LoginView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LoginView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LoginView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LoginView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/SettingsView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/SettingsView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/SettingsView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/SettingsView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/SettingsView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/SettingsView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoriesView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoriesView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoriesView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoriesView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoriesView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoriesView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoriesView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoriesView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryReaderView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryReaderView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryReaderView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryReaderView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryReaderView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryReaderView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryReaderView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryReaderView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryReaderView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryTypingView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryTypingView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryTypingView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryTypingView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryTypingView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryTypingView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryTypingView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/StoryTypingView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabLessonsView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabLessonsView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabLessonsView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabLessonsView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabLessonsView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabLessonsView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabLessonsView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabLessonsView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabLessonsView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabTypingView.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabTypingView.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabTypingView.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabTypingView.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabTypingView.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabTypingView.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabTypingView.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/VocabTypingView~partial.swiftmodule"
+  },
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

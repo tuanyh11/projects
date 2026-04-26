@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: language_app_db
+    environment:
+      POSTGRES_DB: language_app
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: app_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  postgrest:
+    image: postgrest/postgrest:latest
+    container_name: language_app_api
+    ports:
+      - "3000:3000"
+    environment:
+      PGRST_DB_URI: postgres://app_user:app_password@db:5432/language_app
+      PGRST_DB_SCHEMA: public
+      PGRST_DB_ANON_ROLE: web_anon
+      PGRST_JWT_SECRET: "my-super-secret-jwt-token-with-at-least-32-characters"
+      PGTZ: UTC
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  tts_api:
+    image: ghcr.io/remsky/kokoro-fastapi-cpu
+    container_name: kokoro_tts_api
+    ports:
+      - "8880:8880"
+    restart: unless-stopped
+
+volumes:
+  pgdata:

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}{{ language.name }} — LinguaRust{% endblock %}
+
+{% block extra_styles %}
+  .lang-hero {
+    padding: 5rem 2rem 4rem;
+    background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(124,111,255,0.2), transparent);
+    border-bottom: 1px solid var(--border);
+  }
+  .lang-hero-inner {
+    max-width: 900px; margin: 0 auto;
+    display: flex; align-items: center; gap: 2.5rem;
+  }
+  .lang-big-flag { font-size: 6rem; flex-shrink: 0; }
+  .lang-info h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; }
+  .lang-info p { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.25rem; }
+  .lang-chips { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .chip {
+    display: flex; align-items: center; gap: 0.4rem;
+    padding: 0.35rem 0.875rem; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--border);
+    font-size: 0.8rem; color: var(--text-muted);
+  }
+
+  .section { padding: 3rem 2rem 5rem; max-width: 900px; margin: 0 auto; }
+  .section-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; }
+
+  .lesson-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .lesson-item {
+    display: flex; align-items: center; gap: 1.25rem;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem 1.5rem;
+    text-decoration: none; color: var(--text);
+    transition: all 0.2s;
+  }
+  .lesson-item:hover {
+    border-color: var(--accent);
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(124,111,255,0.15);
+  }
+  .lesson-num {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(124,111,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem; color: var(--accent);
+    flex-shrink: 0;
+  }
+  .lesson-body { flex: 1; }
+  .lesson-title { font-weight: 600; margin-bottom: 0.2rem; }
+  .lesson-meta { font-size: 0.8rem; color: var(--text-muted); }
+  .lesson-arrow { color: var(--text-muted); font-size: 1.2rem; }
+  .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600; margin-right: 0.5rem; }
+  .badge-beginner { background: rgba(0,229,197,0.15); color: #00e5c5; }
+  .badge-intermediate { background: rgba(124,111,255,0.15); color: #7c6fff; }
+  .badge-advanced { background: rgba(255,111,168,0.15); color: #ff6fa8; }
+
+  .no-lessons {
+    text-align: center; padding: 3rem;
+    color: var(--text-muted); background: var(--bg3);
+    border: 1px dashed var(--border); border-radius: 16px;
+  }
+  .breadcrumb {
+    padding: 1rem 2rem; font-size: 0.85rem; color: var(--text-muted);
+    max-width: 900px; margin: 0 auto;
+  }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+{% endblock %}
+
+{% block content %}
+  <div style="padding-top: 1rem;">
+    <div class="breadcrumb">
+      <a href="/">Trang chủ</a> / <a href="/languages">Ngôn ngữ</a> / {{ language.name }}
+    </div>
+
+    <div class="lang-hero">
+      <div class="lang-hero-inner">
+        <div class="lang-big-flag">{{ language.flag }}</div>
+        <div class="lang-info">
+          <h1>{{ language.name }}</h1>
+          <p>{{ language.description }}</p>
+          <div class="lang-chips">
+            <div class="chip">📚 {{ language.total_lessons }} bài học</div>
+            <div class="chip">👥 {{ language.total_students }} học viên</div>
+            <div class="chip">
+              <span class="badge badge-{{ language.level | lower }}">{{ language.level }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">📋 Danh sách bài học</div>
+      <div class="lesson-list">
+        {% for lesson in lessons %}
+          <a href="/lessons/{{ lesson.id }}" class="lesson-item">
+            <div class="lesson-num">{{ lesson.order }}</div>
+            <div class="lesson-body">
+              <div class="lesson-title">{{ lesson.title }}</div>
+              <div class="lesson-meta">
+                <span class="badge badge-{{ lesson.level | lower }}">{{ lesson.level }}</span>
+                ⏱ {{ lesson.duration }} phút
+              </div>
+            </div>
+            <div class="lesson-arrow">→</div>
+          </a>
+        {% else %}
+          <div class="no-lessons">
+            <div style="font-size:2.5rem;margin-bottom:1rem;">📭</div>
+            <p>Chưa có bài học nào. Hãy quay lại sau!</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

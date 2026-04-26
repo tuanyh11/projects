@@ -1,0 +1,47 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "LinguaApp-arm64-apple-macosx-debug.module": ["<LinguaApp-arm64-apple-macosx-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<LinguaApp-arm64-apple-macosx-debug.module>"]
+  "test": ["<LinguaApp-arm64-apple-macosx-debug.module>"]
+default: "main"
+nodes:
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Models.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Theme/AppTheme.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/HomeView.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguagesView.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/WritingView.swift"]
+    outputs: ["/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/sources"]
+    description: "Write auxiliary file /Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/sources"
+
+  "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<LinguaApp-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/LinguaApp.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/Models.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/APIService.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/AppTheme.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/HomeView.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/LanguagesView.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/StoriesView.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/WritingView.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/Modules/LinguaApp.swiftmodule"]
+    outputs: ["<LinguaApp-arm64-apple-macosx-debug.module>"]
+
+  "C.LinguaApp-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Models.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Theme/AppTheme.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/HomeView.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguagesView.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/WritingView.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/sources"]
+    outputs: ["/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/LinguaApp.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/Models.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/APIService.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/AppTheme.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/HomeView.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/LanguagesView.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/StoriesView.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/WritingView.swift.o","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/Modules/LinguaApp.swiftmodule"]
+    description: "Compiling Swift Module 'LinguaApp' (8 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","LinguaApp","-emit-dependencies","-emit-module","-emit-module-path","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/Modules/LinguaApp.swiftmodule","-output-file-map","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/sources","-I","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/.build/arm64-apple-macosx/debug/LinguaApp.build/include/LinguaApp-Swift.h","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk","-target","arm64-apple-ios17.0-simulator","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","linguaapp"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/Package.swift","/Users/tuan/Learn/rust/language-app/ios/LinguaApp/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

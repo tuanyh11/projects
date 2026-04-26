@@ -1,0 +1,4 @@
+module AppAuthCore {
+umbrella "/Users/tuan/Learn/rust/language-app/ios/LinguaApp/build/SourcePackages/checkouts/AppAuth-iOS/Sources/AppAuthCore"
+export *
+}
