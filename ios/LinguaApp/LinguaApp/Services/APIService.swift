@@ -82,6 +82,43 @@ final class APIService: Sendable {
         let accuracy: Int
     }
 
+    // MARK: - Progress Tracking
+    func getUserStats(userId: Int) async throws -> UserStats {
+        let body = ["p_user_id": userId]
+        return try await post("/rpc/get_user_stats", body: body)
+    }
+
+    func recordActivity(userId: Int, type: String, accuracy: Int = 0, wpm: Int = 0, wordsTyped: Int = 0, minutes: Int = 0) async throws {
+        let body: [String: Any] = [
+            "p_user_id": userId,
+            "p_type": type,
+            "p_accuracy": accuracy,
+            "p_wpm": wpm,
+            "p_words_typed": wordsTyped,
+            "p_minutes": minutes
+        ]
+        // Use a raw post since we have mixed types
+        guard let url = URL(string: baseURL + "/rpc/record_activity") else {
+            throw URLError(.badURL)
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        if let token = await AuthService.shared.token {
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        let (_, response) = try await URLSession.shared.data(for: request)
+        guard let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) else {
+            throw URLError(.badServerResponse)
+        }
+    }
+
+    func fetchAchievements(userId: Int) async throws -> [Achievement] {
+        try await get("/achievements?user_id=eq.\(userId)&order=unlocked_at.desc")
+    }
+
     // MARK: - Generic GET
     private func get<T: Decodable & Sendable>(_ path: String) async throws -> T {
         guard let url = URL(string: baseURL + path) else {

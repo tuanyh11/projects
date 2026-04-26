@@ -3833,3 +3833,205 @@ Unable to lookup in current state: Shutdown
 An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
 Unable to lookup in current state: Shutdown
 🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:48:38.611 xcodebuild[69179:1138809] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:49:05.427 xcodebuild[69298:1139690] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:49:54.765 xcodebuild[69448:1141005] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:50:06.495 xcodebuild[69531:1141612] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ LinguaApp.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Theme/AppTheme.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/HomeView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguageHubView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguagesView.swift -primary-file /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/LocalizationService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LoginView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Models.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/RegisterView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/SettingsView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryReaderView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabLessonsView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/GeneratedAssetSymbols.swift -emit-dependencies-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.d -emit-const-values-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftconstvalues -emit-reference-dependencies-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftdeps -serialize-diagnostics-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.dia -target arm64-apple-ios17.0-simulator -module-can-import-version DeveloperToolsSupport 23.40.26 23.40.26 -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-dependencies-1.json -debug-module-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftmodule -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -I /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -F /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -swift-version 5 -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/tuan/Learn/rust/language-app/ios/LinguaApp -enable-anonymous-context-mangled-names -file-compilation-dir /Users/tuan/Learn/rust/language-app/ios/LinguaApp -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-generated-files.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-own-target-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-project-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name LinguaApp -frontend-parseable-output -disable-clang-spi -clang-target arm64-apple-ios26.4-simulator -target-sdk-version 26.4 -target-sdk-name iphonesimulator26.4 -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -o /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.o -index-unit-output-path /LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.o -index-store-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Index.noindex/DataStore -index-system-modules
+
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift:33:13: error: cannot find 'ProgressView_Custom' in scope
+            ProgressView_Custom()
+            ^~~~~~~~~~~~~~~~~~~
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:50:25.317 xcodebuild[69634:1142287] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ LinguaApp.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+SwiftEmitModule normal arm64 Emitting\ module\ for\ LinguaApp (in target 'LinguaApp' from project 'LinguaApp')
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftCompile normal arm64 Compiling\ StoryTypingView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift (in target 'LinguaApp' from project 'LinguaApp')
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:50:36.069 xcodebuild[69700:1142779] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ LinguaApp.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftCompile normal arm64 Compiling\ StoryTypingView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift (in target 'LinguaApp' from project 'LinguaApp')
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:50:52.090 xcodebuild[69771:1143305] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ LinguaApp.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift:33:13: error: cannot find 'ProgressView_Custom' in scope
+            ProgressView_Custom()
+            ^~~~~~~~~~~~~~~~~~~
+
+SwiftCompile normal arm64 Compiling\ StoryTypingView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift (in target 'LinguaApp' from project 'LinguaApp')
+
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:52:59.265 xcodebuild[70780:1147631] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ ReadingQuizView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/ReadingQuizView.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/ReadingQuizView.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling GeneratedAssetSymbols.swift (in target 'LinguaApp' from project 'LinguaApp')
+
+SwiftDriverJobDiscovery normal arm64 Compiling TranslationService.swift (in target 'LinguaApp' from project 'LinguaApp')
+
+SwiftDriverJobDiscovery normal arm64 Compiling SpeechService.swift (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:53:22.426 xcodebuild[70929:1148571] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!

@@ -289,6 +289,15 @@ struct VocabTypingView: View {
                     wpm: 0,  // Vocab doesn't strictly use WPM
                     accuracy: accuracy
                 )
+                // Ghi nhận hoạt động vào bảng daily_activity
+                try? await APIService.shared.recordActivity(
+                    userId: userId,
+                    type: "lesson",
+                    accuracy: accuracy,
+                    wpm: 0,
+                    wordsTyped: totalCharactersTyped / 5,
+                    minutes: Int(Date().timeIntervalSince(startTime ?? Date()) / 60)
+                )
                 print("✅ Vocab progress saved!")
             } catch {
                 print("❌ Failed to save vocab progress: \(error)")

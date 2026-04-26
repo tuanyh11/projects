@@ -30,17 +30,23 @@ struct ContentView: View {
                 }
                 .tag(0)
 
+            ProgressView_Custom()
+                .tabItem {
+                    Label("Tiến độ", systemImage: "chart.bar.fill")
+                }
+                .tag(1)
+
             LanguagesView()
                 .tabItem {
                     Label("tab-languages".localized(), systemImage: "globe")
                 }
-                .tag(1)
+                .tag(2)
 
             SettingsView()
                 .tabItem {
                     Label("tab-settings".localized(), systemImage: "gearshape")
                 }
-                .tag(2)
+                .tag(3)
         }
         .tint(Color.appAccent)
     }

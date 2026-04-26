@@ -274,6 +274,15 @@ struct StoryTypingView: View {
                     wpm: wpm,
                     accuracy: accuracy
                 )
+                // Ghi nhận hoạt động vào bảng daily_activity
+                try? await APIService.shared.recordActivity(
+                    userId: userId,
+                    type: "story",
+                    accuracy: accuracy,
+                    wpm: wpm,
+                    wordsTyped: totalCharactersTyped / 5,
+                    minutes: Int(Date().timeIntervalSince(startTime ?? Date()) / 60)
+                )
                 print("✅ Story progress saved!")
             } catch {
                 print("❌ Failed to save story progress: \(error)")

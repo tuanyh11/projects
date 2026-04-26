@@ -139,3 +139,60 @@ struct ReadingQuestion: Codable, Identifiable, Sendable, Hashable {
     let options: [String]
     let correctOptionIndex: Int
 }
+
+// MARK: - User Stats (from get_user_stats RPC)
+struct UserStats: Codable, Sendable {
+    let totalLessons: Int
+    let totalStories: Int
+    let totalQuizzes: Int
+    let totalWordsTyped: Int
+    let totalMinutes: Int
+    let avgAccuracy: Int
+    let avgWpm: Int
+    let currentStreak: Int
+    let longestStreak: Int
+    let weeklyActivity: [WeeklyActivity]?
+}
+
+// MARK: - Weekly Activity
+struct WeeklyActivity: Codable, Sendable, Identifiable {
+    let d: String           // Date string
+    let activities: Int
+    let minutes: Int
+    let words: Int
+    
+    var id: String { d }
+    
+    var dayLabel: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        guard let date = formatter.date(from: d) else { return "?" }
+        formatter.dateFormat = "EEE"
+        formatter.locale = Locale(identifier: "vi_VN")
+        return formatter.string(from: date)
+    }
+}
+
+// MARK: - Daily Activity
+struct DailyActivity: Codable, Identifiable, Sendable {
+    let id: Int
+    let activityDate: String
+    let lessonsCompleted: Int
+    let storiesCompleted: Int
+    let quizzesCompleted: Int
+    let totalMinutes: Int
+    let wordsTyped: Int
+    let avgAccuracy: Int
+    let avgWpm: Int
+}
+
+// MARK: - Achievement
+struct Achievement: Codable, Identifiable, Sendable {
+    let id: Int
+    let userId: Int
+    let achievementType: String
+    let title: String
+    let description: String?
+    let icon: String?
+    let unlockedAt: String?
+}

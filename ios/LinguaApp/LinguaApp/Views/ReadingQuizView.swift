@@ -36,7 +36,7 @@ struct ReadingQuizView: View {
                         Spacer()
                         Text("Điểm: \(score)")
                             .font(.subheadline.weight(.bold))
-                            .foregroundStyle(.appAccent)
+                            .foregroundStyle(Color.appAccent)
                     }
                     .padding()
                     
@@ -54,7 +54,7 @@ struct ReadingQuizView: View {
                                 Button(action: { showTranslation.toggle() }) {
                                     Label(showTranslation ? "Hiện nguyên bản" : "Xem bản dịch", systemImage: "character.book.closed")
                                         .font(.caption.weight(.medium))
-                                        .foregroundStyle(.appAccent)
+                                        .foregroundStyle(Color.appAccent)
                                 }
                                 .padding(.top, 4)
                             }
@@ -131,6 +131,20 @@ struct ReadingQuizView: View {
                 feedbackType = nil
             } else {
                 isFinished = true
+                // Ghi nhận hoạt động quiz
+                if let userId = AuthService.shared.currentUser?.id {
+                    let quizAccuracy = Int(Double(score) / Double(max(1, questions.count)) * 100)
+                    Task {
+                        try? await APIService.shared.recordActivity(
+                            userId: userId,
+                            type: "quiz",
+                            accuracy: quizAccuracy,
+                            wpm: 0,
+                            wordsTyped: 0,
+                            minutes: 0
+                        )
+                    }
+                }
             }
         }
     }
