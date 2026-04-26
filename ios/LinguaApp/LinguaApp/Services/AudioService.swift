@@ -55,8 +55,8 @@ final class AudioService: ObservableObject {
     }
     
     private func fetchAndPlayEdgeTTS(text: String, language: String = "en") async throws {
-        // API URL của server Python Edge TTS (Chạy local trên cổng 8880 hoặc thay bằng link Render sau khi deploy)
-        let baseUrlString = "http://localhost:8880/v1/audio/speech"
+        // API URL của server Python Edge TTS đã deploy lên Render
+        let baseUrlString = "https://lingua-tts.onrender.com/v1/audio/speech"
         
         guard var components = URLComponents(string: baseUrlString) else {
             throw URLError(.badURL)
