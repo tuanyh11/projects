@@ -2059,3 +2059,1777 @@ Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezr
 ✅ Build thành công! Đang cài đặt lên Simulator...
 com.example.LinguaApp: 25254
 🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:36:54.422 xcodebuild[29454:536786] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 29558
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:37:16.103 xcodebuild[29562:538214] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 29604
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:46:59.600 xcodebuild[30092:548392] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app: replacing existing signature
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 30150
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:48:41.300 xcodebuild[30211:550995] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 30271
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:54:03.664 xcodebuild[30454:556162] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 30509
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:54:13.887 xcodebuild[30514:556941] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift:115:5: error: attribute 'private' can only be used in a non-local scope
+    private func loadStories() async {
+    ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift:229:1: error: expected '}' in struct
+
+^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift:3:26: note: to match this opening '{'
+struct StoriesView: View {
+                         ^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift:115:5: error: Attribute 'private' can only be used in a non-local scope
+    private func loadStories() async {
+    ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift:229:1: error: Expected '}' in struct
+
+^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift:3:26: note: To match this opening '{'
+struct StoriesView: View {
+                         ^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 30539
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:54:20.745 xcodebuild[30540:557303] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ StoriesView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift:113:9: error: closure containing control flow statement cannot be used with result builder 'ViewBuilder'
+        do {
+        ^
+SwiftUI.ViewBuilder:2:30: note: struct 'ViewBuilder' declared here
+@resultBuilder public struct ViewBuilder {
+                             ^
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 30592
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:54:40.331 xcodebuild[30599:558100] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 30653
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:54:50.599 xcodebuild[30654:558791] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 30678
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 14:54:58.084 xcodebuild[30679:559185] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 30708
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:04:45.197 xcodebuild[31222:569081] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift:126:1: error: expected '}' in class
+
+^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift:5:44: note: to match this opening '{'
+final class AudioService: ObservableObject {
+                                           ^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LinguaApp -Onone @/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -F /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-generated-files.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-own-target-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-project-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-Swift.h -working-directory /Users/tuan/Learn/rust/language-app/ios/LinguaApp -experimental-emit-module-separately -disable-cmo
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift:126:1: error: Expected '}' in class
+
+^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift:5:44: note: To match this opening '{'
+final class AudioService: ObservableObject {
+                                           ^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 31287
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:05:05.543 xcodebuild[31294:570107] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 31352
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:05:22.460 xcodebuild[31359:570869] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: expected declaration
+        if newValue.count > oldValue.count {
+        ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: in declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: extraneous '}' at top level
+}
+^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: Expected declaration
+        if newValue.count > oldValue.count {
+        ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: In declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: Extraneous '}' at top level
+}
+^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 31394
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:05:30.907 xcodebuild[31400:571423] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: expected declaration
+        if newValue.count > oldValue.count {
+        ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: in declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: extraneous '}' at top level
+}
+^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: Expected declaration
+        if newValue.count > oldValue.count {
+        ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: In declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: Extraneous '}' at top level
+}
+^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 31425
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:06:29.192 xcodebuild[31481:573064] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: expected declaration
+        if newValue.count > oldValue.count {
+        ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: in declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: extraneous '}' at top level
+}
+^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: Expected declaration
+        if newValue.count > oldValue.count {
+        ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: In declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: Extraneous '}' at top level
+}
+^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 31534
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:08:17.761 xcodebuild[31603:575180] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: expected declaration
+        if newValue.count > oldValue.count {
+        ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: in declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: extraneous '}' at top level
+}
+^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: Expected declaration
+        if newValue.count > oldValue.count {
+        ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: In declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: Extraneous '}' at top level
+}
+^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 31675
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:08:30.786 xcodebuild[31692:576208] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: expected declaration
+        if newValue.count > oldValue.count {
+        ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: in declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: extraneous '}' at top level
+}
+^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: Expected declaration
+        if newValue.count > oldValue.count {
+        ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: In declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: Extraneous '}' at top level
+}
+^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 31717
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:08:39.091 xcodebuild[31722:576658] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: expected declaration
+        if newValue.count > oldValue.count {
+        ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: in declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: extraneous '}' at top level
+}
+^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:259:9: error: Expected declaration
+        if newValue.count > oldValue.count {
+        ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:3:8: note: In declaration of 'VocabTypingView'
+struct VocabTypingView: View {
+       ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift:299:1: error: Extraneous '}' at top level
+}
+^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 31762
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:09:17.303 xcodebuild[31824:578210] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 31915
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:10:52.080 xcodebuild[31974:580852] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift:133:1: error: expected '}' in class
+
+^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift:5:44: note: to match this opening '{'
+final class AudioService: ObservableObject {
+                                           ^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LinguaApp -Onone @/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -F /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-generated-files.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-own-target-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-project-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-Swift.h -working-directory /Users/tuan/Learn/rust/language-app/ios/LinguaApp -experimental-emit-module-separately -disable-cmo
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift:133:1: error: Expected '}' in class
+
+^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift:5:44: note: To match this opening '{'
+final class AudioService: ObservableObject {
+                                           ^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 32013
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:11:03.411 xcodebuild[32018:581617] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 32066
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:13:51.597 xcodebuild[32194:584808] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 32270
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:14:03.007 xcodebuild[32271:585806] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 32322
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:17:18.885 xcodebuild[32527:589566] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 32593
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:19:31.052 xcodebuild[32867:593287] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app: replacing existing signature
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 32925
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:21:45.321 xcodebuild[32998:595907] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33052
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:21:59.829 xcodebuild[33055:596710] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33116
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:22:12.296 xcodebuild[33117:597417] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33170
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:22:22.942 xcodebuild[33171:598194] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33230
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:23:55.057 xcodebuild[33308:600247] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+ProcessInfoPlistFile /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app/Info.plist /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Info.plist (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-infoPlistUtility /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/assetcatalog_generated_info.plist -o /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app/Info.plist
+
+CopySwiftLibs /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app/LinguaApp.debug.dylib --scan-folder /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app/Frameworks --scan-folder /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app/PlugIns --scan-folder /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app/SystemExtensions --scan-folder /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33369
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:26:10.909 xcodebuild[33544:603902] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33616
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:26:23.598 xcodebuild[33617:604925] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:424:14: error: consecutive declarations on a line must be separated by ';'
+            } else {
+             ^
+             ;
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:424:15: error: expected declaration
+            } else {
+              ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:407:8: note: in declaration of 'InteractiveWordView'
+struct InteractiveWordView: View {
+       ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:433:9: error: statements are not allowed at the top level
+        return
+        ^
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:437:5: error: extraneous '}' at top level
+    }
+    ^
+    
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:438:1: error: extraneous '}' at top level
+}
+^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+        return
+        ^ (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:437:5: error: Extraneous '}' at top level
+    }
+    ^
+     (in target 'LinguaApp' from project 'LinguaApp')
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:438:1: error: Extraneous '}' at top level
+}
+^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33658
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:27:13.283 xcodebuild[33710:606559] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33785
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:27:26.838 xcodebuild[33790:607690] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app: replacing existing signature
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33824
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:28:30.886 xcodebuild[33862:609041] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33919
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:28:41.885 xcodebuild[33920:609874] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:282:1: error: extraneous '}' at top level
+}
+^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LinguaApp -Onone @/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -F /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-generated-files.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-own-target-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-project-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-Swift.h -working-directory /Users/tuan/Learn/rust/language-app/ios/LinguaApp -experimental-emit-module-separately -disable-cmo
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:282:1: error: Extraneous '}' at top level
+}
+^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33960
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:28:48.875 xcodebuild[33963:610282] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:282:1: error: extraneous '}' at top level
+}
+^
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(2 failures)
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+SwiftDriver LinguaApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name LinguaApp -Onone @/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -F /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -output-file-map /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-generated-files.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-own-target-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-project-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-Swift.h -working-directory /Users/tuan/Learn/rust/language-app/ios/LinguaApp -experimental-emit-module-separately -disable-cmo
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift:282:1: error: Extraneous '}' at top level
+}
+^ (in target 'LinguaApp' from project 'LinguaApp')
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 33980
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:29:08.913 xcodebuild[33991:610749] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 34055
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:30:45.819 xcodebuild[34155:613588] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app: replacing existing signature
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 34240
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:37:15.713 xcodebuild[34497:620300] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 34553
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:42:48.185 xcodebuild[34754:625705] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 34815
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 15:44:19.413 xcodebuild[34860:627946] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 34920
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 16:32:00.290 xcodebuild[37164:669225] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AudioService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Theme/AppTheme.swift -primary-file /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/HomeView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguageHubView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguagesView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/LocalizationService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LoginView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Models.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/RegisterView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/SettingsView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryReaderView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabLessonsView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/GeneratedAssetSymbols.swift -emit-dependencies-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.d -emit-const-values-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.swiftconstvalues -emit-reference-dependencies-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.swiftdeps -serialize-diagnostics-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.dia -target arm64-apple-ios17.0-simulator -module-can-import-version DeveloperToolsSupport 23.40.26 23.40.26 -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-dependencies-1.json -debug-module-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftmodule -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -I /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -F /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -swift-version 5 -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/tuan/Learn/rust/language-app/ios/LinguaApp -enable-anonymous-context-mangled-names -file-compilation-dir /Users/tuan/Learn/rust/language-app/ios/LinguaApp -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-generated-files.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-own-target-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-project-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name LinguaApp -frontend-parseable-output -disable-clang-spi -clang-target arm64-apple-ios26.4-simulator -target-sdk-version 26.4 -target-sdk-name iphonesimulator26.4 -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -o /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.o -index-unit-output-path /LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.o -index-store-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Index.noindex/DataStore -index-system-modules
+
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift:35:27: error: cannot find 'fetchAndPlayKokoro' in scope
+                try await fetchAndPlayKokoro(text: text, language: language)
+                          ^~~~~~~~~~~~~~~~~~
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 37263
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 16:32:17.123 xcodebuild[37273:670422] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 37308
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 16:32:36.029 xcodebuild[37314:671179] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 37380
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 16:42:48.646 xcodebuild[38108:680840] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 38155
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 16:58:15.454 xcodebuild[38862:694543] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AudioService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+        guard var components = URLComponents(string: baseUrlString) else {
+                                                     ^~~~~~~~~~~~~
+
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Theme/AppTheme.swift -primary-file /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/HomeView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguageHubView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguagesView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/LocalizationService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LoginView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Models.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/RegisterView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/SettingsView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryReaderView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabLessonsView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/GeneratedAssetSymbols.swift -emit-dependencies-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.d -emit-const-values-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.swiftconstvalues -emit-reference-dependencies-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.swiftdeps -serialize-diagnostics-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.dia -target arm64-apple-ios17.0-simulator -module-can-import-version DeveloperToolsSupport 23.40.26 23.40.26 -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-dependencies-1.json -debug-module-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftmodule -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -I /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -F /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -swift-version 5 -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/tuan/Learn/rust/language-app/ios/LinguaApp -enable-anonymous-context-mangled-names -file-compilation-dir /Users/tuan/Learn/rust/language-app/ios/LinguaApp -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-generated-files.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-own-target-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-project-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name LinguaApp -frontend-parseable-output -disable-clang-spi -clang-target arm64-apple-ios26.4-simulator -target-sdk-version 26.4 -target-sdk-name iphonesimulator26.4 -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -o /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.o -index-unit-output-path /LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AudioService.o -index-store-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Index.noindex/DataStore -index-system-modules
+SwiftEmitModule normal arm64 Emitting\ module\ for\ LinguaApp (in target 'LinguaApp' from project 'LinguaApp')
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 38906
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 16:58:25.174 xcodebuild[38908:695243] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 38981
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 16:59:14.014 xcodebuild[39038:696706] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app: replacing existing signature
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 39080
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 17:02:11.043 xcodebuild[39188:699839] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 39244
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 17:02:27.779 xcodebuild[39255:700673] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 39309
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 17:02:47.090 xcodebuild[39316:701578] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 39383
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 17:33:17.055 xcodebuild[41959:736705] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 42051
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 17:33:35.064 xcodebuild[42061:737887] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+            ^~~~
+            _
+
+Failed frontend command:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Theme/AppTheme.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AudioService.swift -primary-file /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/HomeView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguageHubView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LanguagesView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/LinguaApp.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/LocalizationService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/LoginView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Models.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/RegisterView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/SettingsView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoriesView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryReaderView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/StoryTypingView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabLessonsView.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Views/VocabTypingView.swift /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/GeneratedAssetSymbols.swift -emit-dependencies-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.d -emit-const-values-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.swiftconstvalues -emit-reference-dependencies-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.swiftdeps -serialize-diagnostics-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.dia -target arm64-apple-ios17.0-simulator -module-can-import-version DeveloperToolsSupport 23.40.26 23.40.26 -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp-dependencies-1.json -debug-module-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp.swiftmodule -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -I /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -F /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -swift-version 5 -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/LinguaApp_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/tuan/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/tuan/Learn/rust/language-app/ios/LinguaApp -enable-anonymous-context-mangled-names -file-compilation-dir /Users/tuan/Learn/rust/language-app/ios/LinguaApp -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-generated-files.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-own-target-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/LinguaApp-project-headers.hmap -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources/arm64 -Xcc -I/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/DerivedSources -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name LinguaApp -frontend-parseable-output -disable-clang-spi -clang-target arm64-apple-ios26.4-simulator -target-sdk-version 26.4 -target-sdk-name iphonesimulator26.4 -in-process-plugin-server-path /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -o /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Intermediates.noindex/LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.o -index-unit-output-path /LinguaApp.build/Debug-iphonesimulator/LinguaApp.build/Objects-normal/arm64/AuthService.o -index-store-path /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Index.noindex/DataStore -index-system-modules
+SwiftEmitModule normal arm64 Emitting\ module\ for\ LinguaApp (in target 'LinguaApp' from project 'LinguaApp')
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 42108
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 17:33:46.926 xcodebuild[42114:738511] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+    private func handleSuccessfulSignIn(response: AuthResponse) {
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:34:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 42164
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 18:55:18.402 xcodebuild[49286:816980] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(5 failures)
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift:86:37: error: cannot find 'baseURL' in scope
+        guard let url = URL(string: baseURL + path) else {
+                                    ^~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift:109:37: error: cannot find 'baseURL' in scope
+        guard let url = URL(string: baseURL + path) else {
+                                    ^~~~~~~
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 49690
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 18:55:36.292 xcodebuild[49697:818328] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+    private func handleSuccessfulSignIn(response: AuthResponse) {
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:34:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 49726
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 18:56:18.417 xcodebuild[49749:819585] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 49795
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:01:42.633 xcodebuild[50935:826304] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+    private func handleSuccessfulSignIn(response: AuthResponse) {
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:34:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 50977
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:04:14.059 xcodebuild[51076:829527] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(5 failures)
+    private func handleSuccessfulSignIn(response: AuthResponse) {
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:34:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 51123
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:04:25.532 xcodebuild[51124:830081] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+SwiftEmitModule normal arm64 Emitting\ module\ for\ LinguaApp (in target 'LinguaApp' from project 'LinguaApp')
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 51169
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:04:34.509 xcodebuild[51170:830572] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:35:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 51214
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:05:25.905 xcodebuild[51524:832107] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 51572
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:06:20.863 xcodebuild[51665:834311] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ LinguaApp (in target 'LinguaApp' from project 'LinguaApp')
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 51745
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:07:49.412 xcodebuild[51835:837186] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 51882
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:07:56.002 xcodebuild[51883:837691] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 51912
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:08:38.757 xcodebuild[51970:838750] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+    private func handleSuccessfulSignIn(response: AuthResponse) {
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:34:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52069
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:08:46.917 xcodebuild[52070:839631] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+SwiftEmitModule normal arm64 Emitting\ module\ for\ LinguaApp (in target 'LinguaApp' from project 'LinguaApp')
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52100
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:08:54.371 xcodebuild[52101:839991] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+    private func handleSuccessfulSignIn(response: AuthResponse) {
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:34:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52133
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:10:12.862 xcodebuild[52257:841875] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Models.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52355
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:11:13.333 xcodebuild[52450:843966] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52497
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:11:21.219 xcodebuild[52498:844489] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+    private func handleSuccessfulSignIn(response: AuthResponse) {
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:34:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52545
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:11:53.707 xcodebuild[52587:845672] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+    private func handleSuccessfulSignIn(response: AuthResponse) {
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:34:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52636
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:12:03.508 xcodebuild[52641:846271] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+    private func handleSuccessfulSignIn(response: AuthResponse) {
+                                                  ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:34:23: error: cannot find type 'AuthResponse' in scope
+        let response: AuthResponse = try await APIService.shared.post("/rpc/login", body: body)
+                      ^~~~~~~~~~~~
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52673
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:12:42.978 xcodebuild[52747:847463] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+/Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift:43:13: warning: immutable value 'user' was never used; consider replacing with '_' or removing it
+        let user: User = try await APIService.shared.post("/rpc/signup", body: body)
+            ^~~~
+            _
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52787
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:12:53.989 xcodebuild[52792:848047] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	SwiftCompile normal arm64 Compiling\ AuthService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/AuthService.swift (in target 'LinguaApp' from project 'LinguaApp')
+	Building project LinguaApp with scheme LinguaApp
+(3 failures)
+EmitSwiftModule normal arm64 (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+SwiftCompile normal arm64 Compiling\ APIService.swift /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+
+SwiftCompile normal arm64 /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp/Services/APIService.swift (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 52874
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:13:19.224 xcodebuild[52922:849276] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 53065
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:13:36.568 xcodebuild[53067:850436] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 53105
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:13:42.048 xcodebuild[53106:850808] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 53139
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:14:03.305 xcodebuild[53163:851409] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 53254
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:14:13.969 xcodebuild[53255:852258] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 53271
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:14:32.017 xcodebuild[53286:852865] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 53368
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:16:14.360 xcodebuild[53513:855777] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 53619
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:16:27.246 xcodebuild[53620:856728] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 53706
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:16:37.958 xcodebuild[53707:857577] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 53733
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:32:51.538 xcodebuild[54732:876533] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+/Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app: replacing existing signature
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 54824
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-26 19:33:00.110 xcodebuild[54825:877416] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+com.example.LinguaApp: 54854
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:34:20.529 xcodebuild[67477:1120524] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:34:57.882 xcodebuild[67684:1122634] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:35:07.438 xcodebuild[67727:1123073] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp/LinguaApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.4.sdk -o /Users/tuan/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.4-23E252-686eebb5dc1d8ecb277353a59184f4aa.sdkstatcache
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 01:42:48.310 xcodebuild[68343:1130761] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!

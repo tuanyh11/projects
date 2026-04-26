@@ -114,6 +114,9 @@ struct StoriesView: View {
         .task {
             await loadStories()
         }
+        .refreshable {
+            await loadStories()
+        }
     }
 
     private func loadStories() async {

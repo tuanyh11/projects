@@ -65,6 +65,9 @@ struct ReadingPassagesView: View {
         .task {
             await loadPassages()
         }
+        .refreshable {
+            await loadPassages()
+        }
     }
     
     private func loadPassages() async {

@@ -1,22 +1,51 @@
 import SwiftUI
 
-// MARK: - Color Palette (Travel & Youthful)
+// MARK: - Color Palette (Travel & Youthful) — Dark Mode Adaptive
 extension Color {
-    // Primary "Travel" colors
-    static let appBg         = Color(hex: "FDF8F5") // Warm off-white
-    static let appSurface    = Color(hex: "FFFFFF") // Pure white
-    static let appSurface2   = Color(hex: "FFEFE6") // Soft peach
-    static let appBorder     = Color(hex: "FFE0D1") // Gentle coral border
+    // Helper to create adaptive colors (Light / Dark)
+    private static func adaptive(light: UIColor, dark: UIColor) -> Color {
+        Color(UIColor { $0.userInterfaceStyle == .dark ? dark : light })
+    }
     
-    // Vibrant accents
+    // MARK: Backgrounds
+    static let appBg = adaptive(
+        light: UIColor(red: 253/255, green: 248/255, blue: 245/255, alpha: 1), // FDF8F5
+        dark:  UIColor(red: 18/255,  green: 18/255,  blue: 20/255,  alpha: 1)  // Deep charcoal
+    )
+    static let appSurface = adaptive(
+        light: .white,
+        dark:  UIColor(red: 30/255, green: 30/255, blue: 34/255, alpha: 1)     // Elevated dark
+    )
+    static let appSurface2 = adaptive(
+        light: UIColor(red: 255/255, green: 239/255, blue: 230/255, alpha: 1), // FFEFE6
+        dark:  UIColor(red: 42/255,  green: 42/255,  blue: 48/255,  alpha: 1)  // Slightly lighter
+    )
+    static let appBorder = adaptive(
+        light: UIColor(red: 255/255, green: 224/255, blue: 209/255, alpha: 1), // FFE0D1
+        dark:  UIColor(red: 60/255,  green: 60/255,  blue: 67/255,  alpha: 1)  // Subtle border
+    )
+    
+    // MARK: Accent colors (Same in both modes for brand consistency)
     static let appAccent     = Color(hex: "FF6B35") // Vibrant Orange (Sunset)
     static let appBlue       = Color(hex: "2D9CDB") // Sky Blue (Ocean)
     static let appGreen      = Color(hex: "27AE60") // Lush Green (Nature)
     static let appYellow     = Color(hex: "F2C94C") // Sunny Yellow
     
-    static let appText       = Color(hex: "2D3436") // Dark charcoal
-    static let appTextMuted  = Color(hex: "636E72") // Grayish blue
+    // MARK: Text colors
+    static let appText = adaptive(
+        light: UIColor(red: 45/255,  green: 52/255,  blue: 54/255,  alpha: 1), // 2D3436
+        dark:  UIColor(red: 240/255, green: 240/255, blue: 245/255, alpha: 1)  // Near-white
+    )
+    static let appTextMuted = adaptive(
+        light: UIColor(red: 99/255,  green: 110/255, blue: 114/255, alpha: 1), // 636E72
+        dark:  UIColor(red: 160/255, green: 165/255, blue: 170/255, alpha: 1)  // Soft gray
+    )
     static let appPink       = Color(hex: "EB5757") // Coral red
+    
+    // Adaptive aliases (kept for backward compatibility with Login/Register)
+    static var adaptiveBg: Color { appBg }
+    static var adaptiveSurface: Color { appSurface }
+    static var adaptiveText: Color { appText }
     
     // Aliases for compatibility
     static let appGold       = appYellow

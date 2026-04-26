@@ -97,10 +97,22 @@ final class APIService: Sendable {
         }
 
         let (data, response) = try await URLSession.shared.data(for: request)
+        
+        // Log để debug
+        if let jsonString = String(data: data, encoding: .utf8) {
+            print("📡 GET Response [\(path)]: \(jsonString)")
+        }
+
         guard let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) else {
             throw URLError(.badServerResponse)
         }
-        return try decoder.decode(T.self, from: data)
+        
+        do {
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            print("❌ Decoding Error [\(path)]: \(error)")
+            throw error
+        }
     }
 
     // MARK: - Generic POST
@@ -128,6 +140,11 @@ final class APIService: Sendable {
 
         let (data, response) = try await URLSession.shared.data(for: request)
 
+        // Log để debug
+        if let jsonString = String(data: data, encoding: .utf8) {
+            print("📡 POST Response [\(path)]: \(jsonString)")
+        }
+
         guard let http = response as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
         }
@@ -144,6 +161,11 @@ final class APIService: Sendable {
             throw URLError(.badServerResponse)
         }
 
-        return try decoder.decode(T.self, from: data)
+        do {
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            print("❌ Decoding Error [\(path)]: \(error)")
+            throw error
+        }
     }
 }

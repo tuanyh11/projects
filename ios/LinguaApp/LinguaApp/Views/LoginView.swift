@@ -10,7 +10,7 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.appBg.ignoresSafeArea()
+                Color.adaptiveBg.ignoresSafeArea()
                 
                 ScrollView {
                     VStack(spacing: 40) {
@@ -30,34 +30,44 @@ struct LoginView: View {
                             Text("LinguaZen")
                                 .font(.largeTitle.weight(.bold))
                                 .tracking(1.5)
-                                .foregroundStyle(.primary)
+                                .foregroundStyle(Color.adaptiveText)
                             
                             Text("Đăng nhập để tiếp tục")
                                 .font(.subheadline)
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(Color.appTextMuted)
                         }
                         
                         // Form
                         VStack(spacing: 20) {
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("Email")
-                                    .font(.caption.weight(.medium))
-                                    .foregroundStyle(.secondary)
-                                TextField("Nhập email", text: $email)
+                                    .font(.caption.weight(.bold))
+                                    .foregroundStyle(Color.appTextMuted)
+                                TextField("", text: $email, prompt: Text("Nhập email").foregroundColor(Color.appTextMuted.opacity(0.5)))
+                                    .foregroundStyle(Color.adaptiveText)
                                     .keyboardType(.emailAddress)
                                     .textInputAutocapitalization(.never)
                                     .autocorrectionDisabled()
                                     .padding()
-                                    .background(Color.appSurface2, in: RoundedRectangle(cornerRadius: 12))
+                                    .background(Color.adaptiveSurface, in: RoundedRectangle(cornerRadius: 12))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .stroke(Color.appBorder, lineWidth: 1)
+                                    )
                             }
                             
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("Mật khẩu")
-                                    .font(.caption.weight(.medium))
-                                    .foregroundStyle(.secondary)
-                                SecureField("Nhập mật khẩu", text: $password)
+                                    .font(.caption.weight(.bold))
+                                    .foregroundStyle(Color.appTextMuted)
+                                SecureField("", text: $password, prompt: Text("Nhập mật khẩu").foregroundColor(Color.appTextMuted.opacity(0.5)))
+                                    .foregroundStyle(Color.adaptiveText)
                                     .padding()
-                                    .background(Color.appSurface2, in: RoundedRectangle(cornerRadius: 12))
+                                    .background(Color.adaptiveSurface, in: RoundedRectangle(cornerRadius: 12))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .stroke(Color.appBorder, lineWidth: 1)
+                                    )
                             }
                             
                             if let error = errorMessage {
@@ -96,7 +106,10 @@ struct LoginView: View {
                             NavigationLink(destination: RegisterView()) {
                                 Text("Chưa có tài khoản? **Đăng ký ngay**")
                                     .font(.subheadline)
-                                    .foregroundStyle(.primary)
+                                    .foregroundStyle(Color.adaptiveText)
+                                    .padding(.vertical, 8)
+                                    .frame(maxWidth: .infinity)
+                                    .contentShape(Rectangle())
                             }
                         }
                         .padding(.top, 10)

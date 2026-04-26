@@ -3,27 +3,33 @@ import Foundation
 final class TranslationService: Sendable {
     static let shared = TranslationService()
     
-    /// Dịch một từ hoặc câu sử dụng Lingva (Free Google Translate API)
-    func translate(_ text: String, from source: String, to target: String = "vi") async throws -> String {
-        // Lingva API Format: https://lingva.ml/api/v1/source/target/query
-        let query = text.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? text
-        let urlString = "https://lingva.ml/api/v1/\(source)/\(target)/\(query)"
+    /// Dịch một từ hoặc câu sử dụng Google Translate API (không chính thức)
+    func translate(_ text: String, from languageCode: String) async throws -> (translation: String, pronunciation: String?) {
+        let targetLang = "vi"
+        let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=\(languageCode)&tl=\(targetLang)&dt=t&dt=rm&q=\(encodedText)"
         
-        guard let url = URL(string: urlString) else {
-            throw URLError(.badURL)
+        guard let url = URL(string: urlString) else { throw URLError(.badURL) }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let json = try JSONSerialization.jsonObject(with: data) as? [Any]
+        
+        var translation = ""
+        var pronunciation: String?
+        
+        if let first = json?.first as? [Any] {
+            for segment in first {
+                if let s = segment as? [Any], let t = s.first as? String {
+                    translation += t
+                }
+            }
+            
+            // Pronunciation is often at the end of the first array or second array
+            if let last = first.last as? [Any], last.count >= 4, let p = last[3] as? String {
+                pronunciation = p
+            }
         }
         
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-            throw URLError(.badServerResponse)
-        }
-        
-        let result = try JSONDecoder().decode(LingvaResponse.self, from: data)
-        return result.translation
-    }
-    
-    private struct LingvaResponse: Codable {
-        let translation: String
+        return (translation, pronunciation)
     }
 }

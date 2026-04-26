@@ -12,7 +12,7 @@ struct RegisterView: View {
     
     var body: some View {
         ZStack {
-            Color.appBg.ignoresSafeArea()
+            Color.adaptiveBg.ignoresSafeArea()
             
             ScrollView {
                 VStack(spacing: 40) {
@@ -29,11 +29,11 @@ struct RegisterView: View {
                         
                         Text("Tạo Tài Khoản")
                             .font(.largeTitle.weight(.bold))
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(Color.adaptiveText)
                         
                         Text("Tham gia học ngôn ngữ cùng LinguaZen")
                             .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color.appTextMuted)
                     }
                     .padding(.top, 40)
                     
@@ -41,33 +41,48 @@ struct RegisterView: View {
                     VStack(spacing: 20) {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Tên của bạn")
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(.secondary)
-                            TextField("Nguyễn Văn A", text: $name)
+                                .font(.caption.weight(.bold))
+                                .foregroundStyle(Color.appTextMuted)
+                            TextField("", text: $name, prompt: Text("Nguyễn Văn A").foregroundColor(Color.appTextMuted.opacity(0.5)))
+                                .foregroundStyle(Color.adaptiveText)
                                 .textInputAutocapitalization(.words)
                                 .padding()
-                                .background(Color.appSurface2, in: RoundedRectangle(cornerRadius: 12))
+                                .background(Color.adaptiveSurface, in: RoundedRectangle(cornerRadius: 12))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.appBorder, lineWidth: 1)
+                                )
                         }
                         
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Email")
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(.secondary)
-                            TextField("Nhập email", text: $email)
+                                .font(.caption.weight(.bold))
+                                .foregroundStyle(Color.appTextMuted)
+                            TextField("", text: $email, prompt: Text("Nhập email").foregroundColor(Color.appTextMuted.opacity(0.5)))
+                                .foregroundStyle(Color.adaptiveText)
                                 .keyboardType(.emailAddress)
                                 .textInputAutocapitalization(.never)
                                 .autocorrectionDisabled()
                                 .padding()
-                                .background(Color.appSurface2, in: RoundedRectangle(cornerRadius: 12))
+                                .background(Color.adaptiveSurface, in: RoundedRectangle(cornerRadius: 12))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.appBorder, lineWidth: 1)
+                                )
                         }
                         
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Mật khẩu")
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(.secondary)
-                            SecureField("Nhập mật khẩu (ít nhất 6 ký tự)", text: $password)
+                                .font(.caption.weight(.bold))
+                                .foregroundStyle(Color.appTextMuted)
+                            SecureField("", text: $password, prompt: Text("Nhập mật khẩu (ít nhất 6 ký tự)").foregroundColor(Color.appTextMuted.opacity(0.5)))
+                                .foregroundStyle(Color.adaptiveText)
                                 .padding()
-                                .background(Color.appSurface2, in: RoundedRectangle(cornerRadius: 12))
+                                .background(Color.adaptiveSurface, in: RoundedRectangle(cornerRadius: 12))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.appBorder, lineWidth: 1)
+                                )
                         }
                         
                         if let error = errorMessage {
@@ -103,12 +118,22 @@ struct RegisterView: View {
                         .disabled(isLoading || email.isEmpty || password.count < 6 || name.isEmpty)
                         .padding(.horizontal, 32)
                         
+                        // Gợi ý nếu nút bị khóa
+                        if name.isEmpty || email.isEmpty || password.count < 6 {
+                            Text("Vui lòng nhập đủ Tên, Email và Mật khẩu ≥ 6 ký tự")
+                                .font(.caption2)
+                                .foregroundStyle(Color.appTextMuted)
+                                .padding(.top, 4)
+                        }
+
                         Button(action: {
                             dismiss()
                         }) {
                             Text("Đã có tài khoản? **Đăng nhập**")
                                 .font(.subheadline)
-                                .foregroundStyle(.primary)
+                                .foregroundStyle(Color.adaptiveText)
+                                .padding(.vertical, 8)
+                                .contentShape(Rectangle())
                         }
                     }
                     .padding(.top, 10)
@@ -122,9 +147,9 @@ struct RegisterView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: { dismiss() }) {
                     Image(systemName: "chevron.left")
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(Color.adaptiveText)
                         .padding(8)
-                        .background(Color.appSurface, in: Circle())
+                        .background(Color.adaptiveSurface, in: Circle())
                 }
             }
         }
@@ -142,11 +167,5 @@ struct RegisterView: View {
                 isLoading = false
             }
         }
-    }
-}
-
-#Preview {
-    NavigationStack {
-        RegisterView()
     }
 }

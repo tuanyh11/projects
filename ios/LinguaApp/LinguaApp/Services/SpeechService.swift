@@ -2,6 +2,7 @@ import Foundation
 import Speech
 import AVFoundation
 
+@MainActor
 class SpeechService: ObservableObject {
     static let shared = SpeechService()
     
@@ -17,101 +18,130 @@ class SpeechService: ObservableObject {
     @Published var lastError: String?
     
     func requestPermissions() {
-        SFSpeechRecognizer.requestAuthorization { status in
-            // Handle status if needed
-        }
-        
-        AVAudioApplication.requestRecordPermission { granted in
-            // Handle status if needed
-        }
+        SFSpeechRecognizer.requestAuthorization { _ in }
+        AVAudioSession.sharedInstance().requestRecordPermission { _ in }
     }
     
     func startRecording(languageCode: String, completion: @escaping (String) -> Void) {
-        // Reset state
+        // Stop any ongoing speech playback first
+        AudioService.shared.stop()
+        
         transcribedText = ""
         lastError = nil
-        
-        // Cancel previous task
         recognitionTask?.cancel()
         recognitionTask = nil
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+            // Use playAndRecord to avoid switching categories too often, which can cause lag
+            try audioSession.setCategory(.playAndRecord, mode: .measurement, options: [.defaultToSpeaker, .allowBluetooth])
             try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         } catch {
-            lastError = "Audio session error: \(error.localizedDescription)"
+            lastError = "Audio session error"
             return
         }
         
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        
         guard let recognitionRequest = recognitionRequest else { return }
         recognitionRequest.shouldReportPartialResults = true
         
+        // Force on-device recognition if available for speed
+        if #available(iOS 13, *) {
+            recognitionRequest.requiresOnDeviceRecognition = false // Set to false to ensure it works in simulator
+        }
+        
         let recognizer = languageCode.hasPrefix("zh") ? speechRecognizerZh : speechRecognizerEn
         
-        recognitionTask = recognizer?.recognitionTask(with: recognitionRequest) { [weak self] result, error in
+        // Check if recognizer is available
+        guard let recognizer = recognizer, recognizer.isAvailable else {
+            lastError = "Recognizer not available"
+            return
+        }
+        
+        recognitionTask = recognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
             if let result = result {
                 self?.transcribedText = result.bestTranscription.formattedString
-                if result.isFinal {
-                    completion(result.bestTranscription.formattedString)
-                }
+                // Update completion on every partial result for better UX
+                completion(result.bestTranscription.formattedString)
             }
-            
-            if error != nil || result?.isFinal == true {
+            if error != nil {
                 self?.stopRecording()
             }
         }
         
         let recordingFormat = audioEngine.inputNode.outputFormat(forBus: 0)
+        audioEngine.inputNode.removeTap(onBus: 0)
         audioEngine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
             recognitionRequest.append(buffer)
         }
         
-        audioEngine.prepare()
-        do {
-            try audioEngine.start()
-            isRecording = true
-        } catch {
-            lastError = "Audio engine error: \(error.localizedDescription)"
+        if !audioEngine.isRunning {
+            audioEngine.prepare()
+            do {
+                try audioEngine.start()
+            } catch {
+                lastError = "Audio engine start failed"
+                return
+            }
         }
+        isRecording = true
     }
     
     func stopRecording() {
-        audioEngine.stop()
-        audioEngine.inputNode.removeTap(onBus: 0)
-        recognitionRequest?.endAudio()
+        // Update UI state immediately for responsiveness
         isRecording = false
         
-        // Reset audio session to playback
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            audioEngine.inputNode.removeTap(onBus: 0)
+        }
+        
+        recognitionRequest?.endAudio()
+        
+        // Clean up task after a short delay to allow final results
+        let task = recognitionTask
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            task?.finish()
+            self.recognitionTask = nil
+            self.recognitionRequest = nil
+        }
+        
         let audioSession = AVAudioSession.sharedInstance()
-        try? audioSession.setCategory(.playback, mode: .default)
+        try? audioSession.setCategory(.playback, mode: .default, options: .duckOthers)
         try? audioSession.setActive(true)
     }
     
-    // Scoring logic: Simple word overlap for now
     func calculateScore(original: String, spoken: String) -> Int {
-        let originalWords = original.lowercased()
-            .components(separatedBy: CharacterSet.alphanumerics.inverted)
-            .filter { !$0.isEmpty }
+        func clean(_ s: String) -> [String] {
+            s.lowercased()
+                .components(separatedBy: CharacterSet.alphanumerics.inverted)
+                .filter { !$0.isEmpty }
+        }
         
-        let spokenWords = spoken.lowercased()
-            .components(separatedBy: CharacterSet.alphanumerics.inverted)
-            .filter { !$0.isEmpty }
+        let orig = clean(original)
+        let spok = clean(spoken)
         
-        if originalWords.isEmpty { return 0 }
+        if orig.isEmpty { return 0 }
+        if spok.isEmpty { return 0 }
         
+        // Fuzzy matching: Count how many original words are found in spoken text in ANY order
+        // (More forgiving for learners)
         var matches = 0
-        var spokenSet = Set(spokenWords)
+        var tempSpoken = spok
         
-        for word in originalWords {
-            if spokenSet.contains(word) {
+        for word in orig {
+            if let index = tempSpoken.firstIndex(of: word) {
                 matches += 1
-                spokenSet.remove(word) // Count each word once
+                tempSpoken.remove(at: index)
             }
         }
         
-        return Int((Double(matches) / Double(originalWords.count)) * 100)
+        let baseScore = Double(matches) / Double(orig.count)
+        
+        // Penalize for too many extra words (noise/babbling)
+        let penalty = max(0, Double(spok.count - orig.count) / Double(orig.count)) * 0.2
+        
+        let finalScore = max(0, (baseScore - penalty) * 100)
+        return Int(finalScore)
     }
 }

@@ -35,7 +35,7 @@ struct ContentView: View {
                     Label("tab-languages".localized(), systemImage: "globe")
                 }
                 .tag(1)
-            
+
             SettingsView()
                 .tabItem {
                     Label("tab-settings".localized(), systemImage: "gearshape")

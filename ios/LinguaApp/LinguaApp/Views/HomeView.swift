@@ -178,6 +178,9 @@ struct HomeView: View {
             .task {
                 await loadRealData()
             }
+            .refreshable {
+                await loadRealData()
+            }
         }
     }
 
