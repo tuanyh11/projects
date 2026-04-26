@@ -8,6 +8,12 @@ struct User: Codable, Identifiable, Sendable, Hashable {
     let avatarUrl: String?
 }
 
+// MARK: - Auth Response
+struct AuthResponse: Codable, Sendable {
+    let user: User
+    let token: String
+}
+
 // MARK: - Language
 struct Language: Codable, Identifiable, Sendable, Hashable {
     let id: Int
