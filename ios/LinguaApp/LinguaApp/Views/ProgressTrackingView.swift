@@ -251,45 +251,61 @@ struct ProgressView_Custom: View {
     }
     
     private func loadStats() async {
-        guard let userId = AuthService.shared.currentUser?.id else { 
-            errorMessage = "Chưa đăng nhập"
+        guard let userId = AuthService.shared.currentUser?.id else {
+            // Không đăng nhập → vẫn hiển thị zeros, không báo lỗi
+            stats = UserStats.empty
             isLoading = false
-            return 
+            return
         }
-        
-        do {
-            stats = try await APIService.shared.getUserStats(userId: userId)
+
+        // Thử gọi RPC (chỉ có sau khi chạy SQL migration)
+        if let rpcStats = try? await APIService.shared.getUserStats(userId: userId) {
+            stats = rpcStats
             isLoading = false
-        } catch {
-            print("❌ Error loading stats: \(error)")
-            // Fallback: tính từ user_progress
-            do {
-                let progressList = try await APIService.shared.fetchUserProgress(userId: userId)
-                let lessons = Set(progressList.compactMap { $0.lessonId }).count
-                let stories = Set(progressList.compactMap { $0.storyId }).count
-                let dates = progressList.compactMap { $0.completedAt?.prefix(10) }
-                let streak = Set(dates).count
-                let avgAcc = progressList.compactMap { $0.accuracy }.reduce(0, +) / max(progressList.count, 1)
-                let avgWpm = progressList.compactMap { $0.wpm }.filter { $0 ?? 0 > 0 }.compactMap { $0 }.reduce(0, +) / max(progressList.filter { ($0.wpm ?? 0) > 0 }.count, 1)
-                
-                stats = UserStats(
-                    totalLessons: lessons,
-                    totalStories: stories,
-                    totalQuizzes: 0,
-                    totalWordsTyped: 0,
-                    totalMinutes: 0,
-                    avgAccuracy: avgAcc,
-                    avgWpm: avgWpm,
-                    currentStreak: streak,
-                    longestStreak: streak,
-                    weeklyActivity: nil
-                )
-                isLoading = false
-            } catch {
-                errorMessage = "Không thể tải dữ liệu tiến độ"
-                isLoading = false
-            }
+            return
         }
+
+        // Fallback: tính từ bảng user_progress (luôn có sẵn)
+        let progressList = (try? await APIService.shared.fetchUserProgress(userId: userId)) ?? []
+
+        let totalLessons  = Set(progressList.compactMap { $0.lessonId }).count
+        let totalStories  = Set(progressList.compactMap { $0.storyId }).count
+
+        // Accuracy trung bình — tránh chia cho 0
+        let accuracies   = progressList.compactMap { $0.accuracy }
+        let avgAccuracy  = accuracies.isEmpty ? 0 : accuracies.reduce(0, +) / accuracies.count
+
+        // WPM trung bình — chỉ lấy các record > 0
+        let wpms         = progressList.compactMap { $0.wpm }.filter { $0 > 0 }
+        let avgWpm       = wpms.isEmpty ? 0 : wpms.reduce(0, +) / wpms.count
+
+        // Streak: đếm số ngày duy nhất có hoạt động
+        let uniqueDays   = Set(progressList.compactMap { $0.completedAt.flatMap { String($0.prefix(10)) } })
+        let streak       = uniqueDays.count
+
+        // Biểu đồ 7 ngày: tính số bài hoàn thành theo ngày
+        let weeklyActivity: [WeeklyActivity] = (0..<7).reversed().map { daysAgo in
+            let date = Calendar.current.date(byAdding: .day, value: -daysAgo, to: Date())!
+            let dateStr = ISO8601DateFormatter().string(from: date).prefix(10).description
+            let count = progressList.filter {
+                $0.completedAt?.hasPrefix(dateStr) == true
+            }.count
+            return WeeklyActivity(d: dateStr, activities: count, minutes: 0, words: 0)
+        }
+
+        stats = UserStats(
+            totalLessons: totalLessons,
+            totalStories: totalStories,
+            totalQuizzes: 0,
+            totalWordsTyped: 0,
+            totalMinutes: 0,
+            avgAccuracy: avgAccuracy,
+            avgWpm: avgWpm,
+            currentStreak: streak,
+            longestStreak: streak,
+            weeklyActivity: weeklyActivity
+        )
+        isLoading = false
     }
 }
 

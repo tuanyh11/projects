@@ -152,6 +152,14 @@ struct UserStats: Codable, Sendable {
     let currentStreak: Int
     let longestStreak: Int
     let weeklyActivity: [WeeklyActivity]?
+
+    static let empty = UserStats(
+        totalLessons: 0, totalStories: 0, totalQuizzes: 0,
+        totalWordsTyped: 0, totalMinutes: 0,
+        avgAccuracy: 0, avgWpm: 0,
+        currentStreak: 0, longestStreak: 0,
+        weeklyActivity: nil
+    )
 }
 
 // MARK: - Weekly Activity
