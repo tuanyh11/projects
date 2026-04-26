@@ -249,7 +249,7 @@ struct VocabTypingView: View {
         if !targetText.hasPrefix(newValue) {
             if newValue.count > oldValue.count {
                 totalErrors += 1
-                AudioService.shared.playSound("wrong")
+                AudioService.shared.playWrongSound()
                 let generator = UINotificationFeedbackGenerator()
                 generator.notificationOccurred(.error)
             }
@@ -262,13 +262,13 @@ struct VocabTypingView: View {
         }
 
         if newValue == targetText {
-            AudioService.shared.playSound("sussces")
+            AudioService.shared.playSuccessSound()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 if currentIndex + 1 < vocabularies.count {
                     currentIndex += 1
                     typedText = ""
                 } else {
-                    AudioService.shared.playSound("sussces")
+                    AudioService.shared.playSuccessSound()
                     saveFinalProgress()
                     isFinished = true
                     isFocused = false

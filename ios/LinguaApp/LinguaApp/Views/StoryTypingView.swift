@@ -234,7 +234,7 @@ struct StoryTypingView: View {
         if !target.hasPrefix(newValue) {
             if newValue.count > oldValue.count {
                 totalErrors += 1
-                AudioService.shared.playSound("wrong")
+                AudioService.shared.playWrongSound()
                 let generator = UINotificationFeedbackGenerator()
                 generator.notificationOccurred(.error)
             }
@@ -247,13 +247,13 @@ struct StoryTypingView: View {
         }
 
         if newValue == target {
-            AudioService.shared.playSound("sussces")
+            AudioService.shared.playSuccessSound()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 if currentIndex + 1 < storyLines.count {
                     currentIndex += 1
                     typedText = ""
                 } else {
-                    AudioService.shared.playSound("sussces")
+                    AudioService.shared.playSuccessSound()
                     saveFinalProgress()
                     isFinished = true
                     isFocused = false

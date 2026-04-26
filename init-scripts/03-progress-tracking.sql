@@ -2,6 +2,15 @@
 -- PROGRESS TRACKING SYSTEM
 -- =============================================
 
+-- Tự động tạo role web_anon nếu chưa có để tránh lỗi
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT FROM pg_catalog.pg_roles WHERE rolname = 'web_anon') THEN
+        CREATE ROLE web_anon NOLOGIN;
+    END IF;
+END
+$$;
+
 -- 1. Bảng theo dõi hoạt động hàng ngày
 CREATE TABLE IF NOT EXISTS daily_activity (
     id SERIAL PRIMARY KEY,

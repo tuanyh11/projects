@@ -4035,3 +4035,75 @@ Unable to lookup in current state: Shutdown
 An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
 Unable to lookup in current state: Shutdown
 🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 02:02:53.511 xcodebuild[72055:1160443] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 02:03:02.477 xcodebuild[72104:1161075] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 02:03:16.633 xcodebuild[72184:1161792] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!
+🚀 Phát hiện thay đổi, đang build lại...
+2026-04-27 02:03:33.035 xcodebuild[72269:1162464] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app
+
+Validate /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app (in target 'LinguaApp' from project 'LinguaApp')
+    cd /Users/tuan/Learn/rust/language-app/ios/LinguaApp
+    builtin-validationUtility /Users/tuan/Library/Developer/Xcode/DerivedData/LinguaApp-cnzhrpjntxezraexaicvemyehwby/Build/Products/Debug-iphonesimulator/LinguaApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+** BUILD SUCCEEDED **
+
+✅ Build thành công! Đang cài đặt lên Simulator...
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to lookup in current state: Shutdown
+🎉 Đã cập nhật app!

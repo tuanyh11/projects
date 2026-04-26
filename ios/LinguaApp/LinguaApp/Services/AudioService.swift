@@ -116,10 +116,13 @@ final class AudioService: ObservableObject {
         }
     }
 
-    /// Phát hiệu ứng âm thanh từ file nội bộ (ví dụ: "correct", "wrong")
+    /// Phát hiệu ứng âm thanh từ file nội bộ
+    /// - Parameters:
+    ///   - name: Tên file âm thanh (không cần đuôi file)
+    ///   - volume: Âm lượng (0.0 – 2.0; mặc định 1.0)
+    ///   - rate: Tốc độ phát (0.5 – 2.0; mặc định 1.0)
     private var effectPlayer: AVAudioPlayer?
-    func playSound(_ name: String) {
-        // Tạm thời set category để phát được hiệu ứng song song
+    func playSound(_ name: String, volume: Float = 1.0, rate: Float = 1.0) {
         try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: [.duckOthers, .defaultToSpeaker])
         try? AVAudioSession.sharedInstance().setActive(true)
 
@@ -128,19 +131,30 @@ final class AudioService: ObservableObject {
                        Bundle.main.url(forResource: name, withExtension: "wav") ??
                        Bundle.main.url(forResource: name, withExtension: "m4a") else {
             print("⚠️ Could not find sound file: \(name)")
-            // Fallback âm thanh hệ thống để biết là code đã chạy tới đây
-            AudioServicesPlaySystemSound(1053) 
+            AudioServicesPlaySystemSound(1053)
             return
         }
 
         do {
             effectPlayer = try AVAudioPlayer(contentsOf: url)
-            effectPlayer?.volume = 1.0
+            effectPlayer?.volume = min(max(volume, 0.0), 2.0)   // clamp 0–2
+            effectPlayer?.enableRate = true
+            effectPlayer?.rate   = min(max(rate, 0.25), 4.0)    // clamp 0.25–4
             effectPlayer?.prepareToPlay()
             effectPlayer?.play()
-            print("🔊 Playing effect: \(name)")
+            print("🔊 Playing effect: \(name) | volume=\(volume) rate=\(rate)")
         } catch {
             print("❌ Failed to play sound \(name): \(error.localizedDescription)")
         }
+    }
+
+    /// Phát tiếng báo lỗi — chậm hơn bình thường
+    func playWrongSound() {
+        playSound("wrong", volume: 1.0, rate: 0.6)
+    }
+
+    /// Phát tiếng hoàn thành — to hơn bình thường
+    func playSuccessSound() {
+        playSound("sussces", volume: 2.0, rate: 1.0)
     }
 }
