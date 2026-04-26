@@ -3,7 +3,7 @@ services:
   - type: web
     name: lingua-api
     env: docker
-    plan: free # Có thể đổi sang starter nếu cần
+    plan: free
     dockerContext: .
     dockerCommand: postgrest
     envVars:
@@ -17,6 +17,16 @@ services:
         value: anon
       - key: PGRST_JWT_SECRET
         value: your-super-secret-jwt-token-at-least-32-chars-long
+    healthCheckPath: /
+
+  # 3. Edge TTS Proxy Server
+  - type: web
+    name: lingua-tts
+    env: python
+    plan: free
+    rootDir: edge-tts-server
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /
 
 # 2. PostgreSQL Database

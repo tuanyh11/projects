@@ -29,65 +29,51 @@ final class AudioService: ObservableObject {
         audioPlayer?.stop()
         synthesizer.stopSpeaking(at: .immediate)
         
-        // Request Kokoro TTS
+        // Request Edge TTS
         Task {
             do {
-                try await fetchAndPlayKokoro(text: text, language: language)
+                try await fetchAndPlayEdgeTTS(text: text, language: language)
             } catch {
-                print("❌ Kokoro TTS Failed: \(error.localizedDescription). Falling back to system TTS.")
+                print("❌ Edge TTS Failed: \(error.localizedDescription). Falling back to system TTS.")
                 fallbackSpeak(text, language: language)
             }
         }
     }
     
-    /// Chọn giọng Kokoro phù hợp với từng ngôn ngữ
-    private func kokoroVoice(for language: String) -> String {
+    /// Chọn giọng Edge TTS (Microsoft Neural) phù hợp
+    private func edgeVoice(for language: String) -> String {
         let lang = language.lowercased()
         switch lang {
-        case "zh": return "zf_xiaoxiao"
-        case "ja": return "jf_alpha"
-        case "ko": return "hf_alpha"
-        case "fr": return "ff_siwis"
-        case "it": return "if_sara"
-        default:   return "af_bella" // Nữ Mỹ (thường rõ hơn Michael)
+        case "zh": return "zh-CN-XiaoxiaoNeural"
+        case "ja": return "ja-JP-NanamiNeural"
+        case "ko": return "ko-KR-SunHiNeural"
+        case "fr": return "fr-FR-DeniseNeural"
+        case "it": return "it-IT-ElsaNeural"
+        case "vi": return "vi-VN-HoaiMyNeural"
+        default:   return "en-US-AriaNeural"
         }
     }
     
-    /// Chọn ngôn ngữ (lang_code) cho Kokoro
-    private func kokoroLangCode(for language: String) -> String {
-        let lang = language.lowercased()
-        if lang.contains("zh") { return "z" } // Trung
-        if lang.contains("ja") { return "j" } // Nhật
-        if lang.contains("ko") { return "k" } // Hàn
-        if lang.contains("fr") { return "f" } // Pháp
-        if lang.contains("it") { return "i" } // Ý
-        return "a" // Mặc định là Tiếng Anh (American/British)
-    }
-    
-    private func fetchAndPlayKokoro(text: String, language: String = "en") async throws {
-        guard let url = URL(string: "http://localhost:8880/v1/audio/speech") else {
+    private func fetchAndPlayEdgeTTS(text: String, language: String = "en") async throws {
+        // API URL của server Python Edge TTS (Chạy local trên cổng 8880 hoặc thay bằng link Render sau khi deploy)
+        let baseUrlString = "http://localhost:8880/v1/audio/speech"
+        
+        guard var components = URLComponents(string: baseUrlString) else {
             throw URLError(.badURL)
         }
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let voice = kokoroVoice(for: language)
-        let langCode = kokoroLangCode(for: language)
-        print("🎙️ Requesting Kokoro voice: \(voice), lang_code: \(langCode) for text: \(text)")
-        
-        let body: [String: Any] = [
-            "model": "kokoro",
-            "input": text,
-            "voice": voice,
-            "language": langCode, // Thử cả 2 key phổ biến
-            "lang_code": langCode,
-            "speed": 1.0,
-            "response_format": "wav"
+        let voice = edgeVoice(for: language)
+        components.queryItems = [
+            URLQueryItem(name: "text", value: text),
+            URLQueryItem(name: "voice", value: voice)
         ]
         
-        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        guard let url = components.url else { throw URLError(.badURL) }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        print("🎙️ Requesting Edge TTS voice: \(voice) for text: \(text)")
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
@@ -127,6 +113,34 @@ final class AudioService: ObservableObject {
         let voices = AVSpeechSynthesisVoice.speechVoices()
         for voice in voices {
             print("🔊 Available Voice: \(voice.name) [\(voice.language)]")
+        }
+    }
+
+    /// Phát hiệu ứng âm thanh từ file nội bộ (ví dụ: "correct", "wrong")
+    private var effectPlayer: AVAudioPlayer?
+    func playSound(_ name: String) {
+        // Tạm thời set category để phát được hiệu ứng song song
+        try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: [.duckOthers, .defaultToSpeaker])
+        try? AVAudioSession.sharedInstance().setActive(true)
+
+        guard let url = Bundle.main.url(forResource: name, withExtension: nil) ??
+                       Bundle.main.url(forResource: name, withExtension: "mp3") ??
+                       Bundle.main.url(forResource: name, withExtension: "wav") ??
+                       Bundle.main.url(forResource: name, withExtension: "m4a") else {
+            print("⚠️ Could not find sound file: \(name)")
+            // Fallback âm thanh hệ thống để biết là code đã chạy tới đây
+            AudioServicesPlaySystemSound(1053) 
+            return
+        }
+
+        do {
+            effectPlayer = try AVAudioPlayer(contentsOf: url)
+            effectPlayer?.volume = 1.0
+            effectPlayer?.prepareToPlay()
+            effectPlayer?.play()
+            print("🔊 Playing effect: \(name)")
+        } catch {
+            print("❌ Failed to play sound \(name): \(error.localizedDescription)")
         }
     }
 }

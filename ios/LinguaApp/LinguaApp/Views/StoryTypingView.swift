@@ -231,13 +231,10 @@ struct StoryTypingView: View {
 
         let target = targetText
 
-        // Lenient comparison: ignore trailing spaces/punctuation if the user missed them
         if !target.hasPrefix(newValue) {
-            // Check if user just typed an extra space or something that's not actually an error but a mismatch with target
-            // But for a typing app, precision is usually key.
-            // The real issue is if the ghost text is MISSING characters from target.
             if newValue.count > oldValue.count {
                 totalErrors += 1
+                AudioService.shared.playSound("wrong")
                 let generator = UINotificationFeedbackGenerator()
                 generator.notificationOccurred(.error)
             }
@@ -250,11 +247,13 @@ struct StoryTypingView: View {
         }
 
         if newValue == target {
+            AudioService.shared.playSound("sussces")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 if currentIndex + 1 < storyLines.count {
                     currentIndex += 1
                     typedText = ""
                 } else {
+                    AudioService.shared.playSound("sussces")
                     saveFinalProgress()
                     isFinished = true
                     isFocused = false
